@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard AI - Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-page">
+    <div class="bg-animation">
+        <div class="grid-bg"></div>
+        <div class="glow-orb glow-1"></div>
+        <div class="glow-orb glow-2"></div>
+        <div class="glow-orb glow-3"></div>
+        <div class="particles"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card" id="loginCard">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h1 class="logo-text">PhishGuard AI</h1>
+                <p class="tagline">Advanced Phishing Detection System</p>
+            </div>
+
+            <!-- Auto-Login Screen -->
+            <div class="screen active" id="autoLoginScreen">
+                <div class="user-greeting">
+                    <div class="avatar-ring">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2>Welcome Back!</h2>
+                    <p class="user-email" id="savedEmail"></p>
+                    <p class="prompt-text">Would you like to continue?</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary btn-glow" id="continueBtn">
+                        <i class="fas fa-check"></i>
+                        <span>Continue</span>
+                    </button>
+                    <button class="btn btn-secondary" id="notYouBtn">
+                        <i class="fas fa-user-slash"></i>
+                        <span>Not You?</span>
+                    </button>
+                </div>
+                <a href="#" class="link" id="useEmailLink">Use a different email</a>
+            </div>
+
+            <!-- Email Input Screen -->
+            <div class="screen" id="emailScreen">
+                <h2 class="screen-title">
+                    <i class="fas fa-envelope"></i>
+                    Enter Your Email
+                </h2>
+                <p class="screen-subtitle">We'll send you a secure OTP code</p>
+                
+                <form id="emailForm" class="form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <input type="email" id="emailInput" placeholder="your.email@example.com" required autocomplete="email">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-glow btn-full" id="sendOtpBtn">
+                        <span class="btn-text">Send OTP Code</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <a href="#" class="link" id="registerLink">
+                    <i class="fas fa-user-plus"></i>
+                    Create New Account
+                </a>
+                
+                <a href="#" class="link forgot-link" id="forgotPasswordLink">
+                    <i class="fas fa-key"></i>
+                    Forgot Password?
+                </a>
+            </div>
+
+            <!-- Forgot Password Screen -->
+            <div class="screen" id="forgotPasswordScreen">
+                <button class="back-btn" id="backFromForgotBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <h2 class="screen-title">
+                    <i class="fas fa-key"></i>
+                    Reset Password
+                </h2>
+                <p class="screen-subtitle">Enter your email to reset your password</p>
+                
+                <form id="forgotPasswordForm" class="form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <input type="email" id="forgotEmailInput" placeholder="your.email@example.com" required autocomplete="email">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-glow btn-full" id="sendResetOtpBtn">
+                        <span class="btn-text">Send Reset Code</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- New Password Screen -->
+            <div class="screen" id="newPasswordScreen">
+                <button class="back-btn" id="backFromNewPassBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <h2 class="screen-title">
+                    <i class="fas fa-lock"></i>
+                    Set New Password
+                </h2>
+                <p class="screen-subtitle">Enter the OTP and your new password<br><strong id="resetEmailDisplay"></strong></p>
+                
+                <form id="newPasswordForm" class="form">
+                    <div class="otp-input-group">
+                        <input type="text" class="otp-input" maxlength="1" data-index="0" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="1" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="2" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="3" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="4" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="5" autocomplete="off">
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" id="newPasswordInput" placeholder="New Password (min 6 chars)" required minlength="6" autocomplete="new-password">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" id="confirmPasswordInput" placeholder="Confirm Password" required autocomplete="new-password">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-glow btn-full" id="resetPasswordBtn">
+                        <span class="btn-text"><i class="fas fa-check"></i> Reset Password</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="otp-timer" id="resetOtpTimer">
+                    <i class="fas fa-clock"></i>
+                    <span>Resend available in <strong id="resetTimerSeconds">60</strong>s</span>
+                </div>
+                
+                <button class="btn btn-ghost" id="resendResetOtpBtn" disabled>
+                    <i class="fas fa-redo"></i>
+                    Resend Code
+                </button>
+                
+                <p class="error-message" id="resetPasswordError"></p>
+            </div>
+
+            <!-- OTP Verification Screen -->
+            <div class="screen" id="otpScreen">
+                <button class="back-btn" id="backToEmailBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <h2 class="screen-title">
+                    <i class="fas fa-lock"></i>
+                    Verify Your Identity
+                </h2>
+                <p class="screen-subtitle">Enter the 6-digit code sent to<br><strong id="otpEmail"></strong></p>
+                
+                <form id="otpForm" class="form">
+                    <div class="otp-input-group">
+                        <input type="text" class="otp-input" maxlength="1" data-index="0" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="1" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="2" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="3" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="4" autocomplete="off">
+                        <input type="text" class="otp-input" maxlength="1" data-index="5" autocomplete="off">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-glow btn-full" id="verifyOtpBtn">
+                        <span class="btn-text"><i class="fas fa-shield-check"></i> Verify & Login</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="otp-timer" id="otpTimer">
+                    <i class="fas fa-clock"></i>
+                    <span>Resend available in <strong id="timerSeconds">60</strong>s</span>
+                </div>
+                
+                <button class="btn btn-ghost" id="resendOtpBtn" disabled>
+                    <i class="fas fa-redo"></i>
+                    Resend OTP
+                </button>
+                
+                <p class="error-message" id="otpError"></p>
+            </div>
+
+            <!-- Registration Screen -->
+            <div class="screen" id="registerScreen">
+                <button class="back-btn" id="backFromRegisterBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <h2 class="screen-title">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </h2>
+                <p class="screen-subtitle">Join the phishing protection network</p>
+                
+                <form id="registerForm" class="form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" id="regName" placeholder="Full Name" required autocomplete="name">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <input type="email" id="regEmail" placeholder="Email Address" required autocomplete="email">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <input type="text" id="regInstitution" placeholder="Institution (Optional)" autocomplete="organization">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" id="regPassword" placeholder="Password (min 6 chars)" required autocomplete="new-password">
+                        <div class="input-focus-ring"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-glow btn-full" id="registerBtn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <a href="#" class="link" id="loginLink">
+                    <i class="fas fa-sign-in"></i>
+                    Already have an account?
+                </a>
+            </div>
+
+            <!-- Success Screen -->
+            <div class="screen" id="successScreen">
+                <div class="success-animation">
+                    <div class="success-circle">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="success-particles"></div>
+                </div>
+                <h2 class="success-title">Welcome!</h2>
+                <p class="success-text">Logging you in securely...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="login-footer">
+            <p><i class="fas fa-lock"></i> Secured with end-to-end encryption</p>
+            <p class="copyright">© 2026 PhishGuard AI - Science Exhibition</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="login.js"></script>
+</body>
+</html>

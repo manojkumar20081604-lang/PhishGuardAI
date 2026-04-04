@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model files (generated - will be built on Render)
+models/*.pkl
+models/*.keras
+models/*.h5
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Database
+*.db
+*.sqlite
+
+# Confidential
+config.py
+
+# Old gitignore
+_gitignore

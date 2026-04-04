@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard AI - Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="flex-login.css">
+</head>
+<body class="login-page">
+    <div class="bg-animation">
+        <div class="grid-bg"></div>
+        <div class="glow-orb glow-1"></div>
+        <div class="glow-orb glow-2"></div>
+        <div class="glow-orb glow-3"></div>
+        <div class="scan-line"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-halved"></i>
+                    <div class="shield-scan"></div>
+                </div>
+                <h1 class="logo-text">PhishGuard AI</h1>
+                <p class="tagline">Advanced Phishing Detection System</p>
+            </div>
+
+            <!-- Auto Login Banner -->
+            <div class="auto-login-banner" id="autoLoginBanner">
+                <div class="auto-login-icon">
+                    <i class="fas fa-fingerprint"></i>
+                </div>
+                <div class="auto-login-info">
+                    <h4>Welcome Back!</h4>
+                    <p id="savedEmailText"></p>
+                </div>
+                <button class="btn-use-account" id="useSavedAccount">
+                    <i class="fas fa-check"></i>
+                </button>
+                <button class="btn-different-account" id="differentAccount">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Login Method Selector -->
+            <div class="method-selector" id="methodSelector">
+                <h3>Choose Login Method</h3>
+                <div class="method-buttons">
+                    <button class="method-btn active" data-method="password">
+                        <div class="method-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <span>Password</span>
+                    </button>
+                    <button class="method-btn" data-method="otp">
+                        <div class="method-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <span>OTP Code</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Password Login Form -->
+            <div class="auth-form active" id="passwordForm">
+                <h2 class="form-title">
+                    <i class="fas fa-key"></i>
+                    Login with Password
+                </h2>
+                
+                <form id="loginPasswordForm">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" id="pwdEmail" placeholder="Email Address" required autocomplete="email">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" id="pwdPassword" placeholder="Password" required autocomplete="current-password">
+                        <button type="button" class="toggle-pwd" id="togglePwd">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label class="checkbox-custom">
+                            <input type="checkbox" id="rememberPwd">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="link-forgot" id="forgotLink">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth" id="loginPwdBtn">
+                        <span class="btn-text"><i class="fas fa-sign-in-alt"></i> Login</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="error-alert" id="pwdError"></div>
+            </div>
+
+            <!-- OTP Login Form -->
+            <div class="auth-form" id="otpForm">
+                <h2 class="form-title">
+                    <i class="fas fa-mobile-alt"></i>
+                    Login with OTP
+                </h2>
+                
+                <form id="sendOtpForm">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" id="otpEmail" placeholder="Email Address" required autocomplete="email">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth btn-send-otp" id="sendOtpBtn">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Send OTP Code</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="otp-input-section" id="otpInputSection" style="display: none;">
+                    <div class="otp-info">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Enter the 6-digit code sent to<br><strong id="otpSentTo"></strong></p>
+                    </div>
+                    
+                    <form id="verifyOtpForm">
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="0">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="1">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="2">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="3">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="4">
+                            <input type="text" class="otp-digit" maxlength="1" data-idx="5">
+                        </div>
+                        
+                        <div class="otp-timer-bar">
+                            <div class="timer-track">
+                                <div class="timer-fill" id="timerFill"></div>
+                            </div>
+                            <span class="timer-text"><i class="fas fa-clock"></i> <span id="timerValue">60</span>s</span>
+                        </div>
+                        
+                        <button type="submit" class="btn-auth" id="verifyOtpBtn">
+                            <span class="btn-text"><i class="fas fa-shield-alt"></i> Verify & Login</span>
+                            <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                        
+                        <button type="button" class="btn-resend" id="resendOtpBtn" disabled>
+                            <i class="fas fa-redo"></i> Resend OTP
+                        </button>
+                    </form>
+                    
+                    <div class="error-alert" id="otpError"></div>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form -->
+            <div class="auth-form" id="forgotForm">
+                <h2 class="form-title">
+                    <i class="fas fa-key"></i>
+                    Reset Password
+                </h2>
+                
+                <form id="resetForm">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" id="resetEmail" placeholder="Email Address" required>
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth" id="resetBtn">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Reset Link</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="success-alert" id="resetSuccess"></div>
+                <div class="error-alert" id="resetError"></div>
+                
+                <button class="btn-back" id="backFromReset">
+                    <i class="fas fa-arrow-left"></i> Back to Login
+                </button>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="auth-form" id="registerForm">
+                <h2 class="form-title">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </h2>
+                
+                <form id="signupForm">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" id="regEmail" placeholder="Email Address" required autocomplete="email">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" id="regPassword" placeholder="Password (min 8 chars)" required>
+                        <button type="button" class="toggle-pwd" data-target="regPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="password-strength-meter" id="pwdStrength">
+                        <div class="strength-track">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <span class="strength-label" id="strengthLabel">Password strength</span>
+                    </div>
+                    
+                    <ul class="password-rules">
+                        <li data-rule="length"><i class="fas fa-circle"></i> At least 8 characters</li>
+                        <li data-rule="upper"><i class="fas fa-circle"></i> One uppercase letter</li>
+                        <li data-rule="number"><i class="fas fa-circle"></i> One number</li>
+                        <li data-rule="special"><i class="fas fa-circle"></i> One special character</li>
+                    </ul>
+                    
+                    <button type="submit" class="btn-auth btn-register" id="registerBtn">
+                        <span class="btn-text"><i class="fas fa-user-plus"></i> Create Account</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                
+                <div class="error-alert" id="regError"></div>
+                
+                <button class="btn-back" id="backToLogin">
+                    <i class="fas fa-arrow-left"></i> Back to Login
+                </button>
+            </div>
+
+            <!-- Success Screen -->
+            <div class="auth-form success-screen" id="successScreen">
+                <div class="success-animation">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="success-ring"></div>
+                    <div class="success-ring delay"></div>
+                </div>
+                <h2 class="success-title">Welcome!</h2>
+                <p class="success-message">Secure login successful</p>
+                <div class="redirect-text">
+                    <i class="fas fa-spinner fa-spin"></i> Redirecting to dashboard...
+                </div>
+            </div>
+
+            <!-- Divider & Links -->
+            <div class="form-footer" id="formFooter">
+                <div class="divider-or">
+                    <span>or</span>
+                </div>
+                <a href="#" class="link-create" id="createAccountLink">
+                    <i class="fas fa-user-plus"></i> Create New Account
+                </a>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <div class="security-badges">
+                <span><i class="fas fa-shield-alt"></i> 256-bit Encryption</span>
+                <span><i class="fas fa-lock"></i> Secure 2FA</span>
+            </div>
+            <p class="copyright">© 2026 PhishGuard AI - Science Exhibition</p>
+        </div>
+    </div>
+
+    <script src="flex-login.js"></script>
+</body>
+</html>

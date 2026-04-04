@@ -1,0 +1,34 @@
+{
+  "name": "PhishGuard - AI Phishing Detection",
+  "short_name": "PhishGuard",
+  "description": "AI-powered phishing detection system for URLs, emails, SMS, and social media",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#00d4ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/assets/shield.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["security", "utilities", "education"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Analyze URL",
+      "short_name": "URL",
+      "description": "Analyze a URL for phishing",
+      "url": "/#url"
+    },
+    {
+      "name": "Take Quiz",
+      "short_name": "Quiz",
+      "description": "Test your knowledge",
+      "url": "/#quiz"
+    }
+  ]
+}

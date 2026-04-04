@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard AI - Cyber Defense Dashboard</title>
+    
+    <!-- Meta Tags -->
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="description" content="AI-Powered Phishing Detection System">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="static/assets/shield.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-grid"></div>
+        <div class="bg-glow glow-1"></div>
+        <div class="bg-glow glow-2"></div>
+        <div class="bg-glow glow-3"></div>
+    </div>
+
+    <!-- Login Screen Overlay -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-container">
+            <div class="login-visual">
+                <div class="login-logo">
+                    <div class="shield-icon">
+                        <i class="fas fa-shield-halved"></i>
+                        <div class="shield-ring"></div>
+                    </div>
+                    <h1>PhishGuard</h1>
+                    <p>AI-Powered Cyber Defense</p>
+                </div>
+                <div class="login-stats">
+                    <div class="login-stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                    <div class="login-stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Threats Blocked</span>
+                    </div>
+                </div>
+            </div>
+            <div class="login-form-container">
+                <div class="login-tabs">
+                    <button class="login-tab active" data-form="login">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <button class="login-tab" data-form="register">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginFormMain" class="auth-form active">
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="mainLoginEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <div class="password-input">
+                            <input type="password" id="mainLoginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-neon">
+                        <span>Login</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <p class="form-footer">
+                        Don't have an account? 
+                        <a href="#" class="switch-form" data-form="register">Register here</a>
+                    </p>
+                </form>
+                
+                <!-- Register Form -->
+                <form id="registerFormMain" class="auth-form">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="mainRegName" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="mainRegEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="mainRegPassword" placeholder="Create password (min 6 chars)" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-building"></i> Institution</label>
+                        <input type="text" id="mainRegInstitution" placeholder="College/School name">
+                    </div>
+                    <button type="submit" class="btn-neon">
+                        <span>Create Account</span>
+                        <i class="fas fa-user-plus"></i>
+                    </button>
+                    <p class="form-footer">
+                        Already have an account? 
+                        <a href="#" class="switch-form" data-form="login">Login here</a>
+                    </p>
+                </form>
+                
+                <div id="loginErrorMain" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application Container -->
+    <div class="app-container" id="appContainer">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <span class="logo-text">PhishGuard</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-page="url">
+                    <i class="fas fa-link"></i>
+                    <span>URL Checker</span>
+                </a>
+                <a href="#" class="nav-item" data-page="email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Analyzer</span>
+                </a>
+                <a href="#" class="nav-item" data-page="message">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Message Scanner</span>
+                </a>
+                <a href="#" class="nav-item" data-page="qr">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QR Scanner</span>
+                </a>
+                <a href="#" class="nav-item" data-page="simulator">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Simulator</span>
+                </a>
+                <a href="#" class="nav-item" data-page="challenge">
+                    <i class="fas fa-bolt"></i>
+                    <span>Challenge</span>
+                </a>
+                <a href="#" class="nav-item" data-page="quiz">
+                    <i class="fas fa-brain"></i>
+                    <span>Quiz</span>
+                </a>
+                <a href="#" class="nav-item" data-page="videos">
+                    <i class="fas fa-video"></i>
+                    <span>Videos</span>
+                </a>
+                <a href="#" class="nav-item" data-page="history">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+                <a href="#" class="nav-item" data-page="profile">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="threat-indicator">
+                    <div class="indicator-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="indicator-info">
+                        <span class="indicator-label">System Status</span>
+                        <span class="indicator-value">Protected</span>
+                    </div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="page-title">
+                        <h2 id="currentPageTitle">Dashboard</h2>
+                        <span class="page-date" id="currentDate"></span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn" id="notificationsBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="header-btn" id="themeBtn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="header-btn" id="musicBtn" title="Background Music">
+                        <i class="fas fa-music"></i>
+                    </button>
+                    <div class="user-menu" id="userMenuBtn">
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="" alt="" id="userAvatarImg" style="display:none;">
+                            <i class="fas fa-user" id="userAvatarIcon"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name" id="headerUserName">User</span>
+                            <span class="user-role">Cyber Defender</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a href="#" class="dropdown-item" data-page="profile">
+                                <i class="fas fa-user"></i> My Profile
+                            </a>
+                            <a href="#" class="dropdown-item" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content Container -->
+            <div class="page-content" id="pageContent">
+                
+                <!-- Dashboard Page -->
+                <div class="page active" id="page-dashboard">
+                    <div class="welcome-section">
+                        <div class="welcome-text">
+                            <h1>Welcome back, <span id="welcomeUserName">Defender</span>!</h1>
+                            <p>Your cyber defense dashboard is ready. Stay vigilant against phishing threats.</p>
+                        </div>
+                        <div class="welcome-stats">
+                            <div class="quick-stat">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>98% Accuracy</span>
+                            </div>
+                            <div class="quick-stat">
+                                <i class="fas fa-clock"></i>
+                                <span id="sessionTime">00:00:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card total">
+                            <div class="stat-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statTotalScans">0</span>
+                                <span class="stat-label">Total Scans</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 12%
+                            </div>
+                        </div>
+                        <div class="stat-card threats">
+                            <div class="stat-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statThreats">0</span>
+                                <span class="stat-label">Threats Blocked</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 8%
+                            </div>
+                        </div>
+                        <div class="stat-card safe">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statSafe">0</span>
+                                <span class="stat-label">Safe Verified</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i> 15%
+                            </div>
+                        </div>
+                        <div class="stat-card accuracy">
+                            <div class="stat-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Accuracy Rate</span>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-check"></i> Stable
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div class="charts-section">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3><i class="fas fa-chart-pie"></i> Threat Distribution</h3>
+                            </div>
+                            <div class="chart-body">
+                                <canvas id="threatPieChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card wide">
+                            <div class="chart-header">
+                                <h3><i class="fas fa-chart-line"></i> Scanning Activity (24h)</h3>
+                            </div>
+                            <div class="chart-body">
+                                <canvas id="activityLineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="activity-section">
+                        <div class="section-header">
+                            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                            <a href="#" class="view-all" data-page="history">View All</a>
+                        </div>
+                        <div class="activity-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Content</th>
+                                        <th>Result</th>
+                                        <th>Confidence</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentActivityTable">
+                                    <tr>
+                                        <td colspan="5" class="empty-state">
+                                            <i class="fas fa-inbox"></i>
+                                            <p>No recent activity. Start scanning to see results here.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- URL Checker Page -->
+                <div class="page" id="page-url">
+                    <div class="analyzer-card">
+                        <div class="analyzer-header">
+                            <div class="analyzer-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="analyzer-title">
+                                <h2>URL Phishing Detection</h2>
+                                <p>Analyze URLs for potential phishing threats using AI</p>
+                            </div>
+                        </div>
+                        <div class="analyzer-body">
+                            <div class="input-group">
+                                <input type="text" id="urlInput" placeholder="Enter URL to analyze (e.g., https://example.com)">
+                                <button class="btn-neon" id="analyzeUrlBtn">
+                                    <i class="fas fa-search"></i> Analyze
+                                </button>
+                            </div>
+                            <div class="demo-buttons">
+                                <span>Try demo:</span>
+                                <button class="demo-btn danger" data-url="https://paypal.com.secure.tk/login">
+                                    <i class="fas fa-skull"></i> Phishing Demo
+                                </button>
+                                <button class="demo-btn safe" data-url="https://www.google.com">
+                                    <i class="fas fa-shield-alt"></i> Safe Demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="analyzer-result" id="urlResult" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Email Analyzer Page -->
+                <div class="page" id="page-email">
+                    <div class="analyzer-card">
+                        <div class="analyzer-header">
+                            <div class="analyzer-icon email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="analyzer-title">
+                                <h2>Email Phishing Analysis</h2>
+                                <p>Detect malicious content in emails</p>
+                            </div>
+                        </div>
+                        <div class="analyzer-body">
+                            <div class="input-group vertical">
+                                <textarea id="emailInput" placeholder="Paste email content here..."></textarea>
+                                <button class="btn-neon" id="analyzeEmailBtn">
+                                    <i class="fas fa-search"></i> Analyze Email
+                                </button>
+                            </div>
+                            <div class="demo-buttons">
+                                <span>Try demo:</span>
+                                <button class="demo-btn danger" data-email="URGENT: Your account has been suspended! Click here immediately to verify: http://bit.ly/secure-update">
+                                    <i class="fas fa-skull"></i> Phishing Demo
+                                </button>
+                                <button class="demo-btn safe" data-email="Hi Team, Please find the quarterly report attached. Let me know if you have questions. Best regards, Sarah">
+                                    <i class="fas fa-shield-alt"></i> Safe Demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="analyzer-result" id="emailResult" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Message Scanner Page -->
+                <div class="page" id="page-message">
+                    <div class="analyzer-card">
+                        <div class="analyzer-header">
+                            <div class="analyzer-icon message">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="analyzer-title">
+                                <h2>Message Scanner</h2>
+                                <p>Scan SMS and social media messages for threats</p>
+                            </div>
+                        </div>
+                        <div class="platform-selector">
+                            <button class="platform-btn active" data-platform="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <button class="platform-btn" data-platform="instagram"><i class="fab fa-instagram"></i> Instagram</button>
+                            <button class="platform-btn" data-platform="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                            <button class="platform-btn" data-platform="sms"><i class="fas fa-sms"></i> SMS</button>
+                        </div>
+                        <div class="analyzer-body">
+                            <div class="input-group vertical">
+                                <textarea id="messageInput" placeholder="Paste message content here..."></textarea>
+                                <button class="btn-neon" id="analyzeMessageBtn">
+                                    <i class="fas fa-search"></i> Analyze Message
+                                </button>
+                            </div>
+                        </div>
+                        <div class="analyzer-result" id="messageResult" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- QR Scanner Page -->
+                <div class="page" id="page-qr">
+                    <div class="analyzer-card">
+                        <div class="analyzer-header">
+                            <div class="analyzer-icon qr">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <div class="analyzer-title">
+                                <h2>QR Code Scanner</h2>
+                                <p>Scan QR codes to detect hidden phishing links</p>
+                            </div>
+                        </div>
+                        <div class="qr-scanner-area">
+                            <div class="qr-video-container" id="qrVideoContainer" style="display:none;">
+                                <video id="qrVideo" autoplay playsinline></video>
+                                <div class="qr-overlay">
+                                    <div class="qr-frame"></div>
+                                </div>
+                            </div>
+                            <div class="qr-placeholder" id="qrPlaceholder">
+                                <i class="fas fa-qrcode"></i>
+                                <p>Click Start Camera or Upload Image to scan QR code</p>
+                            </div>
+                        </div>
+                        <div class="qr-controls">
+                            <button class="btn-neon" id="startCameraBtn">
+                                <i class="fas fa-camera"></i> Start Camera
+                            </button>
+                            <button class="btn-neon secondary" id="stopCameraBtn" style="display:none;">
+                                <i class="fas fa-stop"></i> Stop Camera
+                            </button>
+                            <label class="btn-neon secondary">
+                                <i class="fas fa-upload"></i> Upload Image
+                                <input type="file" id="qrImageInput" accept="image/*" style="display:none;">
+                            </label>
+                        </div>
+                        <div class="analyzer-result" id="qrResult" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Phishing Simulator Page -->
+                <div class="page" id="page-simulator">
+                    <div class="simulator-container">
+                        <div class="sim-header">
+                            <h2><i class="fas fa-gamepad"></i> Phishing Simulator</h2>
+                            <p>Test your phishing detection skills!</p>
+                        </div>
+                        <div class="sim-stats-bar">
+                            <div class="sim-stat">
+                                <span class="sim-stat-label">Round</span>
+                                <span class="sim-stat-value" id="simRound">1/10</span>
+                            </div>
+                            <div class="sim-stat">
+                                <span class="sim-stat-label">Score</span>
+                                <span class="sim-stat-value" id="simScore">0</span>
+                            </div>
+                            <div class="sim-stat">
+                                <span class="sim-stat-label">Streak</span>
+                                <span class="sim-stat-value" id="simStreak">0</span>
+                            </div>
+                        </div>
+                        <div class="sim-scenario-card" id="simScenario">
+                            <div class="sim-scenario-header">
+                                <span class="sim-sender" id="simSender">sender@example.com</span>
+                                <span class="sim-platform">Just now</span>
+                            </div>
+                            <div class="sim-scenario-body" id="simBody">
+                                Loading scenario...
+                            </div>
+                            <div class="sim-scenario-actions">
+                                <button class="sim-action-btn safe" id="simSafeBtn">
+                                    <i class="fas fa-check-circle"></i> Legitimate
+                                </button>
+                                <button class="sim-action-btn danger" id="simDangerBtn">
+                                    <i class="fas fa-exclamation-triangle"></i> Phishing
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sim-feedback" id="simFeedback" style="display:none;"></div>
+                        <div class="sim-results" id="simResults" style="display:none;"></div>
+                        <button class="btn-neon" id="startSimBtn">
+                            <i class="fas fa-play"></i> Start Simulator
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Daily Challenge Page -->
+                <div class="page" id="page-challenge">
+                    <div class="challenge-container">
+                        <div class="challenge-header">
+                            <div class="challenge-badge">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h2>Daily Challenge</h2>
+                            <p class="challenge-streak" id="challengeStreakText">Streak: 0 days</p>
+                        </div>
+                        <div class="challenge-card">
+                            <div class="challenge-timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="challengeTimer">--:--:--</span>
+                            </div>
+                            <h3 id="challengeTitle">Loading challenge...</h3>
+                            <p id="challengeDesc"></p>
+                            <div class="challenge-options" id="challengeOptions"></div>
+                            <button class="btn-neon" id="submitChallengeBtn">
+                                <i class="fas fa-paper-plane"></i> Submit Answer
+                            </button>
+                        </div>
+                        <div class="challenge-result" id="challengeResult" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Quiz Page -->
+                <div class="page" id="page-quiz">
+                    <div class="quiz-container">
+                        <div class="quiz-header">
+                            <h2><i class="fas fa-brain"></i> Cyber Security Quiz</h2>
+                            <p>Test your knowledge about phishing and cybersecurity</p>
+                        </div>
+                        <div class="quiz-controls">
+                            <select id="quizCategory">
+                                <option value="">All Categories</option>
+                                <option value="url">URL Security</option>
+                                <option value="email">Email Security</option>
+                                <option value="sms">SMS Security</option>
+                                <option value="social">Social Media</option>
+                                <option value="general">General Security</option>
+                            </select>
+                            <select id="quizDifficulty">
+                                <option value="">Any Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <button class="btn-neon" id="startQuizBtn">
+                                <i class="fas fa-play"></i> Start Quiz
+                            </button>
+                        </div>
+                        <div class="quiz-card" id="quizCard" style="display:none;">
+                            <div class="quiz-progress">
+                                <span id="quizProgress">Question 1/5</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="quizProgressFill"></div>
+                                </div>
+                            </div>
+                            <h3 id="quizQuestion">Question text here?</h3>
+                            <div class="quiz-options" id="quizOptions"></div>
+                            <div class="quiz-actions">
+                                <button class="btn-neon secondary" id="skipQuestionBtn">Skip</button>
+                                <button class="btn-neon" id="nextQuestionBtn" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="quiz-results" id="quizResults" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Videos Page -->
+                <div class="page" id="page-videos">
+                    <div class="videos-container">
+                        <div class="videos-header">
+                            <h2><i class="fas fa-video"></i> Educational Videos</h2>
+                            <p>Learn about phishing, cybersecurity, and how to protect yourself online</p>
+                        </div>
+                        <div class="videos-grid">
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/inWWhr5tnEA')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>What is Phishing?</h3>
+                                    <p>Learn the basics of phishing attacks and how they work</p>
+                                    <span class="video-duration">1:00</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/Y7uG92g6GLU')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>How Hackers Steal Passwords</h3>
+                                    <p>See how attackers use phishing to steal credentials</p>
+                                    <span class="video-duration">1:30</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/lcOxhHG9x5A')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Spot Fake Emails</h3>
+                                    <p>Learn to identify red flags in suspicious emails</p>
+                                    <span class="video-duration">1:15</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/aS61MZ7tJ4c')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Safe Browsing Tips</h3>
+                                    <p>Best practices for staying safe online</p>
+                                    <span class="video-duration">1:00</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/8Z3Kjhb-H9w')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Password Security</h3>
+                                    <p>Create strong passwords and protect your accounts</p>
+                                    <span class="video-duration">1:30</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/QCY_3gc8K2U')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Social Engineering</h3>
+                                    <p>Understand how attackers manipulate people</p>
+                                    <span class="video-duration">1:00</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/V9AbeALNHsk')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Two-Factor Authentication</h3>
+                                    <p>Why 2FA is essential for account security</p>
+                                    <span class="video-duration">1:00</span>
+                                </div>
+                            </div>
+                            <div class="video-card" onclick="openVideoModal('https://www.youtube.com/embed/wVirtjJ3uD4')">
+                                <div class="video-thumbnail">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Malware Protection</h3>
+                                    <p>How to protect yourself from malicious software</p>
+                                    <span class="video-duration">1:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Modal -->
+                <div class="video-modal" id="videoModal">
+                    <div class="video-modal-content">
+                        <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+                        <iframe id="videoFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- History Page -->
+                <div class="page" id="page-history">
+                    <div class="history-container">
+                        <div class="history-header">
+                            <h2><i class="fas fa-history"></i> Analysis History</h2>
+                            <button class="btn-neon secondary" id="exportHistoryBtn">
+                                <i class="fas fa-download"></i> Export PDF
+                            </button>
+                        </div>
+                        <div class="history-filters">
+                            <select id="historyFilterType">
+                                <option value="">All Types</option>
+                                <option value="url">URL</option>
+                                <option value="email">Email</option>
+                                <option value="message">Message</option>
+                            </select>
+                            <select id="historyFilterResult">
+                                <option value="">All Results</option>
+                                <option value="phishing">Phishing</option>
+                                <option value="safe">Safe</option>
+                                <option value="suspicious">Suspicious</option>
+                            </select>
+                        </div>
+                        <div class="history-list" id="historyList">
+                            <div class="empty-state">
+                                <i class="fas fa-inbox"></i>
+                                <p>No analysis history yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile/Settings Page -->
+                <div class="page" id="page-profile">
+                    <div class="profile-container">
+                        <div class="profile-header-card">
+                            <div class="profile-avatar-section">
+                                <div class="profile-avatar" id="profileAvatar">
+                                    <img src="" alt="" id="profileAvatarImg" style="display:none;">
+                                    <i class="fas fa-user" id="profileAvatarIcon"></i>
+                                    <label class="avatar-upload-btn" for="avatarUpload">
+                                        <i class="fas fa-camera"></i>
+                                    </label>
+                                    <input type="file" id="avatarUpload" accept="image/*" style="display:none;">
+                                </div>
+                                <button class="btn-neon secondary" id="uploadAvatarBtn">
+                                    <i class="fas fa-upload"></i> Upload Photo
+                                </button>
+                            </div>
+                            <div class="profile-info">
+                                <h2 id="profileUserName">User Name</h2>
+                                <p id="profileUserEmail">user@email.com</p>
+                                <p id="profileUserInstitution"><i class="fas fa-graduation-cap"></i> Institution</p>
+                                <p class="member-since"><i class="fas fa-calendar"></i> Member since <span id="profileMemberSince">2024</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-stats-section">
+                            <h3><i class="fas fa-chart-bar"></i> Your Statistics</h3>
+                            <div class="profile-stats-grid">
+                                <div class="profile-stat-card">
+                                    <i class="fas fa-search"></i>
+                                    <span class="stat-value" id="profileTotalScans">0</span>
+                                    <span class="stat-label">Total Scans</span>
+                                </div>
+                                <div class="profile-stat-card">
+                                    <i class="fas fa-shield-virus"></i>
+                                    <span class="stat-value" id="profileThreatsFound">0</span>
+                                    <span class="stat-label">Threats Found</span>
+                                </div>
+                                <div class="profile-stat-card">
+                                    <i class="fas fa-trophy"></i>
+                                    <span class="stat-value" id="profileBadges">0</span>
+                                    <span class="stat-label">Badges Earned</span>
+                                </div>
+                                <div class="profile-stat-card">
+                                    <i class="fas fa-brain"></i>
+                                    <span class="stat-value" id="profileQuizScore">0</span>
+                                    <span class="stat-label">Quiz Score</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-badges-section">
+                            <h3><i class="fas fa-medal"></i> Achievements</h3>
+                            <div class="badges-showcase" id="profileBadgesGrid"></div>
+                        </div>
+                        
+                        <div class="profile-settings-section">
+                            <h3><i class="fas fa-cog"></i> Account Settings</h3>
+                            <form id="profileSettingsForm" class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Full Name</label>
+                                        <input type="text" id="settingsName" placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Institution</label>
+                                        <input type="text" id="settingsInstitution" placeholder="College/School">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="settingsEmail" disabled>
+                                </div>
+                                <button type="submit" class="btn-neon">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <p>Analyzing with AI...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- AI Chatbot -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+    </button>
+    
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h3>PhishGuard AI</h3>
+                <p><span class="online-dot"></span> Online</p>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chat-message bot">
+                Hello! I'm <strong>PhishGuard AI</strong>, your cybersecurity assistant. I can help you with:
+                <br><br>
+                🔍 Detecting phishing attacks
+                <br>
+                💡 Security tips & advice
+                <br>
+                ❓ Answering your questions
+                <br><br>
+                What would you like to know?
+            </div>
+        </div>
+        
+        <div class="chatbot-quick-actions">
+            <button class="chat-quick-action" data-question="What is phishing?">
+                <i class="fas fa-question-circle"></i> What is phishing?
+            </button>
+            <button class="chat-quick-action" data-question="Give me security tips">
+                <i class="fas fa-shield-alt"></i> Security tips
+            </button>
+            <button class="chat-quick-action" data-question="How to spot phishing?">
+                <i class="fas fa-search"></i> Spot phishing
+            </button>
+        </div>
+        
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+            <button class="chatbot-send" id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="offline-analyzer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
