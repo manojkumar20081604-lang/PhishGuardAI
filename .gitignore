@@ -44,3 +44,4 @@ phishguard.db
 # Not for deployment
 not_for_deploy/
 static/assets/background-music.mp3
+models/*.pkl
