@@ -62,6 +62,30 @@ MODELS_DIR = os.path.join(BASE_DIR, 'models')
 
 print(f"[*] Looking for models in: {MODELS_DIR}")
 
+# Create models directory if it doesn't exist
+os.makedirs(MODELS_DIR, exist_ok=True)
+
+def train_models():
+    """Train ML models if they don't exist"""
+    import subprocess
+    import sys
+    print("[*] Training ML models...")
+    try:
+        result = subprocess.run([sys.executable, 'train_model.py'], 
+                              capture_output=True, text=True, timeout=300)
+        if result.returncode == 0:
+            print("[*] Models trained successfully!")
+            return True
+        else:
+            print(f"[!] Training failed: {result.stderr}")
+            return False
+    except Exception as e:
+        print(f"[!] Training error: {e}")
+        return False
+
+url_model = None
+text_model = None
+
 try:
     url_model_path = os.path.join(MODELS_DIR, 'url_model.pkl')
     text_model_path = os.path.join(MODELS_DIR, 'text_model.pkl')
@@ -72,7 +96,6 @@ try:
         print("[*] URL model loaded")
     else:
         print(f"[!] URL model not found at: {url_model_path}")
-        url_model = None
         
     if os.path.exists(text_model_path):
         with open(text_model_path, 'rb') as f:
@@ -80,15 +103,38 @@ try:
         print("[*] Text model loaded")
     else:
         print(f"[!] Text model not found at: {text_model_path}")
-        text_model = None
+    
+    # Auto-train if any model is missing
+    if url_model is None or text_model is None:
+        print("[*] Some models are missing, training new models...")
+        train_models()
+        # Try loading again after training
+        if os.path.exists(url_model_path):
+            with open(url_model_path, 'rb') as f:
+                url_model = pickle.load(f)
+            print("[*] URL model loaded after training")
+        if os.path.exists(text_model_path):
+            with open(text_model_path, 'rb') as f:
+                text_model = pickle.load(f)
+            print("[*] Text model loaded after training")
         
     print("[*] ML Models loaded successfully")
 except Exception as e:
     print(f"[!] ML models error: {e}")
-    print("[*] Run: python train_model.py to generate models")
-    url_model = None
-    text_model = None
-    text_model = None
+    print("[*] Attempting to train models...")
+    train_models()
+    # Try loading one more time
+    try:
+        url_model_path = os.path.join(MODELS_DIR, 'url_model.pkl')
+        text_model_path = os.path.join(MODELS_DIR, 'text_model.pkl')
+        if os.path.exists(url_model_path):
+            with open(url_model_path, 'rb') as f:
+                url_model = pickle.load(f)
+        if os.path.exists(text_model_path):
+            with open(text_model_path, 'rb') as f:
+                text_model = pickle.load(f)
+    except:
+        pass
 
 # In-memory database for demo/anonymous use
 db = {
