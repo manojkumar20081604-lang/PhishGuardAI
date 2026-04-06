@@ -313,6 +313,105 @@ def health():
     })
 
 
+@app.route('/api/export/pdf', methods=['POST'])
+def export_pdf():
+    """Generate simple PDF report"""
+    data = request.get_json()
+    
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    
+    try:
+        from reportlab.lib.pagesizes import letter
+        from reportlab.pdfgen import canvas
+        from reportlab.lib import colors
+        import io
+        
+        # Create PDF in memory
+        buffer = io.BytesIO()
+        c = canvas.Canvas(buffer, pagesize=letter)
+        width, height = letter
+        
+        # Title
+        c.setFont("Helvetica-Bold", 24)
+        c.setFillColor(colors.HexColor("#00d4ff"))
+        c.drawString(50, height - 50, "PhishGuard AI - Analysis Report")
+        
+        # Line
+        c.setStrokeColor(colors.HexColor("#00d4ff"))
+        c.setLineWidth(2)
+        c.line(50, height - 60, width - 50, height - 60)
+        
+        # Details
+        c.setFont("Helvetica", 12)
+        c.setFillColor(colors.black)
+        
+        y = height - 100
+        
+        # Prediction
+        prediction = data.get('prediction', 'Unknown')
+        risk_score = data.get('risk_score', 0)
+        c.setFont("Helvetica-Bold", 16)
+        c.drawString(50, y, f"Result: {prediction}")
+        y -= 25
+        
+        # Risk Score
+        c.setFont("Helvetica", 14)
+        c.drawString(50, y, f"Risk Score: {risk_score}/100")
+        y -= 30
+        
+        # URL/Content
+        content = data.get('url', data.get('content', ''))
+        if content:
+            c.setFont("Helvetica", 12)
+            c.drawString(50, y, "Analyzed Content:")
+            y -= 20
+            c.setFont("Helvetica-Oblique", 10)
+            # Split long URL
+            if len(content) > 70:
+                c.drawString(50, y, content[:70])
+                y -= 15
+                c.drawString(50, y, content[70:])
+            else:
+                c.drawString(50, y, content)
+            y -= 30
+        
+        # Reasons
+        reasons = data.get('reasons', [])
+        if reasons:
+            c.setFont("Helvetica-Bold", 12)
+            c.drawString(50, y, "Detection Reasons:")
+            y -= 20
+            c.setFont("Helvetica", 10)
+            for reason in reasons[:5]:
+                c.drawString(60, y, f"• {reason}")
+                y -= 15
+        
+        # Date
+        y -= 20
+        c.setFont("Helvetica-Oblique", 9)
+        c.setFillColor(colors.gray)
+        analyzed_at = data.get('analyzed_at', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        c.drawString(50, y, f"Generated: {analyzed_at}")
+        
+        # Footer
+        c.drawString(50, 30, "PhishGuard AI - Advanced Phishing Detection System")
+        
+        c.save()
+        buffer.seek(0)
+        
+        return buffer.getvalue(), 200, {
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': f'attachment; filename=phishguard_report.pdf'
+        }
+        
+    except ImportError:
+        return jsonify({'error': 'PDF generation not available'}), 500
+    except Exception as e:
+        print(f"[!] PDF error: {e}")
+        return jsonify({'error': 'Failed to generate PDF'}), 500
+
+
 # ===================== STATIC FILES =====================
 
 @app.route('/static/<path:filename>')
