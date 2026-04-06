@@ -474,6 +474,38 @@ def export_pdf():
         return jsonify({'error': 'Failed to generate PDF'}), 500
 
 
+@app.route('/api/quiz', methods=['GET'])
+def get_quiz():
+    """Get quiz questions"""
+    category = request.args.get('category', 'all')
+    difficulty = request.args.get('difficulty', 'all')
+    limit = int(request.args.get('limit', 5))
+    
+    all_questions = [
+        {"question": "What is phishing?", "option_a": "A fishing technique", "option_b": "A cyber attack to steal information", "option_c": "A type of virus", "option_d": "A programming language", "correct_answer": "b", "explanation": "Phishing is a cybercrime where attackers pretend to be legitimate to steal sensitive data", "difficulty": "easy", "category": "phishing"},
+        {"question": "Which email is most likely a phishing attempt?", "option_a": "From your bank with your name", "option_b": "From unknown sender asking for password", "option_c": "From colleague about project", "option_d": "From newsletter you subscribed to", "correct_answer": "b", "explanation": "Legitimate organizations never ask for passwords via email", "difficulty": "easy", "category": "phishing"},
+        {"question": "What does HTTPS indicate?", "option_a": "Site is fast", "option_b": "Site is secure", "option_c": "Site is government", "option_d": "Site is popular", "correct_answer": "b", "explanation": "HTTPS means the connection is encrypted and secure", "difficulty": "easy", "category": "security"},
+        {"question": "What is a strong password?", "option_a": "password123", "option_b": "Your birthday", "option_c": "MyDogName!", "option_d": "G7$kP#9@mL2!", "correct_answer": "d", "explanation": "Strong passwords mix uppercase, lowercase, numbers, and symbols", "difficulty": "easy", "category": "password"},
+        {"question": "What is malware?", "option_a": "Bad weather", "option_b": "Malicious software", "option_c": "A type of hardware", "option_d": "A backup system", "correct_answer": "b", "explanation": "Malware is software designed to damage or gain unauthorized access", "difficulty": "easy", "category": "security"},
+        {"question": "What is two-factor authentication?", "option_a": "Using two passwords", "option_b": "Using two different devices", "option_c": "Using password + verification code", "option_d": "Logging in twice", "correct_answer": "c", "explanation": "2FA adds an extra layer of security beyond just password", "difficulty": "medium", "category": "security"},
+        {"question": "What is a suspicious URL sign?", "option_a": "It ends in .com", "option_b": "It has typos or extra characters", "option_c": "It's from a known company", "option_d": "It uses HTTPS", "correct_answer": "b", "explanation": "Phishing URLs often mimic real sites with slight typos", "difficulty": "medium", "category": "phishing"},
+        {"question": "What is ransomware?", "option_a": "Free software", "option_b": "Software that encrypts files for ransom", "option_c": "A type of firewall", "option_d": "An antivirus", "correct_answer": "b", "explanation": "Ransomware locks your files until you pay attackers", "difficulty": "medium", "category": "security"},
+        {"question": "How often should you update passwords?", "option_a": "Never", "option_b": "Every year", "option_c": "Every 3-6 months", "option_d": "Only when hacked", "correct_answer": "c", "explanation": "Regular password changes reduce risk of account compromise", "difficulty": "medium", "category": "password"},
+        {"question": "What is social engineering?", "option_a": "Building social networks", "option_b": "Manipulating people to reveal secrets", "option_c": "Engineering social media", "option_d": "Designing websites", "correct_answer": "b", "explanation": "Social engineering exploits human psychology rather than technical flaws", "difficulty": "hard", "category": "security"},
+    ]
+    
+    filtered = all_questions
+    if category != 'all':
+        filtered = [q for q in filtered if q['category'] == category]
+    if difficulty != 'all':
+        filtered = [q for q in filtered if q['difficulty'] == difficulty]
+    
+    import random
+    questions = random.sample(filtered, min(limit, len(filtered)))
+    
+    return jsonify({'questions': questions, 'total': len(all_questions)})
+
+
 @app.route('/api/chat', methods=['POST'])
 def chat():
     """Simple chatbot"""
