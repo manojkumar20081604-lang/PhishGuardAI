@@ -498,60 +498,6 @@ def chat():
 
 
 # ===================== STATIC FILES =====================
-        c.setFont("Helvetica", 14)
-        c.drawString(50, y, f"Risk Score: {risk_score}/100")
-        y -= 30
-        
-        # URL/Content
-        content = data.get('url', data.get('content', ''))
-        if content:
-            c.setFont("Helvetica", 12)
-            c.drawString(50, y, "Analyzed Content:")
-            y -= 20
-            c.setFont("Helvetica-Oblique", 10)
-            # Split long URL
-            if len(content) > 70:
-                c.drawString(50, y, content[:70])
-                y -= 15
-                c.drawString(50, y, content[70:])
-            else:
-                c.drawString(50, y, content)
-            y -= 30
-        
-        # Reasons
-        reasons = data.get('reasons', [])
-        if reasons:
-            c.setFont("Helvetica-Bold", 12)
-            c.drawString(50, y, "Detection Reasons:")
-            y -= 20
-            c.setFont("Helvetica", 10)
-            for reason in reasons[:5]:
-                c.drawString(60, y, f"• {reason}")
-                y -= 15
-        
-        # Date
-        y -= 20
-        c.setFont("Helvetica-Oblique", 9)
-        c.setFillColor(colors.gray)
-        analyzed_at = data.get('analyzed_at', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-        c.drawString(50, y, f"Generated: {analyzed_at}")
-        
-        # Footer
-        c.drawString(50, 30, "PhishGuard AI - Advanced Phishing Detection System")
-        
-        c.save()
-        buffer.seek(0)
-        
-        return buffer.getvalue(), 200, {
-            'Content-Type': 'application/pdf',
-            'Content-Disposition': f'attachment; filename=phishguard_report.pdf'
-        }
-        
-    except ImportError:
-        return jsonify({'error': 'PDF generation not available'}), 500
-    except Exception as e:
-        print(f"[!] PDF error: {e}")
-        return jsonify({'error': 'Failed to generate PDF'}), 500
 
 
 # ===================== STATIC FILES =====================
