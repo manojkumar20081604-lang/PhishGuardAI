@@ -816,32 +816,63 @@ function displayAnalyzerResult(elementId, data) {
     const container = document.getElementById(elementId);
     if (!container) return;
     
-    // Store data globally for PDF download
     currentAnalysisData = data;
     
-    const predClass = data.prediction === 'phishing' ? 'danger' : data.prediction === 'suspicious' ? 'suspicious' : 'safe';
-    const predIcon = { danger: 'fa-times-circle', suspicious: 'fa-exclamation-triangle', safe: 'fa-check-circle' };
-    const confidence = data.confidence_percent || Math.round(data.confidence * 100);
+    const riskScore = data.risk_score || 0;
+    const prediction = data.prediction || data.prediction;
+    const riskLevel = data.risk_level || prediction;
+    
+    // Color based on risk score
+    let riskColor = '#10b981'; // Safe - green
+    if (riskScore >= 61) riskColor = '#ef4444'; // Phishing - red
+    else if (riskScore >= 31) riskColor = '#f59e0b'; // Suspicious - orange
+    
+    // Get explanation text
+    const explanations = data.explanations || data.reasons || [];
+    const recommendation = data.recommendation || '';
     
     container.innerHTML = `
         <div class="result-header">
-            <i class="fas ${predIcon[predClass]}"></i>
-            <h3>${data.prediction.toUpperCase()}</h3>
-            <span class="result-confidence">${confidence}% Confidence</span>
+            <div class="risk-score-display">
+                <span class="risk-number" style="color: ${riskColor}">${riskScore}</span>
+                <span class="risk-label">Risk Score</span>
+            </div>
+            <h3 style="color: ${riskColor}">${riskLevel}</h3>
         </div>
-        ${data.reasons?.length ? `
-            <ul class="result-reasons">
-                ${data.reasons.map(r => `<li><i class="fas fa-exclamation-triangle"></i> ${r}</li>`).join('')}
-            </ul>
+        
+        <div class="result-meters">
+            <div class="meter-container">
+                <div class="meter-label">Phishing Probability</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" style="width: ${riskScore}%; background: ${riskColor}"></div>
+                </div>
+                <span class="meter-value">${riskScore}%</span>
+            </div>
+        </div>
+        
+        ${explanations.length ? `
+            <div class="explanation-section">
+                <h4><i class="fas fa-info-circle"></i> Why this result?</h4>
+                <ul class="result-reasons">
+                    ${explanations.map(r => `<li>${r}</li>`).join('')}
+                </ul>
+            </div>
         ` : ''}
-        <div class="result-actions" style="margin-top: 15px;">
+        
+        ${recommendation ? `
+            <div class="recommendation-box" style="border-left: 3px solid ${riskColor};">
+                <strong>Recommendation:</strong> ${recommendation}
+            </div>
+        ` : ''}
+        
+        <div class="result-actions">
             <button class="btn-neon secondary" onclick="downloadCurrentAnalysisPDF()">
-                <i class="fas fa-download"></i> Download PDF
+                <i class="fas fa-download"></i> Download Report
             </button>
         </div>
     `;
     
-    container.className = `analyzer-result ${predClass}`;
+    container.className = `analyzer-result`;
     container.style.display = 'block';
 }
 
