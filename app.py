@@ -17,8 +17,10 @@ app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
 
 # ===================== IN-MEMORY USER STORAGE =====================
 users_db = {}  # {email: {name, email, password, institution}}
+analysis_history = []  # Stores all analyses permanently
 
 print("[*] In-memory user database initialized")
+print("[*] Analysis history storage initialized")
 
 # ===================== ML MODEL (Simple Heuristic) =====================
 def analyze_url_simple(url):
@@ -246,6 +248,20 @@ def analyze_url():
     
     result = analyze_url_simple(url)
     
+    # Save to history
+    analysis_id = len(analysis_history) + 1
+    analysis_record = {
+        'id': analysis_id,
+        'type': 'URL',
+        'content': url,
+        'prediction': result['prediction'],
+        'risk_score': result['risk_score'],
+        'risk_level': result['risk_level'],
+        'reasons': result['reasons'],
+        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    }
+    analysis_history.append(analysis_record)
+    
     return jsonify({
         'success': True,
         'url': url,
@@ -255,7 +271,8 @@ def analyze_url():
         'risk_color': result['risk_color'],
         'reasons': result['reasons'],
         'confidence': result['confidence'],
-        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        'analyzed_at': analysis_record['analyzed_at'],
+        'analysis_id': analysis_id
     })
 
 
@@ -270,6 +287,20 @@ def analyze_email():
     
     result = analyze_email_simple(text)
     
+    # Save to history
+    analysis_id = len(analysis_history) + 1
+    analysis_record = {
+        'id': analysis_id,
+        'type': 'Email',
+        'content': text[:200],
+        'prediction': result['prediction'],
+        'risk_score': result['risk_score'],
+        'risk_level': result['risk_level'],
+        'reasons': result['reasons'],
+        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    }
+    analysis_history.append(analysis_record)
+    
     return jsonify({
         'success': True,
         'prediction': result['prediction'],
@@ -278,7 +309,8 @@ def analyze_email():
         'risk_color': result['risk_color'],
         'reasons': result['reasons'],
         'confidence': result['confidence'],
-        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        'analyzed_at': analysis_record['analyzed_at'],
+        'analysis_id': analysis_id
     })
 
 
@@ -293,14 +325,45 @@ def analyze_message():
     
     result = analyze_email_simple(message)
     
+    # Save to history
+    analysis_id = len(analysis_history) + 1
+    analysis_record = {
+        'id': analysis_id,
+        'type': 'Message',
+        'content': message[:200],
+        'prediction': result['prediction'],
+        'risk_score': result['risk_score'],
+        'risk_level': result['risk_level'],
+        'reasons': result['reasons'],
+        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    }
+    analysis_history.append(analysis_record)
+    
     return jsonify({
         'success': True,
         'prediction': result['prediction'],
         'risk_score': result['risk_score'],
         'risk_level': result['risk_level'],
         'reasons': result['reasons'],
-        'analyzed_at': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        'analyzed_at': analysis_record['analyzed_at'],
+        'analysis_id': analysis_id
     })
+
+
+@app.route('/api/history', methods=['GET'])
+def get_history():
+    """Get analysis history"""
+    limit = int(request.args.get('limit', 50))
+    return jsonify(analysis_history[:limit])
+
+
+@app.route('/api/history/<int:analysis_id>', methods=['GET'])
+def get_history_item(analysis_id):
+    """Get single history item"""
+    for item in analysis_history:
+        if item['id'] == analysis_id:
+            return jsonify(item)
+    return jsonify({'error': 'Not found'}), 404
 
 
 @app.route('/api/health', methods=['GET'])
