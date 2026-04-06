@@ -464,7 +464,7 @@ def export_pdf():
         
         return buffer.getvalue(), 200, {
             'Content-Type': 'application/pdf',
-            'Content-Disposition': f'attachment; filename=phishguard_report.pdf'
+            'Content-Disposition': 'attachment; filename=phishguard_report.pdf'
         }
         
     except ImportError:
