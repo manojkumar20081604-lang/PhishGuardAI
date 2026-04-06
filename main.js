@@ -1267,8 +1267,9 @@ function scanQRFrame() {
 }
 
 function processQRImage(file) {
-    showToast('Processing QR code...', 'info');
-    // In production, use a QR library to decode
+    showToast('QR Scanner feature coming soon!', 'info');
+    // Note: QR code scanning requires additional libraries (jsQR)
+    // For now, use the camera feature or enter URL manually
 }
 
 // =============================================
@@ -1736,6 +1737,14 @@ async function sendChatMessage() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
     
     try {
+        // Check if user is logged in
+        const user = JSON.parse(localStorage.getItem('phishguard_user') || '{}');
+        if (!user.id) {
+            typingEl.remove();
+            addChatMessage("Please login to use the chatbot feature.", 'bot');
+            return;
+        }
+        
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

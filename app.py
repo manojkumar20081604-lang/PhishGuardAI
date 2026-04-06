@@ -509,6 +509,31 @@ def health():
     })
 
 
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """Simple chatbot without OpenAI - provides helpful security info"""
+    data = request.get_json()
+    message = data.get('message', '').lower()
+    
+    # Simple response system
+    responses = {
+        'phishing': "Phishing is a cybercrime where attackers trick you into revealing sensitive information by pretending to be a trustworthy entity. Always verify the sender and check URLs carefully!",
+        'how to spot': "To spot phishing: 1) Check sender email address 2) Look for urgency 3) Verify links before clicking 4) Watch for spelling errors 5) Never provide passwords",
+        'safe browsing': "Safe browsing tips: 1) Check HTTPS 2) Verify domain 3) Don't click suspicious links 4) Use strong passwords 5) Keep software updated",
+        'password': "Strong password tips: Use 12+ characters, mix uppercase/lowercase/numbers/symbols, never reuse passwords, consider a password manager.",
+        'suspicious': "If something seems suspicious, don't click! Instead, go directly to the website by typing the URL yourself.",
+        'default': "I'm here to help with phishing detection! Ask me about: what is phishing, how to spot suspicious emails, safe browsing tips, or password security."
+    }
+    
+    response = responses['default']
+    for key in responses:
+        if key in message:
+            response = responses[key]
+            break
+    
+    return jsonify({'success': True, 'response': response})
+
+
 # ===================== STATIC FILES =====================
 @app.route('/static/<path:filename>')
 def serve_static(filename):
