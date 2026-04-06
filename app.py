@@ -309,25 +309,33 @@ def register():
     from database import create_user
     data = request.get_json()
     
-    if not data or '@' not in data.get('email', ''):
+    if not data:
+        return jsonify({'success': False, 'error': 'Invalid request'}), 400
+    
+    email = data.get('email', '').strip()
+    password = data.get('password', '').strip()
+    
+    if not email or '@' not in email:
         return jsonify({'success': False, 'error': 'Valid email required'}), 400
     
-    if len(data.get('password', '')) < 6:
-        return jsonify({'success': False, 'error': 'Password min 6 chars'}), 400
+    if not password or len(password) < 6:
+        return jsonify({'success': False, 'error': 'Password must be at least 6 characters'}), 400
     
     try:
-        create_user(
-            data['email'], 
-            data.get('username', data['email'].split('@')[0]),
-            data['password'],
+        user_id = create_user(
+            email, 
+            data.get('username', email.split('@')[0]),
+            password,
             data.get('full_name', ''),
             data.get('institution', '')
         )
+        print(f"[*] User registered: {email} (ID: {user_id})")
         return jsonify({'success': True, 'message': 'Registered! Please login.'})
     except Exception as e:
+        print(f"[!] Registration error: {e}")
         if 'UNIQUE' in str(e):
             return jsonify({'success': False, 'error': 'Email already registered'}), 400
-        return jsonify({'success': False, 'error': 'Registration failed'}), 500
+        return jsonify({'success': False, 'error': 'Registration failed. Please try again.'}), 500
 
 
 @app.route('/auth/login', methods=['POST'])
@@ -335,15 +343,23 @@ def login():
     from database import verify_user
     data = request.get_json()
     
+    if not data:
+        return jsonify({'success': False, 'error': 'Invalid request'}), 400
+    
     email = data.get('username', '').strip().lower()
     password = data.get('password', '').strip()
     
+    if not email or not password:
+        return jsonify({'success': False, 'error': 'Email and password required'}), 400
+    
     user = verify_user(email, password)
     if not user:
-        return jsonify({'success': False, 'error': 'Invalid email or password'}), 400
+        return jsonify({'success': False, 'error': 'Invalid email or password'}), 401
     
     session['user_id'] = user['id']
     session['user_email'] = user['email']
+    
+    print(f"[*] User logged in: {email}")
     
     return jsonify({
         'success': True,
