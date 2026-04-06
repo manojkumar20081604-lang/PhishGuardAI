@@ -424,6 +424,85 @@ def export_pdf():
         y -= 30
         
         # URL/Content
+        content = data.get('content', data.get('url', ''))
+        if content:
+            c.setFont("Helvetica", 12)
+            c.drawString(50, y, "Analyzed Content:")
+            y -= 20
+            c.setFont("Helvetica-Oblique", 10)
+            if len(content) > 70:
+                c.drawString(50, y, content[:70])
+                y -= 15
+                c.drawString(50, y, content[70:])
+            else:
+                c.drawString(50, y, content)
+            y -= 30
+        
+        # Reasons
+        reasons = data.get('reasons', [])
+        if reasons:
+            c.setFont("Helvetica-Bold", 12)
+            c.drawString(50, y, "Detection Reasons:")
+            y -= 20
+            c.setFont("Helvetica", 10)
+            for reason in reasons[:5]:
+                c.drawString(60, y, f"• {reason}")
+                y -= 15
+        
+        # Date
+        y -= 20
+        c.setFont("Helvetica-Oblique", 9)
+        c.setFillColor(colors.gray)
+        analyzed_at = data.get('analyzed_at', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        c.drawString(50, y, f"Generated: {analyzed_at}")
+        
+        # Footer
+        c.drawString(50, 30, "PhishGuard AI - Advanced Phishing Detection System")
+        
+        c.save()
+        buffer.seek(0)
+        
+        return buffer.getvalue(), 200, {
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': f'attachment; filename=phishguard_report.pdf'
+        }
+        
+    except ImportError:
+        return jsonify({'error': 'PDF generation not available'}), 500
+    except Exception as e:
+        print(f"[!] PDF error: {e}")
+        return jsonify({'error': 'Failed to generate PDF'}), 500
+
+
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    """Simple chatbot"""
+    data = request.get_json()
+    message = data.get('message', '').lower() if data else ''
+    
+    responses = {
+        'phishing': "Phishing is a cybercrime where attackers trick you into revealing sensitive information. Always verify senders and check URLs!",
+        'how to spot': "Spot phishing: check sender email, look for urgency, verify links before clicking, watch for spelling errors.",
+        'safe': "Safe browsing: Use HTTPS, verify domain, don't click suspicious links, use strong passwords, keep software updated.",
+        'password': "Strong password: 12+ chars, mix uppercase/lowercase/numbers/symbols, never reuse passwords.",
+        'default': "I'm here to help! Ask about: what is phishing, how to spot suspicious emails, safe browsing tips, or password security."
+    }
+    
+    response = responses['default']
+    for key in responses:
+        if key in message:
+            response = responses[key]
+            break
+    
+    return jsonify({'success': True, 'response': response})
+
+
+# ===================== STATIC FILES =====================
+        c.setFont("Helvetica", 14)
+        c.drawString(50, y, f"Risk Score: {risk_score}/100")
+        y -= 30
+        
+        # URL/Content
         content = data.get('url', data.get('content', ''))
         if content:
             c.setFont("Helvetica", 12)
