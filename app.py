@@ -8,6 +8,7 @@ from flask_cors import CORS
 from datetime import datetime
 import os
 import re
+import time
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
@@ -378,93 +379,42 @@ def health():
 
 @app.route('/api/export/pdf', methods=['POST'])
 def export_pdf():
-    """Generate simple PDF report"""
+    """Generate professional PDF report with dark theme design"""
     data = request.get_json()
     
     if not data:
         return jsonify({'error': 'No data provided'}), 400
     
     try:
-        from reportlab.lib.pagesizes import letter
-        from reportlab.pdfgen import canvas
-        from reportlab.lib import colors
-        import io
+        from pdf_generator import PDFReportGenerator
         
-        # Create PDF in memory
-        buffer = io.BytesIO()
-        c = canvas.Canvas(buffer, pagesize=letter)
-        width, height = letter
-        
-        # Title
-        c.setFont("Helvetica-Bold", 24)
-        c.setFillColor(colors.HexColor("#00d4ff"))
-        c.drawString(50, height - 50, "PhishGuard AI - Analysis Report")
-        
-        # Line
-        c.setStrokeColor(colors.HexColor("#00d4ff"))
-        c.setLineWidth(2)
-        c.line(50, height - 60, width - 50, height - 60)
-        
-        # Details
-        c.setFont("Helvetica", 12)
-        c.setFillColor(colors.black)
-        
-        y = height - 100
-        
-        # Prediction
+        confidence = data.get('confidence', data.get('risk_score', 0))
         prediction = data.get('prediction', 'Unknown')
-        risk_score = data.get('risk_score', 0)
-        c.setFont("Helvetica-Bold", 16)
-        c.drawString(50, y, f"Result: {prediction}")
-        y -= 25
         
-        # Risk Score
-        c.setFont("Helvetica", 14)
-        c.drawString(50, y, f"Risk Score: {risk_score}/100")
-        y -= 30
+        if prediction == 'Phishing':
+            threat_level = 'Critical' if confidence >= 70 else 'High'
+        elif prediction == 'Suspicious':
+            threat_level = 'Medium'
+        else:
+            threat_level = 'Low'
         
-        # URL/Content
-        content = data.get('content', data.get('url', ''))
-        if content:
-            c.setFont("Helvetica", 12)
-            c.drawString(50, y, "Analyzed Content:")
-            y -= 20
-            c.setFont("Helvetica-Oblique", 10)
-            if len(content) > 70:
-                c.drawString(50, y, content[:70])
-                y -= 15
-                c.drawString(50, y, content[70:])
-            else:
-                c.drawString(50, y, content)
-            y -= 30
+        analysis_data = {
+            'prediction': prediction,
+            'confidence': confidence,
+            'threat_level': threat_level,
+            'content': data.get('content', data.get('url', '')),
+            'warnings': data.get('reasons', data.get('warnings', [])),
+            'features': data.get('features', {})
+        }
         
-        # Reasons
-        reasons = data.get('reasons', [])
-        if reasons:
-            c.setFont("Helvetica-Bold", 12)
-            c.drawString(50, y, "Detection Reasons:")
-            y -= 20
-            c.setFont("Helvetica", 10)
-            for reason in reasons[:5]:
-                c.drawString(60, y, f"• {reason}")
-                y -= 15
+        analysis_type = data.get('type', 'URL')
         
-        # Date
-        y -= 20
-        c.setFont("Helvetica-Oblique", 9)
-        c.setFillColor(colors.gray)
-        analyzed_at = data.get('analyzed_at', datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-        c.drawString(50, y, f"Generated: {analyzed_at}")
+        generator = PDFReportGenerator()
+        pdf_buffer = generator.generate_report(analysis_data, analysis_type)
         
-        # Footer
-        c.drawString(50, 30, "PhishGuard AI - Advanced Phishing Detection System")
-        
-        c.save()
-        buffer.seek(0)
-        
-        return buffer.getvalue(), 200, {
+        return pdf_buffer.getvalue(), 200, {
             'Content-Type': 'application/pdf',
-            'Content-Disposition': 'attachment; filename=phishguard_report.pdf'
+            'Content-Disposition': f'attachment; filename=phishguard_report_{int(time.time())}.pdf'
         }
         
     except ImportError:
