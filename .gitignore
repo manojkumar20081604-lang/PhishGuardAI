@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environments
+venv/
+.env
+.venv/
+
+# Firefox dist extension dir (chrome/edge share 'dist/'; firefox uses dist-firefox)
+dist-firefox/
+
 # Distribution / packaging
 dist/
 build/
@@ -45,3 +53,4 @@ phishguard.db
 not_for_deploy/
 static/assets/background-music.mp3
 models/*.pkl
+node_modules
