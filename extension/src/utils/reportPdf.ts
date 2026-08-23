@@ -153,7 +153,7 @@ function layoutReport(result: ScanResult): Line[][] {
   // Footer note appended to the last page's line list via marker handled below
   page.push({ text: '', size: 9, bold: false, gapBefore: 20 });
   page.push({
-    text: 'Generated locally by PhishGuard AI v3.1 - this analysis never left your device.',
+    text: `Generated locally by PhishGuard AI v${extensionVersion()} - this analysis never left your device.`,
     size: 9,
     bold: false,
     color: MUTED,
@@ -180,6 +180,15 @@ function layoutReport(result: ScanResult): Line[][] {
 
 function padKey(key: string): string {
   return key.padEnd(12, ' ');
+}
+
+/** Live manifest version; safe fallback outside the extension runtime. */
+function extensionVersion(): string {
+  try {
+    return chrome.runtime.getManifest().version;
+  } catch {
+    return '3.2';
+  }
 }
 
 function formatWhen(iso: string | undefined): string {

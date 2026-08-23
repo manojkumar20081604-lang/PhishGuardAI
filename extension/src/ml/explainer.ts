@@ -157,9 +157,13 @@ function generateSummary(prediction: Prediction, indicators: string[]): string {
   const n = indicators.length;
   switch (prediction) {
     case 'phishing':
-      return `High-risk URL. Found ${n} phishing indicator${n === 1 ? '' : 's'}. Do not enter credentials on this page.`;
+      return n > 0
+        ? `High-risk URL. Found ${n} phishing indicator${n === 1 ? '' : 's'}. Do not enter credentials on this page.`
+        : 'The URL AI model rates this address as high-risk based on its overall pattern. Do not enter credentials on this page.';
     case 'suspicious':
-      return `Found ${n} medium-risk pattern${n === 1 ? '' : 's'}. Exercise caution - this content has some phishing indicators.`;
+      return n > 0
+        ? `Found ${n} medium-risk pattern${n === 1 ? '' : 's'}. Exercise caution - this content has some phishing indicators.`
+        : 'The URL AI model rates this address as unusual, but no specific red flags were found. Verify the site before entering any personal data.';
     default:
       return indicators.length > 0
         ? `No significant phishing patterns detected (${n} informational note${n === 1 ? '' : 's'}).`
