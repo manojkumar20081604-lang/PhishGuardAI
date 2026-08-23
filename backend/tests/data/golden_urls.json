@@ -1,0 +1,9557 @@
+[
+ {
+  "url": "https://biglobe.ne.jp/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.016916,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.983
+  }
+ },
+ {
+  "url": "https://amazon.cn/watch?v=RP6tP7zoBcw&t=697s",
+  "label": "safe",
+  "features": [
+   44.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.113636,
+   9.0,
+   0.0,
+   0.0,
+   0.545455
+  ],
+  "p_phishing": 0.030723,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.969
+  }
+ },
+ {
+  "url": "http://gilded-baklava-b9e48a.netlify.app/",
+  "label": "phishing",
+  "features": [
+   41.0,
+   0.0,
+   0.0,
+   0.0,
+   2.0,
+   0.073171,
+   6.0,
+   1.0,
+   0.0,
+   0.536585
+  ],
+  "p_phishing": 0.998355,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://buymeacoffee.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.64
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://libguides.com/m?continue=https%3A%2F%2Fwww.example.org%2Fpage&hl=en&app=mobile",
+  "label": "safe",
+  "features": [
+   86.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.046512,
+   13.0,
+   0.0,
+   0.0,
+   0.348837
+  ],
+  "p_phishing": 0.001939,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://eventbrite.co.uk/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.68
+  ],
+  "p_phishing": 0.018699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://nerdwallet.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.73913
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://discourse.org/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://mjt.lu/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.733333
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bestwestern.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://martinfowler.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.72
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://lisadrosss-lang.github.io/uy",
+  "label": "phishing",
+  "features": [
+   36.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.527778
+  ],
+  "p_phishing": 0.897916,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.898
+  }
+ },
+ {
+  "url": "https://cbsnews.com/status/433687572498641836",
+  "label": "safe",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.4,
+   6.0,
+   0.0,
+   0.0,
+   0.555556
+  ],
+  "p_phishing": 0.011561,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://supports.ewc-event.com/",
+  "label": "phishing",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.548387
+  ],
+  "p_phishing": 0.529205,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.529
+  }
+ },
+ {
+  "url": "https://api.livejournal.com/v2/items/nbBIN0IBh5Kwg8Zjs7aiwsZT?fields=all",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.069444,
+   10.0,
+   1.0,
+   0.0,
+   0.513889
+  ],
+  "p_phishing": 0.019339,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://helpguide.org/d/yukchjdcbmwmrglzazhv5drt_nfzdujd",
+  "label": "safe",
+  "features": [
+   56.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.017857,
+   7.0,
+   0.0,
+   0.0,
+   0.517857
+  ],
+  "p_phishing": 0.005011,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://crunchbase.com/thread/242509?page=15&author=eqqodi4",
+  "label": "safe",
+  "features": [
+   59.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.152542,
+   10.0,
+   0.0,
+   0.0,
+   0.491525
+  ],
+  "p_phishing": 0.006986,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://1688.com/watch?v=XdRYNArbgRb&list=fSRi5xIFCol3FUMeVrPYGc",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.09375,
+   9.0,
+   0.0,
+   0.0,
+   0.6875
+  ],
+  "p_phishing": 0.000302,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 1.0
+  }
+ },
+ {
+  "url": "http://coinbase.com.app-en.us/",
+  "label": "phishing",
+  "features": [
+   30.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.566667
+  ],
+  "p_phishing": 0.987944,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://api.9to5mac.com/v2/items/OTjutZQsCung3tWSrmff6CRe?fields=all",
+  "label": "safe",
+  "features": [
+   68.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.073529,
+   10.0,
+   1.0,
+   0.0,
+   0.544118
+  ],
+  "p_phishing": 0.00666,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://1url.at/www/robloxcom-users-27414222473-profile",
+  "label": "phishing",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.218182,
+   6.0,
+   0.0,
+   0.0,
+   0.472727
+  ],
+  "p_phishing": 0.842374,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.842
+  }
+ },
+ {
+  "url": "https://bartleby.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://huji.ac.il/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.013486,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://marxists.org/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bigthink.com/c/0crbepeb--zimgc73-5cdm7ceq-yy9m0kwt",
+  "label": "safe",
+  "features": [
+   58.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.12069,
+   6.0,
+   0.0,
+   0.0,
+   0.482759
+  ],
+  "p_phishing": 0.022785,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://counterpunch.org/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.56
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://bigcommerce.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://boeing.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.789474
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.pt-shopee545.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   38.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.078947,
+   7.0,
+   2.0,
+   0.0,
+   0.473684
+  ],
+  "p_phishing": 0.980818,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://apache.org/guide/faq.html",
+  "label": "safe",
+  "features": [
+   33.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.606061
+  ],
+  "p_phishing": 0.002542,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://ilo.org/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://inkscape.org/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://boredpanda.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.695652
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cnki.net/watch/97752090?trackId=49163&action=play",
+  "label": "safe",
+  "features": [
+   57.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.22807,
+   10.0,
+   0.0,
+   0.0,
+   0.561404
+  ],
+  "p_phishing": 0.010233,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.99
+  }
+ },
+ {
+  "url": "https://huffingtonpost.ca/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.576923
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://alaska.gov/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://redirect.me/r/g3nccd",
+  "label": "phishing",
+  "features": [
+   28.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.035714,
+   6.0,
+   0.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.003793,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://nola.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://aip.org/@h7wtj1lh2ke",
+  "label": "safe",
+  "features": [
+   28.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.107143,
+   6.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.053053,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.947
+  }
+ },
+ {
+  "url": "https://abb.com/p/eeuy_hl0-i279l0jj-ph1ggltc-2zssdv5a?tab=read",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.129032,
+   9.0,
+   0.0,
+   0.0,
+   0.532258
+  ],
+  "p_phishing": 0.010163,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.99
+  }
+ },
+ {
+  "url": "https://bp.blogspot.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.541667
+  ],
+  "p_phishing": 0.075089,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.925
+  }
+ },
+ {
+  "url": "https://forbes.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nasdaq.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://colibriwp.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://en---secure--sso-netcoins-com-cdn.webflow.io/",
+  "label": "phishing",
+  "features": [
+   52.0,
+   0.0,
+   0.0,
+   0.0,
+   8.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.403846
+  ],
+  "p_phishing": 0.999435,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://gob.ec/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://hootsuite.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.590909
+  ],
+  "p_phishing": 0.004277,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://books.google.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.022448,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://360.cn/watch?v=TVjQZCuxjiu&t=2029s",
+  "label": "safe",
+  "features": [
+   42.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.166667,
+   9.0,
+   0.0,
+   0.0,
+   0.690476
+  ],
+  "p_phishing": 0.008185,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://cnrs.fr/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6875
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://jdoqocy.com/files/xv7gktgw7to9xaf8pjzop7d6o1ogo7ga4yibpukt",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.136364,
+   6.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.005306,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "http://vh18568.vh.net.pl/TD/TD-ZE5KIzX0UW4&oauth_key_signature=eyJraWQOiJrUFVqdlNhT25GWUVDakpjMmV1MXJvNGxnb2VFeXJJb2tCbU1X3BiZXN/loading.php",
+  "label": "phishing",
+  "features": [
+   140.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.107143,
+   14.0,
+   2.0,
+   0.0,
+   0.407143
+  ],
+  "p_phishing": 0.956216,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.956
+  }
+ },
+ {
+  "url": "https://boardgamegeek.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.653846
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://blogspot.com.es/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.583333
+  ],
+  "p_phishing": 0.035034,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.965
+  }
+ },
+ {
+  "url": "https://apache-ssl.org/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.652174
+  ],
+  "p_phishing": 0.030278,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.97
+  }
+ },
+ {
+  "url": "https://beacons.ai/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nginx.net/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://giantbomb.com/m?continue=https%3A%2F%2Fexample.com%2F%40channel&hl=en&app=desktop",
+  "label": "safe",
+  "features": [
+   89.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.067416,
+   12.0,
+   0.0,
+   0.0,
+   0.348315
+  ],
+  "p_phishing": 0.008213,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "http://millsiowaslv.vercel.app/",
+  "label": "phishing",
+  "features": [
+   31.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.548387
+  ],
+  "p_phishing": 0.977364,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://archives-ouvertes.fr/",
+  "label": "safe",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.586207
+  ],
+  "p_phishing": 0.047044,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.953
+  }
+ },
+ {
+  "url": "https://il.us/watch?v=ewnotMjZKI6",
+  "label": "safe",
+  "features": [
+   33.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.030303,
+   7.0,
+   0.0,
+   0.0,
+   0.757576
+  ],
+  "p_phishing": 0.001544,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nationalinterest.org/t/doc-aamtdodv9y",
+  "label": "safe",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.022222,
+   6.0,
+   0.0,
+   0.0,
+   0.488889
+  ],
+  "p_phishing": 0.058346,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.942
+  }
+ },
+ {
+  "url": "https://mid.ru/wiki/faq.html",
+  "label": "safe",
+  "features": [
+   28.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.642857
+  ],
+  "p_phishing": 0.003017,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://michigan.gov/article/723020041456923709",
+  "label": "safe",
+  "features": [
+   47.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.382979,
+   6.0,
+   0.0,
+   0.0,
+   0.574468
+  ],
+  "p_phishing": 0.005234,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://linkedin.com/files/rm06tybkmnue4ijazsih3ful7zvjpm60wa2dkx_b",
+  "label": "safe",
+  "features": [
+   67.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.119403,
+   7.0,
+   0.0,
+   0.0,
+   0.507463
+  ],
+  "p_phishing": 0.003093,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://mobirise.com/watch?v=WTtdSWwxM6p&t=1954s",
+  "label": "safe",
+  "features": [
+   48.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.104167,
+   9.0,
+   0.0,
+   0.0,
+   0.645833
+  ],
+  "p_phishing": 0.003166,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://c-span.org/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://auth0.com/docs/faq.html",
+  "label": "safe",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.032258,
+   7.0,
+   0.0,
+   0.0,
+   0.548387
+  ],
+  "p_phishing": 0.003033,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://digitaltrends.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.692308
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://blog.fgov.be/library/aqysi7iz?list=VYAsV0fu4Yl40lCocqf-NewD1Qcf&index=48",
+  "label": "safe",
+  "features": [
+   80.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.1,
+   11.0,
+   1.0,
+   0.0,
+   0.525
+  ],
+  "p_phishing": 0.018113,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.982
+  }
+ },
+ {
+  "url": "http://birukkapp.netlify.app/",
+  "label": "phishing",
+  "features": [
+   29.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.586207
+  ],
+  "p_phishing": 0.981248,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://azureedge.net/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://aao.org/conversation/espibkxs-t43msgts-kl8lxuep-qblbv9s_",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.0625,
+   7.0,
+   0.0,
+   0.0,
+   0.453125
+  ],
+  "p_phishing": 0.034347,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.966
+  }
+ },
+ {
+  "url": "https://google.co.id/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.013486,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://jsonline.com/t/kb-9dkxt5hf0n",
+  "label": "safe",
+  "features": [
+   36.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.083333,
+   6.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.031491,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.969
+  }
+ },
+ {
+  "url": "http://www.geemen-lognxzs.godaddysites.com/",
+  "label": "phishing",
+  "features": [
+   43.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.511628
+  ],
+  "p_phishing": 0.998022,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cnr.cn/thread/853064?page=2&author=bk8t6fm",
+  "label": "safe",
+  "features": [
+   50.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.18,
+   10.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.004313,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://nfpa.org/@acxrpup4a",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.037037,
+   6.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.001962,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ntp.org/article/816290375524593741",
+  "label": "safe",
+  "features": [
+   42.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.428571,
+   6.0,
+   0.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.005996,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://dx.doi.org/product/KCCJZ3HNL-?variant=17&ref=email",
+  "label": "safe",
+  "features": [
+   58.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.051724,
+   11.0,
+   1.0,
+   0.0,
+   0.62069
+  ],
+  "p_phishing": 0.008413,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://google.co.nz/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.013486,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://api.google.be/v4/items/aruOfvdpnPRuYk_rr_fqWpqV?fields=all",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.015152,
+   12.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.014187,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.986
+  }
+ },
+ {
+  "url": "https://envato.market/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://checkpoint.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.608696
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://google.at/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bilibili.com/m?continue=https%3A%2F%2Fmail.example.net%2Finbox&hl=en&app=desktop",
+  "label": "safe",
+  "features": [
+   88.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.045455,
+   13.0,
+   0.0,
+   0.0,
+   0.318182
+  ],
+  "p_phishing": 0.001939,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nice.org.uk/watch?v=fzzZkAYB9Pd",
+  "label": "safe",
+  "features": [
+   39.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.025641,
+   8.0,
+   1.0,
+   0.0,
+   0.769231
+  ],
+  "p_phishing": 0.126507,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.873
+  }
+ },
+ {
+  "url": "https://blogspot.fr/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.65
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://api.lowes.com/v2/items/wDPOdJNdV-og3qeetaongGls?fields=all",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.030303,
+   10.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.032569,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.967
+  }
+ },
+ {
+  "url": "https://mapquest.com/watch?v=QnUWPMQt9B6&list=XBRy_I5oZZPkKMHTcCwzptHoGu_H&t=2795s",
+  "label": "safe",
+  "features": [
+   82.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.085366,
+   13.0,
+   0.0,
+   0.0,
+   0.560976
+  ],
+  "p_phishing": 0.000603,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://www.www-paylabs.vercel.app/",
+  "label": "phishing",
+  "features": [
+   35.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.485714
+  ],
+  "p_phishing": 0.972524,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.973
+  }
+ },
+ {
+  "url": "https://doi.org/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://iu.edu/guide/user-manual.html",
+  "label": "safe",
+  "features": [
+   37.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.486486
+  ],
+  "p_phishing": 0.053744,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.946
+  }
+ },
+ {
+  "url": "https://avi-3a.github.io/Free-Fire-Diamond-Givawy",
+  "label": "phishing",
+  "features": [
+   49.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.020408,
+   6.0,
+   1.0,
+   0.0,
+   0.530612
+  ],
+  "p_phishing": 0.952382,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.952
+  }
+ },
+ {
+  "url": "https://bitchute.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://americanexpress.com/",
+  "label": "safe",
+  "features": [
+   28.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://blogger.googleusercontent.com/guide/getting-started.html",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   8.0,
+   1.0,
+   0.0,
+   0.328125
+  ],
+  "p_phishing": 0.953084,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.953
+  }
+ },
+ {
+  "url": "https://ethz.ch/conversation/ouiejntt-rkvkvjnf-argx0vcr-ymihdmms",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.015625,
+   6.0,
+   0.0,
+   0.0,
+   0.421875
+  ],
+  "p_phishing": 0.048929,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.951
+  }
+ },
+ {
+  "url": "https://consumerreports.org/t/doc-o56bxizziv",
+  "label": "safe",
+  "features": [
+   44.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.045455,
+   6.0,
+   0.0,
+   0.0,
+   0.545455
+  ],
+  "p_phishing": 0.016773,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.983
+  }
+ },
+ {
+  "url": "https://csic.es/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://maryland.gov/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.809524
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://peptavida-sys-crediexpress-rapido-2.vercel.app/",
+  "label": "phishing",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.018182,
+   6.0,
+   1.0,
+   0.0,
+   0.363636
+  ],
+  "p_phishing": 0.999064,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://dhs.gov/common/oauth2/authorize?client_id=yVFE0HkINlv9V9bw6rhzQuUj&redirect_uri=https%3A%2F%2Fdhs.gov%2Fsignin&response_type=code&scope=openid+profile",
+  "label": "safe",
+  "features": [
+   158.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.056962,
+   20.0,
+   0.0,
+   0.0,
+   0.297468
+  ],
+  "p_phishing": 0.001865,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nic.in/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://miibeian.gov.cn/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.708333
+  ],
+  "p_phishing": 0.018699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://api.replit.com/v3/items/_0nKIzLbShkD1mNV6OGUvCOV?fields=all",
+  "label": "safe",
+  "features": [
+   67.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.059701,
+   11.0,
+   1.0,
+   0.0,
+   0.597015
+  ],
+  "p_phishing": 0.001592,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://eluniversal.com.mx/watch?v=vx1lq4s0aWR&list=XgxT0D8llXg4t4FwVV-78IGa",
+  "label": "safe",
+  "features": [
+   76.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.118421,
+   10.0,
+   1.0,
+   0.0,
+   0.526316
+  ],
+  "p_phishing": 0.078505,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.921
+  }
+ },
+ {
+  "url": "https://livedoor.jp/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://homeadvisor.com/conversation/gwsso-nq-0aztbabc-uoqnrtnt-fnosoeq-",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   5.0,
+   0.013889,
+   6.0,
+   0.0,
+   0.0,
+   0.361111
+  ],
+  "p_phishing": 0.109866,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.89
+  }
+ },
+ {
+  "url": "https://labiennale.org/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.695652
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://angelfire.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.818182
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://kubernetes.io/watch/77909225?trackId=53869&action=play",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.209677,
+   10.0,
+   0.0,
+   0.0,
+   0.532258
+  ],
+  "p_phishing": 0.006773,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://messefrankfurt.com/watch?v=jo_ROVBtlS4&list=VSkRKhFtt3tL6QE00ZbuN0mKUO&t=3511s",
+  "label": "safe",
+  "features": [
+   86.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.116279,
+   12.0,
+   0.0,
+   0.0,
+   0.534884
+  ],
+  "p_phishing": 0.002196,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://jpmorgan.com/t/kb-nxoh54erb3",
+  "label": "safe",
+  "features": [
+   36.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.083333,
+   6.0,
+   0.0,
+   0.0,
+   0.638889
+  ],
+  "p_phishing": 0.045255,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.955
+  }
+ },
+ {
+  "url": "https://hp.com/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://afr.com/m?continue=https%3A%2F%2Fmail.example.net%2Finbox&hl=en&app=desktop",
+  "label": "safe",
+  "features": [
+   83.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.048193,
+   13.0,
+   0.0,
+   0.0,
+   0.361446
+  ],
+  "p_phishing": 0.001939,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://asos.com/@0zu4-",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   1.0,
+   0.0,
+   1.0,
+   0.086957,
+   6.0,
+   0.0,
+   0.0,
+   0.73913
+  ],
+  "p_phishing": 0.039893,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.96
+  }
+ },
+ {
+  "url": "https://www.roblox.ly/users/181499084/profile",
+  "label": "phishing",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.2,
+   8.0,
+   1.0,
+   0.0,
+   0.511111
+  ],
+  "p_phishing": 0.650566,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.651
+  }
+ },
+ {
+  "url": "https://nicovideo.jp/docs/getting-started.html",
+  "label": "safe",
+  "features": [
+   46.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.456522
+  ],
+  "p_phishing": 0.145982,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.854
+  }
+ },
+ {
+  "url": "https://fastcompany.com/conversation/haj4ka1--yj7f35tf-khpdlt7t-nfdnvb-c",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   5.0,
+   0.083333,
+   6.0,
+   0.0,
+   0.0,
+   0.402778
+  ],
+  "p_phishing": 0.030985,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.969
+  }
+ },
+ {
+  "url": "https://lnk.ink/PKKdV",
+  "label": "phishing",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://everydayhealth.com/",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.62963
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://flightradar24.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.076923,
+   5.0,
+   0.0,
+   0.0,
+   0.730769
+  ],
+  "p_phishing": 0.006157,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://12377.cn/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.294118,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.819186,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.819
+  }
+ },
+ {
+  "url": "https://norton.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.631579
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://makeuseof.com/@2rgt2wcc5jq",
+  "label": "safe",
+  "features": [
+   34.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.088235,
+   6.0,
+   0.0,
+   0.0,
+   0.676471
+  ],
+  "p_phishing": 0.015989,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://elmundo.es/r/sbdk7syc/comments/93lqjq/nhjqyrh8t9ljhpwx/?sort=new",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.069444,
+   12.0,
+   0.0,
+   0.0,
+   0.402778
+  ],
+  "p_phishing": 0.008213,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://fu-berlin.de/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.809524
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://asus.com/search?q=how+to+learn+python&o=&gs_l=5K5hTRGbfT7xQt",
+  "label": "safe",
+  "features": [
+   68.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.044118,
+   15.0,
+   0.0,
+   0.0,
+   0.514706
+  ],
+  "p_phishing": 0.000648,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://mediafire.com/watch?v=CNzXIMVX2zc&t=2767s",
+  "label": "safe",
+  "features": [
+   49.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.102041,
+   9.0,
+   0.0,
+   0.0,
+   0.632653
+  ],
+  "p_phishing": 0.003166,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://govinfo.gov/watch?v=ebZxrPfj5-Q&t=2630s",
+  "label": "safe",
+  "features": [
+   47.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.106383,
+   9.0,
+   0.0,
+   0.0,
+   0.702128
+  ],
+  "p_phishing": 0.006867,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "http://www.pemenang-shopee44.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   42.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.047619,
+   7.0,
+   2.0,
+   0.0,
+   0.452381
+  ],
+  "p_phishing": 0.998488,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://camp-fire.jp/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://medicalnewstoday.com/",
+  "label": "safe",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.62069
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://humaneworld.org/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://jstor.org/search?q=weather+today&o=&gs_l=dlOOnZ_yBD6aLy",
+  "label": "safe",
+  "features": [
+   63.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.015873,
+   14.0,
+   0.0,
+   0.0,
+   0.492063
+  ],
+  "p_phishing": 0.003191,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://interieur.gouv.fr/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.615385
+  ],
+  "p_phishing": 0.026066,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.974
+  }
+ },
+ {
+  "url": "http://www.15847.xyz/",
+  "label": "phishing",
+  "features": [
+   21.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.238095,
+   6.0,
+   1.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.995056,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://degruyter.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.727273
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://hu-berlin.de/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://barrons.com/thread/310649?page=15&author=klpmj-c",
+  "label": "safe",
+  "features": [
+   56.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.142857,
+   10.0,
+   0.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.007209,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://images.gigaom.com/library/bdmu8p9v?list=eKcu4eIzlSvol_p81xSZlV0E2ZIX&index=41",
+  "label": "safe",
+  "features": [
+   85.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.105882,
+   12.0,
+   1.0,
+   0.0,
+   0.482353
+  ],
+  "p_phishing": 0.01923,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://iheart.com/watch/24690713?trackId=30716&action=resume",
+  "label": "safe",
+  "features": [
+   61.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.213115,
+   10.0,
+   0.0,
+   0.0,
+   0.508197
+  ],
+  "p_phishing": 0.011883,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://graph.org/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.611111
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://ctvnews.ca/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://dp.ua/post/481112518909900499",
+  "label": "safe",
+  "features": [
+   37.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.486486,
+   6.0,
+   0.0,
+   0.0,
+   0.486486
+  ],
+  "p_phishing": 0.023623,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.976
+  }
+ },
+ {
+  "url": "http://www.pt-shopee2020.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   38.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.105263,
+   7.0,
+   2.0,
+   0.0,
+   0.473684
+  ],
+  "p_phishing": 0.998097,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://canva.site/watch/28973962?trackId=16486&action=play",
+  "label": "safe",
+  "features": [
+   59.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.220339,
+   10.0,
+   0.0,
+   0.0,
+   0.542373
+  ],
+  "p_phishing": 0.012993,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://mail.opentable.com/library/s4dcrgxo?list=Num_rlqC4rtGqszLGsh4pwsEduRB&index=43",
+  "label": "safe",
+  "features": [
+   86.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.05814,
+   12.0,
+   1.0,
+   0.0,
+   0.44186
+  ],
+  "p_phishing": 0.059928,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.94
+  }
+ },
+ {
+  "url": "http://sp4ct-lalmurex-biz8-kurem-dasik.pages.dev/",
+  "label": "phishing",
+  "features": [
+   49.0,
+   0.0,
+   0.0,
+   0.0,
+   4.0,
+   0.040816,
+   6.0,
+   1.0,
+   0.0,
+   0.510204
+  ],
+  "p_phishing": 0.994459,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://www.amazon-clone-html-css-hazel.vercel.app/",
+  "label": "phishing",
+  "features": [
+   51.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.372549
+  ],
+  "p_phishing": 0.998857,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://foursquare.com/@spfzhl",
+  "label": "safe",
+  "features": [
+   30.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   0.0,
+   0.0,
+   0.633333
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://code.org/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://le.ac.uk/watch?v=WSUMj6hRR-Y&list=fRBh3aIzslFVyIlp9s7IwyDk7S3iy3zo&t=2435s",
+  "label": "safe",
+  "features": [
+   82.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.134146,
+   12.0,
+   1.0,
+   0.0,
+   0.52439
+  ],
+  "p_phishing": 0.025231,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.975
+  }
+ },
+ {
+  "url": "https://amazon.es/watch/38551356?trackId=17048&action=resume",
+  "label": "safe",
+  "features": [
+   60.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.216667,
+   10.0,
+   0.0,
+   0.0,
+   0.533333
+  ],
+  "p_phishing": 0.006773,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://redemption.officiall-events.com/",
+  "label": "phishing",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.9166,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.917
+  }
+ },
+ {
+  "url": "https://loom.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.647059
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://gr.com/watch?v=xnTmy3v-mdd&list=rv6kr1c7VegX6aEAb26Ezq9k4&t=1394s",
+  "label": "safe",
+  "features": [
+   73.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.178082,
+   11.0,
+   0.0,
+   0.0,
+   0.575342
+  ],
+  "p_phishing": 0.003289,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "http://www.facebook-six-ivory.vercel.app/",
+  "label": "phishing",
+  "features": [
+   41.0,
+   0.0,
+   0.0,
+   0.0,
+   2.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.536585
+  ],
+  "p_phishing": 0.997549,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://odnoklassniki.ru/watch/69412583?trackId=19375&action=play",
+  "label": "safe",
+  "features": [
+   65.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.2,
+   10.0,
+   0.0,
+   0.0,
+   0.492308
+  ],
+  "p_phishing": 0.003699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://nd.edu/watch?v=jhyeB4JuYBK",
+  "label": "safe",
+  "features": [
+   34.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.029412,
+   7.0,
+   0.0,
+   0.0,
+   0.705882
+  ],
+  "p_phishing": 0.001544,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://aliyun.com/files/c_ivzattfryuvoieobuo0p7ub8hf3_a8yxcgmsx8",
+  "label": "safe",
+  "features": [
+   65.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.092308,
+   8.0,
+   0.0,
+   0.0,
+   0.446154
+  ],
+  "p_phishing": 0.004912,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://grammarly.com/post/309109280983312559",
+  "label": "safe",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.4,
+   6.0,
+   0.0,
+   0.0,
+   0.488889
+  ],
+  "p_phishing": 0.010588,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://doe.gov/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://haxx.se/watch/88013040?trackId=59216&action=resume",
+  "label": "safe",
+  "features": [
+   58.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.224138,
+   10.0,
+   0.0,
+   0.0,
+   0.568965
+  ],
+  "p_phishing": 0.007947,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://howstuffworks.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.576923
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://ets.org/files/0ugeqzk5hm8hovsbamm7vndwk8m_fey2k_oakjtw",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.096774,
+   8.0,
+   0.0,
+   0.0,
+   0.532258
+  ],
+  "p_phishing": 0.002241,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ny.us/",
+  "label": "safe",
+  "features": [
+   14.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://blog.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://doodle.com/product/DPTWO-DSZ-?variant=11&ref=nav",
+  "label": "safe",
+  "features": [
+   56.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.035714,
+   10.0,
+   0.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.00921,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.991
+  }
+ },
+ {
+  "url": "https://defensenews.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://haskell.org/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.7
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://9dedpmd8sg65nymbswvohc-ezdma0cvg7dng6ca.z03.azurefd.net/",
+  "label": "phishing",
+  "features": [
+   63.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.142857,
+   7.0,
+   2.0,
+   0.0,
+   0.492063
+  ],
+  "p_phishing": 0.981055,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://itmedia.co.jp/video/1406959/blgnjuyxpgqjb",
+  "label": "safe",
+  "features": [
+   49.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.142857,
+   8.0,
+   1.0,
+   0.0,
+   0.612245
+  ],
+  "p_phishing": 0.313162,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.687
+  }
+ },
+ {
+  "url": "https://ccc.de/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://docs.cognitoforms.com/feed/kayx8wpz?list=pxmiGbI7Ht0oSN7oviWq8V6yExed&index=27",
+  "label": "safe",
+  "features": [
+   86.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.093023,
+   11.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.013912,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.986
+  }
+ },
+ {
+  "url": "https://europeana.eu/p/k7ppqsjf-p4sdwiaq-ecfnqma8-gtdbag04?tab=read",
+  "label": "safe",
+  "features": [
+   67.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.074627,
+   8.0,
+   0.0,
+   0.0,
+   0.462687
+  ],
+  "p_phishing": 0.010564,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://indystar.com/video/1983097/hplxwxnh86zry",
+  "label": "safe",
+  "features": [
+   48.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.1875,
+   7.0,
+   0.0,
+   0.0,
+   0.604167
+  ],
+  "p_phishing": 0.004313,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://ft.com/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.733333
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://acuityscheduling.com/wiki/getting-started.html",
+  "label": "safe",
+  "features": [
+   54.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.425926
+  ],
+  "p_phishing": 0.098499,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.902
+  }
+ },
+ {
+  "url": "https://nami.org/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.823529
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://activecampaign.com/",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.592593
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://googlesource.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://democracynow.org/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.72
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cnn.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6875
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://duckduckgo.com/conversation/awszye-n-uytflfng-1mie0z7r-jb33pvwu",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.070423,
+   6.0,
+   0.0,
+   0.0,
+   0.450704
+  ],
+  "p_phishing": 0.015905,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://api.sputniknews.com/v2/items/_rbSkyTKmLo2plktGsO0lYwE?fields=all",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.041667,
+   11.0,
+   1.0,
+   0.0,
+   0.513889
+  ],
+  "p_phishing": 0.004258,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "http://www.undianshopee-2021.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   42.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.095238,
+   7.0,
+   2.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.9968,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://centos.org/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://www.shopee-666.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   35.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.085714,
+   7.0,
+   2.0,
+   0.0,
+   0.485714
+  ],
+  "p_phishing": 0.997691,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nngroup.com/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.7
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://designrush.com/common/oauth2/authorize?client_id=vwoYEi_LmCq5FCJcQYFOL3xF&redirect_uri=https%3A%2F%2Fdesignrush.com%2Fsignin&response_type=code&scope=openid+profile",
+  "label": "safe",
+  "features": [
+   172.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.040698,
+   21.0,
+   0.0,
+   0.0,
+   0.255814
+  ],
+  "p_phishing": 0.001865,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://music.apple.com/m?continue=https%3A%2F%2Fexample.com%2F%40channel&hl=en&app=mobile",
+  "label": "safe",
+  "features": [
+   90.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.066667,
+   13.0,
+   1.0,
+   0.0,
+   0.311111
+  ],
+  "p_phishing": 0.127864,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.872
+  }
+ },
+ {
+  "url": "https://infogram.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://images.freedesktop.org/library/cbg0o8s9?list=ygn1RNU1yxGSKaUC3aZP2mPHbUum&index=29",
+  "label": "safe",
+  "features": [
+   90.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.1,
+   11.0,
+   1.0,
+   0.0,
+   0.477778
+  ],
+  "p_phishing": 0.026034,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.974
+  }
+ },
+ {
+  "url": "https://www.roblox.com.mu/users/3111072752/profile",
+  "label": "phishing",
+  "features": [
+   50.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.2,
+   9.0,
+   2.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.961161,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.961
+  }
+ },
+ {
+  "url": "https://lenovo.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://americanbar.org/@cunqquyk5et",
+  "label": "safe",
+  "features": [
+   36.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.027778,
+   6.0,
+   0.0,
+   0.0,
+   0.638889
+  ],
+  "p_phishing": 0.006132,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://transfer-to-click.vercel.app/",
+  "label": "phishing",
+  "features": [
+   37.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.513514
+  ],
+  "p_phishing": 0.975278,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.975
+  }
+ },
+ {
+  "url": "https://manchestereveningnews.co.uk/@1svly79s8ya",
+  "label": "safe",
+  "features": [
+   48.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.083333,
+   7.0,
+   1.0,
+   0.0,
+   0.5625
+  ],
+  "p_phishing": 0.052136,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.948
+  }
+ },
+ {
+  "url": "https://credly.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.789474
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://fb.com/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bitdefender.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.708333
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cntraveler.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.695652
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://blog.gov.uk/d/7fthjwm5coczh1kl-a2_naiuxdt6gc5i",
+  "label": "safe",
+  "features": [
+   54.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.111111,
+   8.0,
+   1.0,
+   0.0,
+   0.592593
+  ],
+  "p_phishing": 0.648837,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.649
+  }
+ },
+ {
+  "url": "https://ipcc.ch/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.5625
+  ],
+  "p_phishing": 0.004277,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://as.me/conversation/tps2nyz--ocnnpfv--deyjzt8y-ifur-wy-",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   7.0,
+   0.032258,
+   6.0,
+   0.0,
+   0.0,
+   0.419355
+  ],
+  "p_phishing": 0.054571,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.945
+  }
+ },
+ {
+  "url": "https://china.com.cn/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.016207,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://huffpost.com/d/frr8pm7wycqjn-e2efsmvtxjlzm7v8dk",
+  "label": "safe",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.090909,
+   6.0,
+   0.0,
+   0.0,
+   0.527273
+  ],
+  "p_phishing": 0.018025,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.982
+  }
+ },
+ {
+  "url": "https://azure.com/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.833333
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://www.incolight.vercel.app/",
+  "label": "phishing",
+  "features": [
+   32.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.53125
+  ],
+  "p_phishing": 0.995501,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://hh.ru/",
+  "label": "safe",
+  "features": [
+   14.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.642857
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://ademe.fr/search?q=cheap+flights&o=&gs_l=Qhh0Hjj2evgivs",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.032258,
+   13.0,
+   0.0,
+   0.0,
+   0.483871
+  ],
+  "p_phishing": 0.001617,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://github.io/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://joomla.org/watch?v=QZoLZPRG4CE&list=i2_dSnrjh8OFPzTLvF2VA9SVHmqwXNxNkI",
+  "label": "safe",
+  "features": [
+   78.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.064103,
+   10.0,
+   0.0,
+   0.0,
+   0.641026
+  ],
+  "p_phishing": 0.000312,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 1.0
+  }
+ },
+ {
+  "url": "https://lastampa.it/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.55
+  ],
+  "p_phishing": 0.004277,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://myspace.com/p/361763883393230832",
+  "label": "safe",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.45,
+   6.0,
+   0.0,
+   0.0,
+   0.525
+  ],
+  "p_phishing": 0.00863,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.991
+  }
+ },
+ {
+  "url": "https://commonsensemedia.org/",
+  "label": "safe",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.586207
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://broadcom.com/status/376266998437926640",
+  "label": "safe",
+  "features": [
+   46.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.391304,
+   6.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.010588,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://mix.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://blog.openai.com/results/x88gbzic?list=t-RrO728SxZIF4-_RrRMqm6lp1IQ&index=37",
+  "label": "safe",
+  "features": [
+   83.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.120482,
+   12.0,
+   1.0,
+   0.0,
+   0.518072
+  ],
+  "p_phishing": 0.033575,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.966
+  }
+ },
+ {
+  "url": "https://eltiempo.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://google.nl/video/2935891/dbxc8h0c",
+  "label": "safe",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.225,
+   7.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.086282,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.914
+  }
+ },
+ {
+  "url": "https://go.tz/",
+  "label": "safe",
+  "features": [
+   14.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://mashable.com/common/oauth2/authorize?client_id=R3O1pjlwLaLfjs9rNo-Tdt6z&redirect_uri=https%3A%2F%2Fmashable.com%2Fsignin&response_type=code&scope=openid+profile",
+  "label": "safe",
+  "features": [
+   168.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.053571,
+   20.0,
+   0.0,
+   0.0,
+   0.261905
+  ],
+  "p_phishing": 0.00335,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://bamboohr.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://brevo.com/d/1uodw_oasbqzasjrrsxtbdnrketlqf99",
+  "label": "safe",
+  "features": [
+   52.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.057692,
+   7.0,
+   0.0,
+   0.0,
+   0.557692
+  ],
+  "p_phishing": 0.00158,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://japantimes.co.jp/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.022448,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://kqzyfj.com/files/ilcfvqtjhdslqddnrnkek10sogdzyhfrl3_bbxwu",
+  "label": "safe",
+  "features": [
+   65.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.046154,
+   7.0,
+   0.0,
+   0.0,
+   0.492308
+  ],
+  "p_phishing": 0.000822,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://avg.com/posts/NYNLDbkQDCQCy?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   12.0,
+   0.0,
+   0.0,
+   0.450704
+  ],
+  "p_phishing": 0.006388,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://eur-lex.europa.eu/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.576923
+  ],
+  "p_phishing": 0.14732,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.853
+  }
+ },
+ {
+  "url": "https://www.15832.xyz/",
+  "label": "phishing",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.227273,
+   6.0,
+   1.0,
+   0.0,
+   0.727273
+  ],
+  "p_phishing": 0.750325,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.75
+  }
+ },
+ {
+  "url": "https://audacityteam.org/watch/11500310?trackId=7649&action=resume",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.181818,
+   10.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.003699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://google.ro/product/KHDBWTNS7O?variant=26&ref=nav",
+  "label": "safe",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.054545,
+   10.0,
+   0.0,
+   0.0,
+   0.636364
+  ],
+  "p_phishing": 0.000438,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 1.0
+  }
+ },
+ {
+  "url": "https://elconfidencial.com/p/819571199901800185",
+  "label": "safe",
+  "features": [
+   47.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.382979,
+   6.0,
+   0.0,
+   0.0,
+   0.489362
+  ],
+  "p_phishing": 0.008266,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://gob.mx/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://fao.org/guide/faq.html",
+  "label": "safe",
+  "features": [
+   30.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.633333
+  ],
+  "p_phishing": 0.003017,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "http://www.undianshopee3030.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   41.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.097561,
+   7.0,
+   2.0,
+   0.0,
+   0.536585
+  ],
+  "p_phishing": 0.997482,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://m.media-amazon.com/",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.62963
+  ],
+  "p_phishing": 0.426277,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.426
+  }
+ },
+ {
+  "url": "https://acpjournals.org/common/oauth2/authorize?client_id=KcWP3G0UriQ9sKQWYPJ2KB8B&redirect_uri=https%3A%2F%2Facpjournals.org%2Fsignin&response_type=code&scope=openid+profile",
+  "label": "safe",
+  "features": [
+   174.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.057471,
+   20.0,
+   0.0,
+   0.0,
+   0.258621
+  ],
+  "p_phishing": 0.001865,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://case.edu/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.705882
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://eurekalert.org/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.652174
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://england.nhs.uk/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.652174
+  ],
+  "p_phishing": 0.022448,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "http://3966b7.icefactory.cl/",
+  "label": "phishing",
+  "features": [
+   28.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.178571,
+   6.0,
+   1.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.997825,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://22.cn/",
+  "label": "safe",
+  "features": [
+   14.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.142857,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.208915,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.791
+  }
+ },
+ {
+  "url": "https://networkadvertising.org/",
+  "label": "safe",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.580645
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://app-board.net/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://msdmanuals.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.652174
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://kit.edu/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ncl.ac.uk/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.722222
+  ],
+  "p_phishing": 0.013486,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://nii.ac.jp/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.013486,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://exploratorium.edu/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.653846
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://api.tableau.com/v4/items/tTUF2OVOYaRwyzrOn1pDd1Cn?fields=all",
+  "label": "safe",
+  "features": [
+   68.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.058824,
+   10.0,
+   1.0,
+   0.0,
+   0.558824
+  ],
+  "p_phishing": 0.005952,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://hostingersite.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.576923
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://birmingham.ac.uk/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.68
+  ],
+  "p_phishing": 0.018699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://ny.gov/files/zjki6ffxoudbzlgrj4skruer4tscw6jcsrc5ccen",
+  "label": "safe",
+  "features": [
+   61.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.081967,
+   6.0,
+   0.0,
+   0.0,
+   0.47541
+  ],
+  "p_phishing": 0.00507,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://asm.org/m?continue=https%3A%2F%2Fexample.com%2F%40channel&hl=en&app=desktop",
+  "label": "safe",
+  "features": [
+   83.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.072289,
+   12.0,
+   0.0,
+   0.0,
+   0.373494
+  ],
+  "p_phishing": 0.008213,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://123rf.com/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.166667,
+   5.0,
+   0.0,
+   0.0,
+   0.833333
+  ],
+  "p_phishing": 0.150948,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.849
+  }
+ },
+ {
+  "url": "https://cbo.gov/d/5el1dm2lvmvsfprue5bmtdxtpjjabotr",
+  "label": "safe",
+  "features": [
+   50.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.08,
+   6.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.011388,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://link.springer.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.653846
+  ],
+  "p_phishing": 0.026066,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.974
+  }
+ },
+ {
+  "url": "https://www.adwavein.vercel.app/",
+  "label": "phishing",
+  "features": [
+   32.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.53125
+  ],
+  "p_phishing": 0.925806,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.926
+  }
+ },
+ {
+  "url": "https://qcjm43-c17s.vercel.app/",
+  "label": "phishing",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.129032,
+   6.0,
+   1.0,
+   0.0,
+   0.677419
+  ],
+  "p_phishing": 0.974853,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.975
+  }
+ },
+ {
+  "url": "https://cancer.org/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.pt-shopee435.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   38.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.078947,
+   7.0,
+   2.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.969394,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.969
+  }
+ },
+ {
+  "url": "https://getresponse.com/watch/74360424?trackId=18635&action=play",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.203125,
+   10.0,
+   0.0,
+   0.0,
+   0.53125
+  ],
+  "p_phishing": 0.003545,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "http://www.info-pemenang2.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   39.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.025641,
+   7.0,
+   2.0,
+   0.0,
+   0.538462
+  ],
+  "p_phishing": 0.996842,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://mass.gov/c/gxoptzi_-tzt5kugg-cpypfrkn-nm_emcl-",
+  "label": "safe",
+  "features": [
+   54.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.018519,
+   8.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.097896,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.902
+  }
+ },
+ {
+  "url": "https://verified-blue-profile-two.vercel.app/support",
+  "label": "phishing",
+  "features": [
+   52.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.403846
+  ],
+  "p_phishing": 0.994102,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://ihg.com/docs/getting-started.html",
+  "label": "safe",
+  "features": [
+   41.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.463415
+  ],
+  "p_phishing": 0.106223,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.894
+  }
+ },
+ {
+  "url": "https://allegro.1200000498.casa/lokalnie/home?id=1H5f9Q2H2G4n5v0T3O4X4R6X9z8a7j0h",
+  "label": "phishing",
+  "features": [
+   81.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.320988,
+   9.0,
+   1.0,
+   0.0,
+   0.518519
+  ],
+  "p_phishing": 0.862059,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.862
+  }
+ },
+ {
+  "url": "https://abc7.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.058824,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.001778,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://crypto.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.631579
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://ansible.com/docs/user-manual.html",
+  "label": "safe",
+  "features": [
+   41.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.487805
+  ],
+  "p_phishing": 0.052229,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.948
+  }
+ },
+ {
+  "url": "https://sp21ct-zelur-biz-navi-kemo.pages.dev/",
+  "label": "phishing",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.044444,
+   6.0,
+   1.0,
+   0.0,
+   0.577778
+  ],
+  "p_phishing": 0.889608,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.89
+  }
+ },
+ {
+  "url": "https://alarabiya.net/posts/tzCgbtAvPupsI?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   77.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   12.0,
+   0.0,
+   0.0,
+   0.402597
+  ],
+  "p_phishing": 0.016109,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://knightlab.com/status/854706741987316225",
+  "label": "safe",
+  "features": [
+   47.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.382979,
+   6.0,
+   0.0,
+   0.0,
+   0.595745
+  ],
+  "p_phishing": 0.002754,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://google.gr/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://doordash.com/watch?v=3q77tiZp1CJ",
+  "label": "safe",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.1,
+   7.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.009529,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.99
+  }
+ },
+ {
+  "url": "https://sp22ct-nemur-biz-kavi-zaru-k3u.pages.dev/",
+  "label": "phishing",
+  "features": [
+   49.0,
+   1.0,
+   0.0,
+   0.0,
+   5.0,
+   0.061224,
+   6.0,
+   1.0,
+   0.0,
+   0.489796
+  ],
+  "p_phishing": 0.956029,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.956
+  }
+ },
+ {
+  "url": "https://cjb.net/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://clutch.co/c/nsq-t9xm-mn2qxxoz-yshdlpk7-zodtunid",
+  "label": "safe",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.054545,
+   6.0,
+   0.0,
+   0.0,
+   0.436364
+  ],
+  "p_phishing": 0.179678,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.82
+  }
+ },
+ {
+  "url": "https://gosuslugi.ru/search?q=cheap+flights&o=&gs_l=ukHZvETSpSndFG",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   13.0,
+   0.0,
+   0.0,
+   0.515152
+  ],
+  "p_phishing": 0.002447,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://googlesyndication.com/",
+  "label": "safe",
+  "features": [
+   30.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://icims.com/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.611111
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://lj4704.craftum.io/?naps",
+  "label": "phishing",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.129032,
+   7.0,
+   1.0,
+   0.0,
+   0.709677
+  ],
+  "p_phishing": 0.869352,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.869
+  }
+ },
+ {
+  "url": "https://epson.com/posts/Mckq-QJu_4VM5?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   73.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.027397,
+   13.0,
+   0.0,
+   0.0,
+   0.410959
+  ],
+  "p_phishing": 0.006942,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://sec365officlient.webcindario.com/index05.html",
+  "label": "phishing",
+  "features": [
+   53.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.09434,
+   7.0,
+   1.0,
+   0.0,
+   0.471698
+  ],
+  "p_phishing": 0.630982,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.631
+  }
+ },
+ {
+  "url": "https://blog.livedoor.jp/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.68
+  ],
+  "p_phishing": 0.018699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://cao.go.jp/search?q=how+to+learn+python&o=&gs_l=TN_tE6NKD0bqvR",
+  "label": "safe",
+  "features": [
+   69.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.028986,
+   17.0,
+   1.0,
+   0.0,
+   0.492754
+  ],
+  "p_phishing": 0.011821,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://examiner.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://mail.skype.com/results/4mdh_ttn?list=hf45VPkwtp732hDEH_3t0J2kYpQg&index=5",
+  "label": "safe",
+  "features": [
+   81.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.123457,
+   13.0,
+   1.0,
+   0.0,
+   0.518519
+  ],
+  "p_phishing": 0.014846,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.985
+  }
+ },
+ {
+  "url": "https://saa-s-team-board--technical50.replit.app/",
+  "label": "phishing",
+  "features": [
+   49.0,
+   1.0,
+   0.0,
+   0.0,
+   5.0,
+   0.040816,
+   6.0,
+   1.0,
+   0.0,
+   0.428571
+  ],
+  "p_phishing": 0.977223,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "http://gfytvd-wiyn-np4qjd-g9ewg7.pages.dev/",
+  "label": "phishing",
+  "features": [
+   43.0,
+   0.0,
+   0.0,
+   0.0,
+   3.0,
+   0.069767,
+   6.0,
+   1.0,
+   0.0,
+   0.534884
+  ],
+  "p_phishing": 0.997754,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://beatport.com/r/wt4nfz7c/comments/3i-tba/jmhgaaltaitabuavymplx/?sort=new",
+  "label": "safe",
+  "features": [
+   79.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.037975,
+   12.0,
+   0.0,
+   0.0,
+   0.405063
+  ],
+  "p_phishing": 0.007727,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://avast.com/thread/132583?page=6&author=k08dit3",
+  "label": "safe",
+  "features": [
+   53.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.188679,
+   10.0,
+   0.0,
+   0.0,
+   0.54717
+  ],
+  "p_phishing": 0.007664,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://afp.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://drive.google.com/watch?v=FYWXDigfpa9&list=Cl7MhYFUg9af4Kh7FE_BPodazAl1EPiG",
+  "label": "safe",
+  "features": [
+   82.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.073171,
+   11.0,
+   1.0,
+   0.0,
+   0.52439
+  ],
+  "p_phishing": 0.00669,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://hsdaf145f0d35b328f6ab477ecd8a9d0df.nexusqal.guru/#/",
+  "label": "phishing",
+  "features": [
+   59.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.271186,
+   8.0,
+   1.0,
+   0.0,
+   0.525424
+  ],
+  "p_phishing": 0.841186,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.841
+  }
+ },
+ {
+  "url": "https://api.soundcloud.com/v4/items/fnyAb-7vYrs6SgLTDsrMVhrP?fields=all",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.042254,
+   10.0,
+   1.0,
+   0.0,
+   0.535211
+  ],
+  "p_phishing": 0.013166,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://ifttt.com/p/691300545192155569",
+  "label": "safe",
+  "features": [
+   38.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.473684,
+   6.0,
+   0.0,
+   0.0,
+   0.526316
+  ],
+  "p_phishing": 0.012263,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://gitlab.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.789474
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://adafruit.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.robiox.com.py/users/265736013873/profile",
+  "label": "phishing",
+  "features": [
+   52.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.230769,
+   9.0,
+   2.0,
+   0.0,
+   0.538462
+  ],
+  "p_phishing": 0.965536,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.966
+  }
+ },
+ {
+  "url": "https://instagram.com/watch?v=xAl_oYGX4S3&list=KLSnrv9rHujo23K8uIFtOP-MUnCA-TzC&t=3235s",
+  "label": "safe",
+  "features": [
+   87.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.114943,
+   12.0,
+   0.0,
+   0.0,
+   0.563218
+  ],
+  "p_phishing": 0.002854,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://api.sennheiser.com/v4/items/pjkhVS7JxvFJnFsNu0vBWOoS?fields=all",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.042254,
+   10.0,
+   1.0,
+   0.0,
+   0.507042
+  ],
+  "p_phishing": 0.013267,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://cc.com/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ca.gov/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cointelegraph.com/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.653846
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://gsxt.gov.cn/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.65
+  ],
+  "p_phishing": 0.016207,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://google.fr/video/864663/1vmmsdvwcze2r_ns-ta",
+  "label": "safe",
+  "features": [
+   50.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.16,
+   8.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.020576,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.979
+  }
+ },
+ {
+  "url": "https://copilot.com/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "http://k9n4wu-lyo-vy6qg-v9dmfh-6mk0.pages.dev/",
+  "label": "phishing",
+  "features": [
+   46.0,
+   0.0,
+   0.0,
+   0.0,
+   4.0,
+   0.130435,
+   6.0,
+   1.0,
+   0.0,
+   0.586957
+  ],
+  "p_phishing": 0.996711,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://battle.net/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.631579
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://fidelity.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://cmu.edu/files/qesihygjumrykktftr4h1b59jj9ylsdyn-feqnwx",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.080645,
+   6.0,
+   0.0,
+   0.0,
+   0.483871
+  ],
+  "p_phishing": 0.006015,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://jimdo.com/files/h4zdpwdg5ykk1p7djsqsg1frmo34qcdjmox7sizf",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.125,
+   6.0,
+   0.0,
+   0.0,
+   0.453125
+  ],
+  "p_phishing": 0.07066,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.929
+  }
+ },
+ {
+  "url": "https://aboutads.info/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://kayak.com/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.722222
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://material.io/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.7
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://choicehotels.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.52
+  ],
+  "p_phishing": 0.012856,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://nrdc.org/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://arstechnica.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://spoo.me/es-santander",
+  "label": "phishing",
+  "features": [
+   28.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.535714
+  ],
+  "p_phishing": 0.07854,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.921
+  }
+ },
+ {
+  "url": "https://jenkins.io/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://api.collider.com/v1/items/dbITBMKJYxv-rj-t9wJFzH75?fields=all",
+  "label": "safe",
+  "features": [
+   69.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.057971,
+   10.0,
+   1.0,
+   0.0,
+   0.565217
+  ],
+  "p_phishing": 0.022117,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://lua.org/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8125
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ebay.de/watch?v=tp6bIB81SdK&t=380s",
+  "label": "safe",
+  "features": [
+   42.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.142857,
+   9.0,
+   0.0,
+   0.0,
+   0.642857
+  ],
+  "p_phishing": 0.012586,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://goo.su/8lkOJBz",
+  "label": "phishing",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.045455,
+   5.0,
+   0.0,
+   0.0,
+   0.772727
+  ],
+  "p_phishing": 0.001778,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://google.dk/p/_u7jqoxo-9dvkpkwg-x3h530i_-lsialzch?tab=share",
+  "label": "safe",
+  "features": [
+   65.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.092308,
+   10.0,
+   0.0,
+   0.0,
+   0.523077
+  ],
+  "p_phishing": 0.005715,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://acog.org/thread/532577?page=22&author=we2tqzd",
+  "label": "safe",
+  "features": [
+   53.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.169811,
+   10.0,
+   0.0,
+   0.0,
+   0.471698
+  ],
+  "p_phishing": 0.056348,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.944
+  }
+ },
+ {
+  "url": "https://buzzfeednews.com/search?q=news&o=&gs_l=voYfvPFEHLioav",
+  "label": "safe",
+  "features": [
+   61.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   12.0,
+   0.0,
+   0.0,
+   0.57377
+  ],
+  "p_phishing": 0.001305,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://detroitnews.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.v0-mailspectrum.vercel.app/",
+  "label": "phishing",
+  "features": [
+   39.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.025641,
+   7.0,
+   2.0,
+   0.0,
+   0.487179
+  ],
+  "p_phishing": 0.974825,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.975
+  }
+ },
+ {
+  "url": "https://britishairways.com/",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.592593
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://chanel.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.736842
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://beian.miit.gov.cn/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.653846
+  ],
+  "p_phishing": 0.047679,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.952
+  }
+ },
+ {
+  "url": "https://dailyrecord.co.uk/",
+  "label": "safe",
+  "features": [
+   26.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.692308
+  ],
+  "p_phishing": 0.021727,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://moodle.com/",
+  "label": "safe",
+  "features": [
+   19.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.684211
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://health.gov.au/common/oauth2/authorize?client_id=ZVy9tSnd13Ml7vPVlVPDJSzJ&redirect_uri=https%3A%2F%2Fhealth.gov.au%2Fsignin&response_type=code&scope=openid+profile",
+  "label": "safe",
+  "features": [
+   170.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.052941,
+   22.0,
+   1.0,
+   0.0,
+   0.252941
+  ],
+  "p_phishing": 0.065877,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.934
+  }
+ },
+ {
+  "url": "https://blm.gov/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8125
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://navy.mil/t/kb-xp3hie_ahx",
+  "label": "safe",
+  "features": [
+   32.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.03125,
+   7.0,
+   0.0,
+   0.0,
+   0.65625
+  ],
+  "p_phishing": 0.005712,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "http://facebook-facebook45sr.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   42.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.047619,
+   6.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.99632,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://httpd.apache.org/d/o6x3amvqbgtfd7uw6uywkrpdif1qgnck",
+  "label": "safe",
+  "features": [
+   59.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.084746,
+   7.0,
+   1.0,
+   0.0,
+   0.508475
+  ],
+  "p_phishing": 0.172528,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.827
+  }
+ },
+ {
+  "url": "https://docs.oracle.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.022448,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://b-cdn.net/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.722222
+  ],
+  "p_phishing": 0.022932,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.977
+  }
+ },
+ {
+  "url": "https://b1ba4d.icefactory.cl/",
+  "label": "phishing",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.068966,
+   6.0,
+   1.0,
+   0.0,
+   0.689655
+  ],
+  "p_phishing": 0.238699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.761
+  }
+ },
+ {
+  "url": "https://news-medical.net/post/226696549501851996",
+  "label": "safe",
+  "features": [
+   48.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.375,
+   6.0,
+   0.0,
+   0.0,
+   0.541667
+  ],
+  "p_phishing": 0.104267,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.896
+  }
+ },
+ {
+  "url": "https://dell.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.764706
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://genial.ly/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.777778
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://list-manage2.com/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.04,
+   5.0,
+   0.0,
+   0.0,
+   0.72
+  ],
+  "p_phishing": 0.020058,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.98
+  }
+ },
+ {
+  "url": "https://globalresearch.ca/video/9892768/vy8pxo",
+  "label": "safe",
+  "features": [
+   46.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.173913,
+   7.0,
+   0.0,
+   0.0,
+   0.543478
+  ],
+  "p_phishing": 0.022012,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.978
+  }
+ },
+ {
+  "url": "https://bufferapp.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.727273
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bp.com/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.733333
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://letsencrypt.org/watch?v=HRrlMoUk80F&list=u_Hbyo3K9IEHkoU52VkVhsm",
+  "label": "safe",
+  "features": [
+   72.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.083333,
+   10.0,
+   0.0,
+   0.0,
+   0.583333
+  ],
+  "p_phishing": 0.000603,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://gamblingcommission.gov.uk/files/hfghx7izk0fwdxsyiso-n8r0_xbme34-t9rz1x_h",
+  "label": "safe",
+  "features": [
+   80.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.1,
+   9.0,
+   1.0,
+   0.0,
+   0.45
+  ],
+  "p_phishing": 0.665373,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.665
+  }
+ },
+ {
+  "url": "https://miitbeian.gov.cn/",
+  "label": "safe",
+  "features": [
+   25.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.68
+  ],
+  "p_phishing": 0.018699,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "http://multiple-level-203606.framer.app/",
+  "label": "phishing",
+  "features": [
+   40.0,
+   0.0,
+   0.0,
+   0.0,
+   2.0,
+   0.15,
+   6.0,
+   1.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.999231,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://hu.net/",
+  "label": "safe",
+  "features": [
+   15.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://unusual-account-activity-review.vercel.app/",
+  "label": "phishing",
+  "features": [
+   51.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.392157
+  ],
+  "p_phishing": 0.994102,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://colostate.edu/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.636364
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://duke.edu/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.647059
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://oanda.com/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.722222
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://jnj.com/thread/212336?page=18&author=mi1j4yr",
+  "label": "safe",
+  "features": [
+   52.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.192308,
+   10.0,
+   0.0,
+   0.0,
+   0.557692
+  ],
+  "p_phishing": 0.006863,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://about.google/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://microsoft.com/r/7o8brba8/comments/_mbdu9/tlbbs3fl_y1f-ww9m/?sort=top",
+  "label": "safe",
+  "features": [
+   76.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.092105,
+   14.0,
+   0.0,
+   0.0,
+   0.407895
+  ],
+  "p_phishing": 0.009175,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.991
+  }
+ },
+ {
+  "url": "https://epi.org/files/7zfhv_upy4tlptkpu8i83vzw7wru_2sqrih3udii",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.129032,
+   8.0,
+   0.0,
+   0.0,
+   0.451613
+  ],
+  "p_phishing": 0.063485,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.937
+  }
+ },
+ {
+  "url": "https://mendeley.com/@6trnz",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.037037,
+   6.0,
+   0.0,
+   0.0,
+   0.703704
+  ],
+  "p_phishing": 0.001962,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nsa.gov/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://google.com.tw/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.636364
+  ],
+  "p_phishing": 0.020315,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.98
+  }
+ },
+ {
+  "url": "https://bet365.com/thread/543666?page=24&author=09wmxwl",
+  "label": "safe",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.236364,
+   10.0,
+   0.0,
+   0.0,
+   0.545455
+  ],
+  "p_phishing": 0.011012,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://dawn.com/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.823529
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://brandbucket.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://ebc.com.br/t/kb-s0fdyhg50s",
+  "label": "safe",
+  "features": [
+   34.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.088235,
+   7.0,
+   1.0,
+   0.0,
+   0.617647
+  ],
+  "p_phishing": 0.818902,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.819
+  }
+ },
+ {
+  "url": "https://europapress.es/post/128462241171209997",
+  "label": "safe",
+  "features": [
+   46.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.391304,
+   6.0,
+   0.0,
+   0.0,
+   0.434783
+  ],
+  "p_phishing": 0.073672,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.926
+  }
+ },
+ {
+  "url": "https://kuleuven.be/",
+  "label": "safe",
+  "features": [
+   20.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.7
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://gamestop.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://tickblueverification.vercel.app/support",
+  "label": "phishing",
+  "features": [
+   47.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.425532
+  ],
+  "p_phishing": 0.851453,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.851
+  }
+ },
+ {
+  "url": "https://apps.apple.com/",
+  "label": "safe",
+  "features": [
+   23.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   1.0,
+   0.0,
+   0.565217
+  ],
+  "p_phishing": 0.035034,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.965
+  }
+ },
+ {
+  "url": "https://in.ua/",
+  "label": "safe",
+  "features": [
+   14.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.785714
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://mastodon.social/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.625
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://artsy.net/",
+  "label": "safe",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bio.site/watch?v=8tCsKJIGJhR",
+  "label": "safe",
+  "features": [
+   36.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.027778,
+   7.0,
+   0.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.003519,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://campaign-archive2.com/",
+  "label": "safe",
+  "features": [
+   30.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.033333,
+   5.0,
+   0.0,
+   0.0,
+   0.633333
+  ],
+  "p_phishing": 0.026718,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.973
+  }
+ },
+ {
+  "url": "https://delicious.com/conversation/iwhv_e9i-ehsacv-g-4xi9etrv-hnvu5duw",
+  "label": "safe",
+  "features": [
+   70.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.057143,
+   7.0,
+   0.0,
+   0.0,
+   0.385714
+  ],
+  "p_phishing": 0.016005,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.984
+  }
+ },
+ {
+  "url": "https://moneycontrol.com/product/Y7QGN5NF4U?variant=31&ref=plp",
+  "label": "safe",
+  "features": [
+   62.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.080645,
+   10.0,
+   0.0,
+   0.0,
+   0.564516
+  ],
+  "p_phishing": 0.000922,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://digiday.com/product/PF4M4ZDYLF?variant=31&ref=plp",
+  "label": "safe",
+  "features": [
+   57.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.070175,
+   10.0,
+   0.0,
+   0.0,
+   0.614035
+  ],
+  "p_phishing": 0.000572,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://blog.expedia.com/library/vhq5jqe4?list=Lw7p6iy4RZN14oHC0JDWk7Ob9bht&index=24",
+  "label": "safe",
+  "features": [
+   84.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.142857,
+   11.0,
+   1.0,
+   0.0,
+   0.559524
+  ],
+  "p_phishing": 0.006716,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.993
+  }
+ },
+ {
+  "url": "https://consent.archive.org/results/pglbjxlp?list=umxvmHSN7fOKFAwltPTLysJLBxwh&index=30",
+  "label": "safe",
+  "features": [
+   87.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.034483,
+   11.0,
+   1.0,
+   0.0,
+   0.505747
+  ],
+  "p_phishing": 0.004571,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://eweek.com/search?q=best+laptop+2026&o=&gs_l=C3St8KbvyDTuEO",
+  "label": "safe",
+  "features": [
+   66.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.090909,
+   14.0,
+   0.0,
+   0.0,
+   0.590909
+  ],
+  "p_phishing": 0.000614,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://idc.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://economictimes.com/watch?v=DApzuT1xkw7&list=Y5pqJJbJsCqGvdfQIkeLq708YLr",
+  "label": "safe",
+  "features": [
+   78.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.076923,
+   9.0,
+   0.0,
+   0.0,
+   0.564103
+  ],
+  "p_phishing": 0.000589,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://anotepad.com/watch/80722730?trackId=62919&action=play",
+  "label": "safe",
+  "features": [
+   61.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.213115,
+   10.0,
+   0.0,
+   0.0,
+   0.52459
+  ],
+  "p_phishing": 0.011883,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://google.pl/d/jn06gcnspx6ts16cl-oyn9lk2g7rwcnq",
+  "label": "safe",
+  "features": [
+   52.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.153846,
+   6.0,
+   0.0,
+   0.0,
+   0.538462
+  ],
+  "p_phishing": 0.083134,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.917
+  }
+ },
+ {
+  "url": "https://nba.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.8125
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://fraunhofer.de/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://habittracker-29p.pages.dev/",
+  "label": "phishing",
+  "features": [
+   35.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.057143,
+   6.0,
+   1.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.622465,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.622
+  }
+ },
+ {
+  "url": "https://irs.gov/conversation/9woehw-a-4qe3jxif-ptp6l3xy-2z8irued",
+  "label": "safe",
+  "features": [
+   64.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.109375,
+   6.0,
+   0.0,
+   0.0,
+   0.515625
+  ],
+  "p_phishing": 0.012115,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://ffmpeg.org/p/wvytoos9-gmna1hyc--bprnt0r-nqiljwc1?tab=read",
+  "label": "safe",
+  "features": [
+   65.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.061538,
+   8.0,
+   0.0,
+   0.0,
+   0.476923
+  ],
+  "p_phishing": 0.004311,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "http://pemenang67.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   31.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.064516,
+   6.0,
+   1.0,
+   0.0,
+   0.580645
+  ],
+  "p_phishing": 0.988781,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.989
+  }
+ },
+ {
+  "url": "https://carousell.sg/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://akamaihd.net/docs/user-manual.html",
+  "label": "safe",
+  "features": [
+   42.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   7.0,
+   0.0,
+   0.0,
+   0.47619
+  ],
+  "p_phishing": 0.073903,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.926
+  }
+ },
+ {
+  "url": "https://gsk.com/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://medicalxpress.com/m?continue=https%3A%2F%2Fwww.example.org%2Fpage&hl=en&app=mobile",
+  "label": "safe",
+  "features": [
+   90.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.044444,
+   13.0,
+   0.0,
+   0.0,
+   0.333333
+  ],
+  "p_phishing": 0.001939,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://genius.com/posts/Ki66tkn6heUuK?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   74.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.040541,
+   12.0,
+   0.0,
+   0.0,
+   0.351351
+  ],
+  "p_phishing": 0.004814,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "http://d06d1f.icefactory.cl/",
+  "label": "phishing",
+  "features": [
+   28.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.107143,
+   6.0,
+   1.0,
+   0.0,
+   0.678571
+  ],
+  "p_phishing": 0.995994,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.996
+  }
+ },
+ {
+  "url": "https://adp.com/t/kb-eu22sfujt7",
+  "label": "safe",
+  "features": [
+   31.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.096774,
+   6.0,
+   0.0,
+   0.0,
+   0.677419
+  ],
+  "p_phishing": 0.058593,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.941
+  }
+ },
+ {
+  "url": "https://iea.org/posts/M3R51obFxhruH?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.042254,
+   12.0,
+   0.0,
+   0.0,
+   0.43662
+  ],
+  "p_phishing": 0.001896,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://fortunecity.com/posts/i4HSMT0x7T485?utm_source=share&utm_medium=android",
+  "label": "safe",
+  "features": [
+   79.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.075949,
+   12.0,
+   0.0,
+   0.0,
+   0.417722
+  ],
+  "p_phishing": 0.005772,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://biz.pl/post/369928119600205248",
+  "label": "safe",
+  "features": [
+   38.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.473684,
+   6.0,
+   0.0,
+   0.0,
+   0.552632
+  ],
+  "p_phishing": 0.015336,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.985
+  }
+ },
+ {
+  "url": "https://gambling.com/video/364670/ikzphnaw",
+  "label": "safe",
+  "features": [
+   42.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.142857,
+   7.0,
+   0.0,
+   0.0,
+   0.642857
+  ],
+  "p_phishing": 0.012586,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.987
+  }
+ },
+ {
+  "url": "https://sp22ct-nelur-biz-mavi-zeku.pages.dev/",
+  "label": "phishing",
+  "features": [
+   45.0,
+   1.0,
+   0.0,
+   0.0,
+   4.0,
+   0.044444,
+   6.0,
+   1.0,
+   0.0,
+   0.533333
+  ],
+  "p_phishing": 0.938405,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.938
+  }
+ },
+ {
+  "url": "https://faa.gov/",
+  "label": "safe",
+  "features": [
+   16.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.pt-shopee700.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   38.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.078947,
+   7.0,
+   2.0,
+   0.0,
+   0.473684
+  ],
+  "p_phishing": 0.980818,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://nexusmods.com/",
+  "label": "safe",
+  "features": [
+   22.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.681818
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://bhphotovideo.com/video/5907062/srgrpgcnbsshhw",
+  "label": "safe",
+  "features": [
+   53.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.132075,
+   7.0,
+   0.0,
+   0.0,
+   0.471698
+  ],
+  "p_phishing": 0.024586,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.975
+  }
+ },
+ {
+  "url": "http://roblox.com.bi/users/948999725954/profilemalwarenetworkstealer",
+  "label": "phishing",
+  "features": [
+   68.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.176471,
+   8.0,
+   1.0,
+   0.0,
+   0.411765
+  ],
+  "p_phishing": 0.995425,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://fortunebusinessinsights.com/",
+  "label": "safe",
+  "features": [
+   36.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.029757,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.97
+  }
+ },
+ {
+  "url": "https://www.268365h.com/",
+  "label": "phishing",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.25,
+   6.0,
+   1.0,
+   0.0,
+   0.666667
+  ],
+  "p_phishing": 0.947195,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.947
+  }
+ },
+ {
+  "url": "https://api.grandviewresearch.com/v4/items/zBMMpelwdwiMzHsg4HhiQU6v?fields=all",
+  "label": "safe",
+  "features": [
+   78.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.038462,
+   10.0,
+   1.0,
+   0.0,
+   0.397436
+  ],
+  "p_phishing": 0.353642,
+  "expected": {
+   "prediction": "suspicious",
+   "confidence": 0.354
+  }
+ },
+ {
+  "url": "http://www.undianshopee3535.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   41.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.097561,
+   7.0,
+   2.0,
+   0.0,
+   0.536585
+  ],
+  "p_phishing": 0.997482,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://clickup.com/product/HSDUNENUFF?variant=21&ref=email",
+  "label": "safe",
+  "features": [
+   59.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.033898,
+   10.0,
+   0.0,
+   0.0,
+   0.559322
+  ],
+  "p_phishing": 0.000672,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://gesetze-im-internet.de/files/gitxdcbnlcmfi3h4d36fgfbuinbsebviwacs-kjt",
+  "label": "safe",
+  "features": [
+   77.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.051948,
+   6.0,
+   0.0,
+   0.0,
+   0.38961
+  ],
+  "p_phishing": 0.018432,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.982
+  }
+ },
+ {
+  "url": "https://geekwire.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://www.shopee-indonesia2023.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   45.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   0.088889,
+   7.0,
+   2.0,
+   0.0,
+   0.511111
+  ],
+  "p_phishing": 0.997551,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://nj.com/thread/189760?page=18&author=stjd7ga",
+  "label": "safe",
+  "features": [
+   51.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.176471,
+   10.0,
+   0.0,
+   0.0,
+   0.529412
+  ],
+  "p_phishing": 0.012038,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.988
+  }
+ },
+ {
+  "url": "https://gothamist.com/article/681536908787756136",
+  "label": "safe",
+  "features": [
+   48.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.375,
+   6.0,
+   0.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.008266,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.992
+  }
+ },
+ {
+  "url": "https://gouv.fr/video/5271664/mbtvv1tzwrdjxgqt",
+  "label": "safe",
+  "features": [
+   46.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.173913,
+   7.0,
+   0.0,
+   0.0,
+   0.630435
+  ],
+  "p_phishing": 0.005776,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.994
+  }
+ },
+ {
+  "url": "https://api.homeaffairs.gov.au/v2/items/_XstRVNKu-SXUV-3GnEda4lg?fields=all",
+  "label": "safe",
+  "features": [
+   75.0,
+   1.0,
+   0.0,
+   0.0,
+   2.0,
+   0.04,
+   12.0,
+   2.0,
+   0.0,
+   0.48
+  ],
+  "p_phishing": 0.069708,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.93
+  }
+ },
+ {
+  "url": "https://www.aumentatcdigital.vercel.app/",
+  "label": "phishing",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.976251,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.976
+  }
+ },
+ {
+  "url": "https://freeprivacypolicy.com/",
+  "label": "safe",
+  "features": [
+   30.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.6
+  ],
+  "p_phishing": 0.003,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://mq.edu.au/wiki/getting-started.html",
+  "label": "safe",
+  "features": [
+   43.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.0,
+   8.0,
+   1.0,
+   0.0,
+   0.488372
+  ],
+  "p_phishing": 0.899027,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.899
+  }
+ },
+ {
+  "url": "https://www.roblox.com.gr/users/622177948453/profilemalwarenetworkstealer",
+  "label": "phishing",
+  "features": [
+   73.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.164384,
+   9.0,
+   2.0,
+   0.0,
+   0.438356
+  ],
+  "p_phishing": 0.967099,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.967
+  }
+ },
+ {
+  "url": "https://connect.qq.com/watch?v=lO_hQT5enJF&list=pw8sMxWqkiPc5p1qAsp_okJW7O&t=143s",
+  "label": "safe",
+  "features": [
+   81.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.098765,
+   14.0,
+   1.0,
+   0.0,
+   0.481481
+  ],
+  "p_phishing": 0.019161,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.981
+  }
+ },
+ {
+  "url": "https://flightaware.com/",
+  "label": "safe",
+  "features": [
+   24.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.75
+  ],
+  "p_phishing": 0.002498,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://www.instagramcheck.blogspot.com/",
+  "label": "phishing",
+  "features": [
+   40.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.976251,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.976
+  }
+ },
+ {
+  "url": "https://app.link/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.705882
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://f35f44.icefactory.cl/",
+  "label": "phishing",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.137931,
+   6.0,
+   1.0,
+   0.0,
+   0.655172
+  ],
+  "p_phishing": 0.942138,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.942
+  }
+ },
+ {
+  "url": "https://colorado.edu/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.714286
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://courthousenews.com/",
+  "label": "safe",
+  "features": [
+   27.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.555556
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://www.procedes.vercel.app/",
+  "label": "phishing",
+  "features": [
+   32.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.5
+  ],
+  "p_phishing": 0.947082,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.947
+  }
+ },
+ {
+  "url": "https://d30sec8k5ond2x.cloudfront.net/your-books?tabView=library&discoveryType=on&viewType=genres&ref=ebooks_dsk_sn_yb_ip_lib_dis_d_t1",
+  "label": "phishing",
+  "features": [
+   134.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.044776,
+   22.0,
+   1.0,
+   0.0,
+   0.283582
+  ],
+  "p_phishing": 0.14266,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.857
+  }
+ },
+ {
+  "url": "https://apachetoday.com/p/fka3y1k4-l3qabetc-ixgnpr5z-seyefe6u?tab=share",
+  "label": "safe",
+  "features": [
+   71.0,
+   1.0,
+   0.0,
+   0.0,
+   3.0,
+   0.084507,
+   8.0,
+   0.0,
+   0.0,
+   0.478873
+  ],
+  "p_phishing": 0.003431,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://enable-javascript.com/status/691442722951255802",
+  "label": "safe",
+  "features": [
+   55.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.327273,
+   6.0,
+   0.0,
+   0.0,
+   0.545455
+  ],
+  "p_phishing": 0.102578,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.897
+  }
+ },
+ {
+  "url": "http://8aa68b.icefactory.cl/",
+  "label": "phishing",
+  "features": [
+   28.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.107143,
+   6.0,
+   1.0,
+   0.0,
+   0.642857
+  ],
+  "p_phishing": 0.997019,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://geogebra.org/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.619048
+  ],
+  "p_phishing": 0.002709,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.997
+  }
+ },
+ {
+  "url": "https://cancerresearchuk.org/",
+  "label": "safe",
+  "features": [
+   29.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.551724
+  ],
+  "p_phishing": 0.004734,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.995
+  }
+ },
+ {
+  "url": "https://mrlhea-d3zzloum.vercel.app/",
+  "label": "phishing",
+  "features": [
+   35.0,
+   1.0,
+   0.0,
+   0.0,
+   1.0,
+   0.028571,
+   6.0,
+   1.0,
+   0.0,
+   0.571429
+  ],
+  "p_phishing": 0.768064,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.768
+  }
+ },
+ {
+  "url": "https://experian.com/",
+  "label": "safe",
+  "features": [
+   21.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.761905
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://moma.org/",
+  "label": "safe",
+  "features": [
+   17.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.0,
+   0.0,
+   0.705882
+  ],
+  "p_phishing": 0.002257,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "http://www.instagram-ten-blond.vercel.app/",
+  "label": "phishing",
+  "features": [
+   42.0,
+   0.0,
+   0.0,
+   0.0,
+   2.0,
+   0.0,
+   7.0,
+   2.0,
+   0.0,
+   0.52381
+  ],
+  "p_phishing": 0.998565,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.999
+  }
+ },
+ {
+  "url": "https://72660.xyz/",
+  "label": "phishing",
+  "features": [
+   18.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.277778,
+   5.0,
+   0.0,
+   0.0,
+   0.777778
+  ],
+  "p_phishing": 0.819186,
+  "expected": {
+   "prediction": "phishing",
+   "confidence": 0.819
+  }
+ },
+ {
+  "url": "https://here.com/product/RD8IV9QNGZ?variant=14&ref=nav",
+  "label": "safe",
+  "features": [
+   54.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.074074,
+   10.0,
+   0.0,
+   0.0,
+   0.62963
+  ],
+  "p_phishing": 0.001551,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://clevelandclinic.org/@6eyjm",
+  "label": "safe",
+  "features": [
+   34.0,
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.029412,
+   6.0,
+   0.0,
+   0.0,
+   0.676471
+  ],
+  "p_phishing": 0.001962,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.998
+  }
+ },
+ {
+  "url": "https://163.com/d/ypwqiosk7zemw7wu08x6z7uxep03sspw",
+  "label": "safe",
+  "features": [
+   50.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.22,
+   6.0,
+   0.0,
+   0.0,
+   0.52
+  ],
+  "p_phishing": 0.074158,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.926
+  }
+ },
+ {
+  "url": "https://blog.waw.pl/c/ji4mb5xd?list=mzxT9pXTDUtH0y2gHxPcHaiEOkLE&index=46",
+  "label": "safe",
+  "features": [
+   73.0,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.09589,
+   11.0,
+   1.0,
+   0.0,
+   0.575342
+  ],
+  "p_phishing": 0.00438,
+  "expected": {
+   "prediction": "safe",
+   "confidence": 0.996
+  }
+ }
+]
