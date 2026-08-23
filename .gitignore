@@ -11,6 +11,10 @@ venv/
 # Firefox dist extension dir (chrome/edge share 'dist/'; firefox uses dist-firefox)
 dist-firefox/
 
+# Local tool caches
+.hermes/
+.pytest_cache/
+
 # Distribution / packaging
 dist/
 build/
