@@ -891,3 +891,73 @@ body.as-page .container {
   font-size: 13px;
   line-height: 1.6;
 }
+
+/* ============================================================================
+   COMPETITION DEMO MODE
+   ========================================================================== */
+
+.demo-btn {
+  margin-top: 14px;
+  background: linear-gradient(135deg, #2d9cdb 0%, #56ccf2 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 11px;
+  width: 100%;
+}
+
+.demo-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.demo-banner {
+  background: linear-gradient(135deg, #ebf4ff 0%, #e6fffa 100%);
+  border: 1px solid #bee3f8;
+  border-left: 4px solid #2d9cdb;
+  border-radius: var(--border-radius);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.demo-banner-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#demo-progress-label {
+  font-weight: 700;
+  font-size: 13px;
+  color: #2c5282;
+}
+
+.demo-stop {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.demo-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.demo-dot {
+  width: 26px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border-color);
+}
+
+.demo-dot.active { background: #2b6cb0; }
+.demo-dot.done { background: var(--safe-color); }
+
+.demo-note {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}

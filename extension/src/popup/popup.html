@@ -49,6 +49,11 @@
         <div id="msg-type-hint" class="type-hint">Detected: SMS/text</div>
         <button id="msg-scan-btn" class="btn btn-primary full-width">Analyze Message</button>
       </div>
+
+      <!-- Competition demo mode: scripted attack sequence through the real engine -->
+      <button id="demo-btn" class="btn demo-btn full-width" title="Runs 4 attack scenarios through the live engine - perfect for presentations">
+        ▶ Run Demo &middot; scripted attack sequence
+      </button>
     </div>
 
     <!-- Loading State -->
@@ -66,7 +71,17 @@
 
     <!-- Result State (hidden by default) -->
     <div id="result-container" class="risk-header hidden">
-      
+
+      <!-- Demo progress banner (visible only during demo mode) -->
+      <div id="demo-banner" class="demo-banner hidden">
+        <div class="demo-banner-top">
+          <span id="demo-progress-label"></span>
+          <button id="demo-stop-btn" class="btn btn-secondary demo-stop">Stop</button>
+        </div>
+        <div class="demo-dots" id="demo-dots"></div>
+        <p id="demo-note" class="demo-note"></p>
+      </div>
+
       <!-- Risk Header -->
       <h1 class="risk-header">Scan Result</h1>
 

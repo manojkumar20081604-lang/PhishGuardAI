@@ -11,6 +11,7 @@ import type { ScanResult } from '../services/baseApi';
 import { get as cacheGet, list as cacheList, clear as cacheClear } from '../db/cache';
 import type { ScanCache } from '../db/cache';
 import { downloadScanReport } from '../utils/reportPdf';
+import { setupDemoController, type DemoController, type DemoStep } from './demo';
 
 // ============================================================================
 // DOM ELEMENTS
@@ -47,6 +48,12 @@ const elements = {
   modalTitle: $('modal-title'),
   modalCloseBtn: $<HTMLButtonElement>('modal-close-btn'),
   modalBody: $('modal-body'),
+  demoBtn: $<HTMLButtonElement>('demo-btn'),
+  demoBanner: $('demo-banner'),
+  demoProgressLabel: $('demo-progress-label'),
+  demoNote: $('demo-note'),
+  demoDots: $('demo-dots'),
+  demoStopBtn: $<HTMLButtonElement>('demo-stop-btn'),
 };
 
 // ============================================================================
@@ -312,6 +319,7 @@ function wireEvents(): void {
   wireUrlScanEvents();
   wireMessageScanEvents();
   wireResultButtons();
+  setupDemoMode();
 }
 
 function wireUrlScanEvents(): void {
@@ -445,6 +453,92 @@ function messageToScanResult(msg: {
     security_tips: msg.security_tips,
     analyzed_at: new Date().toISOString(),
   };
+}
+
+// ============================================================================
+// COMPETITION DEMO MODE
+// ============================================================================
+
+let demoController: DemoController | null = null;
+
+/** Run one scripted scenario through the REAL pipeline and render it. */
+async function runDemoStep(step: DemoStep): Promise<{ prediction: string }> {
+  if (step.kind === 'url') {
+    const response = await chrome.runtime.sendMessage({ action: 'analyze', url: step.payload });
+    if (!response?.success) throw new Error(response?.error || 'Analysis failed');
+    const data = response.data as ScanResult;
+    renderResult(data);
+    return { prediction: String(data.prediction) };
+  }
+
+  const response = await chrome.runtime.sendMessage({ action: 'scanMessage', text: step.payload });
+  if (!response?.success) throw new Error(response?.error || 'Message scan failed');
+  const msg = response.data as {
+    prediction: string; confidence: number; risk_score: number;
+    detected_type: string; reasons: string[]; security_tips: string[]; summary: string;
+  };
+  const firstLine = step.payload.split('\n')[0] ?? '';
+  const adapted: ScanResult = {
+    session_id: `demo-msg-${Date.now().toString(36)}`,
+    url: `${msg.detected_type === 'email' ? '📧 Email' : '📱 SMS'} · ${firstLine.slice(0, 64)}${firstLine.length > 64 ? '…' : ''}`,
+    prediction: msg.prediction,
+    confidence: msg.confidence,
+    risk_score: msg.risk_score,
+    risk_level: String(msg.prediction).toUpperCase(),
+    reasons: msg.reasons,
+    summary: msg.summary,
+    security_tips: msg.security_tips,
+    analyzed_at: new Date().toISOString(),
+  };
+  renderResult(adapted);
+  return { prediction: String(msg.prediction) };
+}
+
+function showDemoProgress(index: number, total: number, step: DemoStep): void {
+  hideAllViews();
+  show(elements.resultContainer); // renderResult will re-show per verdict
+  show(elements.demoBanner);
+  elements.demoStopBtn.classList.remove('hidden');
+  elements.demoNote.classList.remove('hidden');
+  elements.demoDots.classList.remove('hidden');
+
+  elements.demoProgressLabel.textContent = `▶ Demo ${index + 1}/${total} · ${step.label}`;
+  elements.demoNote.textContent = step.note;
+  elements.demoDots.innerHTML = '';
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.className = `demo-dot${i === index ? ' active' : ''}${i < index ? ' done' : ''}`;
+    elements.demoDots.appendChild(dot);
+  }
+}
+
+function finishDemo(ran: number, total: number, caught: number, stopped: boolean): void {
+  if (ran === 0 && stopped) {
+    hide(elements.demoBanner);
+    showScanView();
+    return;
+  }
+  elements.demoStopBtn.classList.add('hidden');
+  elements.demoDots.classList.add('hidden');
+  elements.demoNote.classList.add('hidden');
+  elements.demoProgressLabel.textContent = stopped
+    ? `⏹ Demo stopped after ${ran}/${total}`
+    : `✅ Demo complete — ${caught}/${ran} scenarios matched expectations`;
+  // Let the summary breathe, then return to a clean scan view.
+  setTimeout(() => {
+    hide(elements.demoBanner);
+    showScanView();
+  }, 3400);
+}
+
+function setupDemoMode(): void {
+  demoController = setupDemoController({
+    runStep: runDemoStep,
+    showProgress: showDemoProgress,
+    finish: finishDemo,
+  });
+  elements.demoBtn.addEventListener('click', () => void demoController?.start());
+  elements.demoStopBtn.addEventListener('click', () => demoController?.stop());
 }
 
 function wireResultButtons(): void {
