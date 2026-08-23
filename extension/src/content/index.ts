@@ -573,29 +573,52 @@ function showWarningBanner(data: any): void {
   const existing = document.getElementById('phishguard-warning-banner');
   if (existing) existing.remove();
   
+  // Tone drives styling; accept either prediction names or legacy levels
+  const predLower = String(data.prediction ?? '').toLowerCase();
+  const levelLower = String(data.level ?? '').toLowerCase();
+  const tone = predLower.includes('phish') || levelLower === 'high' ? 'phishing' : 'suspicious';
+
   const banner = document.createElement('div');
   banner.id = 'phishguard-warning-banner';
+  const bannerScore = typeof data.score === 'number' ? Math.round(data.score) : null;
   banner.innerHTML = `
     <style>
       #phishguard-warning-banner {
         position: fixed;
         top: 0; left: 0; right: 0;
         z-index: 2147483647;
-        padding: 14px 20px;
+        padding: 16px 22px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.5;
-        animation: phishguard-slide-down 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        animation: phishguard-slide-down 0.3s ease, phishguard-banner-glow 2.2s ease-in-out .4s infinite;
+        box-shadow: 0 6px 26px rgba(0, 0, 0, 0.4);
       }
       @keyframes phishguard-slide-down { from { transform: translateY(-100%); } to { transform: translateY(0); } }
-      #phishguard-warning-banner.phishing { background: linear-gradient(135deg, #991b1b 0%, #ef4444 100%); color: white; }
-      #phishguard-warning-banner.suspicious { background: linear-gradient(135deg, #92400e 0%, #f59e0b 100%); color: white; }
+      @keyframes phishguard-banner-glow {
+        0%, 100% { filter: brightness(1); }
+        50%      { filter: brightness(1.14); }
+      }
+      #phishguard-warning-banner.phishing { background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 55%, #ef4444 100%); color: white; border-bottom: 3px solid #fecaca; }
+      #phishguard-warning-banner.suspicious { background: linear-gradient(135deg, #451a03 0%, #92400e 55%, #f59e0b 100%); color: white; border-bottom: 3px solid #fde68a; }
       .phishguard-banner-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-      .phishguard-banner-text { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 280px; }
-      .phishguard-banner-icon { width: 24px; height: 24px; flex-shrink: 0; }
+      .phishguard-banner-text { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 300px; }
+      .phishguard-banner-iconwrap {
+        width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        background: rgba(255,255,255,.16); border: 2px solid rgba(255,255,255,.55); font-size: 24px;
+      }
+      .phishguard-banner-headline {
+        display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        font-size: 17.5px; font-weight: 800; letter-spacing: .05em; line-height: 1.25;
+      }
+      .phishguard-banner-scorechip {
+        background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.5);
+        padding: 3px 11px; border-radius: 999px; font-size: 12.5px; font-weight: 800; letter-spacing: .02em;
+      }
+      .phishguard-banner-sub { font-size: 13.5px; opacity: .95; margin-top: 3px; }
       .phishguard-banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
-      .phishguard-banner-btn { padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: opacity 0.2s; }
+      .phishguard-banner-btn { padding: 9px 18px; border-radius: 8px; font-size: 13.5px; font-weight: 700; cursor: pointer; border: none; transition: opacity 0.2s; }
       .phishguard-banner-btn:hover { opacity: 0.9; }
       .phishguard-banner-btn-primary { background: white; color: #991b1b; }
       .phishguard-banner-btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
@@ -604,12 +627,14 @@ function showWarningBanner(data: any): void {
     </style>
     <div class="phishguard-banner-content">
       <div class="phishguard-banner-text">
-        <svg class="phishguard-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-          <line x1="12" y1="9" x2="12" y2="13"></line>
-          <line x1="12" y1="17" x2="12.01" y2="17"></line>
-        </svg>
-        <span><strong>PhishGuard AI:</strong> This page is <strong>${data.prediction}</strong> (${data.level} risk). ${data.message}</span>
+        <span class="phishguard-banner-iconwrap">${tone === 'phishing' ? '&#9940;' : '&#9888;'}</span>
+        <div>
+          <div class="phishguard-banner-headline">
+            ${data.prediction} PAGE FLAGGED
+            ${bannerScore !== null ? `<span class="phishguard-banner-scorechip">RISK ${bannerScore}/100</span>` : ''}
+          </div>
+          <div class="phishguard-banner-sub"><strong>PhishGuard AI:</strong> ${data.message}</div>
+        </div>
       </div>
       <div class="phishguard-banner-actions">
         <button class="phishguard-banner-btn phishguard-banner-btn-${data.level.toLowerCase()}-primary" id="phishguard-banner-analyze">View Details</button>
@@ -618,11 +643,6 @@ function showWarningBanner(data: any): void {
     </div>
   `;
   
-  // Tone drives styling; accept either prediction names or legacy levels
-  const predLower = String(data.prediction ?? '').toLowerCase();
-  const levelLower = String(data.level ?? '').toLowerCase();
-  const tone = predLower.includes('phish') || levelLower === 'high' ? 'phishing' : 'suspicious';
-
   banner.className = tone;
   document.body.insertBefore(banner, document.body.firstChild);
   
@@ -725,6 +745,7 @@ function applyAutoProtectVerdict(
     showWarningBanner({
       prediction: 'PHISHING',
       level: 'HIGH',
+      score: ui.finalRiskScore,
       message: ui.explanation.summary || 'Strong phishing indicators detected on this page.',
     });
     if (settings.blockHighRiskPages && ui.finalRiskScore >= 85) {
@@ -805,22 +826,59 @@ function showBlockPage(ui: ReturnType<typeof mapScanResult>): void {
 function showSuspiciousChip(ui: ReturnType<typeof mapScanResult>): void {
   if (document.getElementById('pgai-suspicious-chip')) return;
 
+  const reasons = ((ui.explanation.riskIndicators ?? []) as string[]).slice(0, 2);
   const chip = document.createElement('div');
   chip.id = 'pgai-suspicious-chip';
   chip.innerHTML = `
     <style>
       #pgai-suspicious-chip {
         position: fixed; bottom: 84px; left: 20px; z-index: 2147483646;
-        padding: 8px 14px; border-radius: 999px; cursor: pointer;
-        background: rgba(146, 64, 14, 0.95); color: #fff;
+        width: min(340px, calc(100vw - 40px));
+        background: linear-gradient(150deg, #451a03 0%, #78350f 55%, #92400e 100%);
+        color: #fff; border-radius: 16px; cursor: pointer;
+        border: 1px solid rgba(251, 191, 36, .45);
+        box-shadow: 0 12px 34px rgba(0,0,0,.4), 0 0 0 0 rgba(245,158,11,.55);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 12.5px; font-weight: 600;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-        transition: transform .15s ease;
+        padding: 14px 16px;
+        animation: pgai-chip-in .28s ease, pgai-chip-glow 2.4s ease-in-out .5s infinite;
       }
-      #pgai-suspicious-chip:hover { transform: translateY(-2px); }
+      @keyframes pgai-chip-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes pgai-chip-glow {
+        0%, 100% { box-shadow: 0 12px 34px rgba(0,0,0,.4), 0 0 0 0 rgba(245,158,11,.5); }
+        50%      { box-shadow: 0 12px 34px rgba(0,0,0,.4), 0 0 22px 4px rgba(245,158,11,.35); }
+      }
+      #pgai-suspicious-chip:hover { transform: translateY(-2px); transition: transform .15s ease; }
+      .pgai-sc-head { display: flex; align-items: center; gap: 10px; }
+      .pgai-sc-ico {
+        width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        background: rgba(251,191,36,.18); border: 1.5px solid rgba(251,191,36,.7);
+        font-size: 17px;
+      }
+      .pgai-sc-title { font-size: 15px; font-weight: 800; letter-spacing: .04em; line-height: 1.2; }
+      .pgai-sc-sub { font-size: 11.5px; opacity: .85; margin-top: 2px; }
+      .pgai-sc-score {
+        margin-left: auto; background: rgba(0,0,0,.35); border: 1px solid rgba(251,191,36,.5);
+        padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 800; white-space: nowrap;
+      }
+      .pgai-sc-body { margin-top: 10px; font-size: 12.5px; line-height: 1.5; opacity: .95; }
+      .pgai-sc-reasons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+      .pgai-sc-tag {
+        background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.18);
+        padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600;
+      }
+      .pgai-sc-cta { margin-top: 11px; font-size: 12px; font-weight: 700; color: #fde68a; display: flex; align-items: center; gap: 5px; }
     </style>
-    &#9888; Suspicious &middot; score ${ui.finalRiskScore}
+    <div class="pgai-sc-head">
+      <span class="pgai-sc-ico">&#9888;</span>
+      <div>
+        <div class="pgai-sc-title">SUSPICIOUS PAGE</div>
+        <div class="pgai-sc-sub">PhishGuard AI &middot; caution advised</div>
+      </div>
+      <span class="pgai-sc-score">${ui.finalRiskScore}/100</span>
+    </div>
+    <div class="pgai-sc-body">${reasons.length ? reasons.map((r) => '&bull; ' + r).join('<br>') : 'This page shows medium-risk patterns. Verify before entering any personal data.'}</div>
+    <div class="pgai-sc-cta">Click for full analysis &rarr;</div>
   `;
   chip.addEventListener('click', () => {
     showAnalysisUI(ui);
@@ -888,39 +946,60 @@ function showPasswordAlarm(input: HTMLInputElement): void {
 
   const danger = String(pwAlarmUi?.finalPrediction ?? '').toLowerCase() === 'phishing';
   alarm.className = danger ? 'danger' : 'warn';
+  const pwScore = pwAlarmUi ? Math.round(pwAlarmUi.finalRiskScore) : null;
   alarm.innerHTML = `
     <style>
       #pgai-pw-alarm {
         position: fixed; left: -9999px; top: -9999px; z-index: 2147483647;
-        max-width: min(420px, calc(100vw - 24px));
-        padding: 12px 16px; border-radius: 10px; color: #fff;
+        max-width: min(400px, calc(100vw - 24px));
+        padding: 16px 18px; border-radius: 14px; color: #fff;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 13px; line-height: 1.45;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        font-size: 13.5px; line-height: 1.5;
+        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.45);
         animation: pgai-pw-in 0.18s ease;
       }
       @keyframes pgai-pw-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
-      #pgai-pw-alarm.danger { background: linear-gradient(135deg, #991b1b, #ef4444); border: 1px solid #fca5a5; }
-      #pgai-pw-alarm.warn { background: linear-gradient(135deg, #92400e, #f59e0b); border: 1px solid #fde68a; }
-      .pgai-pw-row { display: flex; align-items: flex-start; gap: 10px; }
-      .pgai-pw-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
-      .pgai-pw-text strong { display: block; font-size: 13.5px; margin-bottom: 2px; }
-      .pgai-pw-actions { display: flex; gap: 8px; margin-top: 10px; }
-      .pgai-pw-btn { padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; border: none; }
+      #pgai-pw-alarm.danger {
+        background: linear-gradient(150deg, #7f1d1d, #b91c1c 60%, #dc2626);
+        border: 1.5px solid #fca5a5;
+        animation: pgai-pw-in .18s ease, pgai-pw-danger-glow 1.6s ease-in-out infinite;
+      }
+      @keyframes pgai-pw-danger-glow {
+        0%, 100% { box-shadow: 0 14px 38px rgba(0,0,0,.45), 0 0 0 0 rgba(239,68,68,.45); }
+        50%      { box-shadow: 0 14px 38px rgba(0,0,0,.45), 0 0 26px 5px rgba(239,68,68,.4); }
+      }
+      #pgai-pw-alarm.warn {
+        background: linear-gradient(150deg, #451a03, #92400e 60%, #d97706);
+        border: 1.5px solid #fde68a;
+      }
+      .pgai-pw-row { display: flex; align-items: flex-start; gap: 12px; }
+      .pgai-pw-ico {
+        width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.55); font-size: 20px;
+      }
+      .pgai-pw-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+      .pgai-pw-text strong.pgai-pw-title { display: block; font-size: 15.5px; letter-spacing: .03em; margin-bottom: 3px; }
+      .pgai-pw-score {
+        background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.4);
+        padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 800; white-space: nowrap;
+      }
+      .pgai-pw-text .pgai-pw-desc { font-size: 13px; opacity: .95; }
+      .pgai-pw-actions { display: flex; gap: 8px; margin-top: 12px; }
+      .pgai-pw-btn { padding: 7px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700; cursor: pointer; border: none; }
       #pgai-pw-details { background: rgba(255, 255, 255, 0.22); color: #fff; }
       #pgai-pw-dismiss { background: #fff; color: #7f1d1d; }
       #pgai-pw-alarm.warn #pgai-pw-dismiss { color: #78350f; }
     </style>
     <div class="pgai-pw-row">
-      <svg class="pgai-pw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-        <line x1="12" y1="9" x2="12" y2="13"></line>
-        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-      </svg>
+      <span class="pgai-pw-ico">${danger ? '&#9940;' : '&#128274;'}</span>
       <div class="pgai-pw-text">
-        <strong>${danger ? '&#9940; Do NOT enter your password' : '&#9888; Avoid entering your password'}</strong>
-        PhishGuard flagged this page (${escapeHtmlAttr(window.location.hostname)}) as
-        <strong>${danger ? 'PHISHING' : 'SUSPICIOUS'}</strong>.
+        <div class="pgai-pw-head">
+          <strong class="pgai-pw-title">${danger ? 'DO NOT ENTER YOUR PASSWORD' : 'PASSWORD WARNING'}</strong>
+          ${pwScore !== null ? `<span class="pgai-pw-score">RISK ${pwScore}/100</span>` : ''}
+        </div>
+        <span class="pgai-pw-desc">PhishGuard flagged this page (${escapeHtmlAttr(window.location.hostname)}) as
+        <strong>${danger ? 'PHISHING' : 'SUSPICIOUS'}</strong>. Typing here may hand your credentials to attackers.</span>
       </div>
     </div>
     <div class="pgai-pw-actions">
