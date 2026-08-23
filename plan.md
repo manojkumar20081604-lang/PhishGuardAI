@@ -46,7 +46,14 @@
 >     body base styles added, missing result/modal/history CSS written
 >   - NEW: one-click PDF scan report (utils/reportPdf.ts, zero-dependency PDF 1.4
 >     writer; qpdf-clean output; 4 structural tests) - "PDF Report" button in popup
-> - Next up when resumed: store submissions (manual) OR parked v4 ideas
+>
+> AMO SUBMISSION (Aug 23 2026): 🚀 SUBMITTED - v3.2.1 in review
+>   - gecko id: {5ECEB6B6-6AF9-47EB-BD6B-FE77E70C9B96} (example.com id was taken)
+>   - privacy policy LIVE: manojkumar20081604-lang.github.io/PhishGuardAI/
+>     privacy-policy.html (GitHub Pages, /docs folder)
+>   - source package verified reproducible: git archive -> npm ci -> build:firefox
+>   - desktop-only for now (popup UX unsupported on Android); v3.3 candidate
+> - Next up when resumed: CWS submission (needs $5) OR parked v4 ideas
 
 > Status of previous plan (v3.0 backend migration): ✅ COMPLETE & VERIFIED
 > - Pure API client architecture shipped (services/ layer)
