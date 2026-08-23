@@ -31,6 +31,17 @@ import {
   resetVerdictStats,
 } from './api';
 import { recordVerdict } from '../stats/counter';
+import { buildScanReportPdf } from '../utils/reportPdf';
+
+/** Uint8Array -> base64 data URL (service-worker safe, no FileReader). */
+function bytesToDataUrl(bytes: Uint8Array, mime: string): string {
+  let bin = '';
+  const CHUNK = 0x8000;
+  for (let i = 0; i < bytes.length; i += CHUNK) {
+    bin += String.fromCharCode(...bytes.subarray(i, i + CHUNK));
+  }
+  return `data:${mime};base64,${btoa(bin)}`;
+}
 
 let initialized = false;
 
@@ -210,6 +221,24 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           });
         });
       return true; // keep channel open for async response
+    }
+
+    case 'buildReportPdf': {
+      try {
+        const bytes = buildScanReportPdf(message.result);
+        const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+        sendResponse({
+          success: true,
+          dataUrl: bytesToDataUrl(bytes, 'application/pdf'),
+          filename: `phishguard-report-${stamp}.pdf`,
+        });
+      } catch (error: unknown) {
+        sendResponse({
+          success: false,
+          error: error instanceof Error ? error.message : 'PDF build failed',
+        });
+      }
+      return;
     }
 
     case 'health': {

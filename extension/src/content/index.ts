@@ -2,16 +2,18 @@
  * PhishGuard AI - Content Script
  * Injected into all pages for real-time analysis and UI injection.
  * All risk analysis comes from the Flask backend via the background service worker.
+ *
+ * NOTE: this file MUST stay import-free - content scripts load as classic
+ * scripts, so any ESM import here kills the entire script (SyntaxError).
+ * Heavy work (PDF building) is delegated to the background via messages.
  */
 
-import { downloadScanReport, type ScanResultForReport } from '../utils/reportPdf';
-
 // ============================================================================
-// PDF REPORT (password-alarm / warning surfaces)
+// PDF REPORT (password-alarm / warning surfaces) - via background worker
 // ============================================================================
 
 /** Adapt the injected-UI verdict shape into the report generator's input. */
-function uiToScanResult(ui: any): ScanResultForReport {
+function uiToScanResult(ui: any): any {
   return {
     session_id: `cs-${Date.now().toString(36)}`,
     url: window.location.href,
@@ -25,6 +27,25 @@ function uiToScanResult(ui: any): ScanResultForReport {
     recommendation: '',
     analyzed_at: ui.analyzedAt || new Date().toISOString(),
   };
+}
+
+/** Ask the background to build the PDF, then trigger a page-context download. */
+function downloadPdfViaBackground(ui: any): void {
+  chrome.runtime.sendMessage(
+    { action: 'buildReportPdf', result: uiToScanResult(ui) },
+    (response) => {
+      if (chrome.runtime.lastError || !response?.success) {
+        console.error('[PhishGuard] PDF build failed:', chrome.runtime.lastError?.message ?? response?.error);
+        return;
+      }
+      const a = document.createElement('a');
+      a.href = response.dataUrl;
+      a.download = response.filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+  );
 }
 
 // ============================================================================
@@ -1058,14 +1079,10 @@ function showPasswordAlarm(input: HTMLInputElement): void {
   alarm.querySelector('#pgai-pw-dismiss')!.addEventListener('click', dismissPasswordAlarm);
   alarm.querySelector('#pgai-pw-pdf')!.addEventListener('click', () => {
     if (!pwAlarmUi) return;
-    try {
-      downloadScanReport(uiToScanResult(pwAlarmUi));
-      const btn = alarm.querySelector('#pgai-pw-pdf') as HTMLButtonElement;
-      btn.textContent = '✓ Report saved';
-      setTimeout(() => { btn.textContent = '📄 Save PDF report'; }, 2200);
-    } catch (err) {
-      console.error('[PhishGuard] PDF report failed:', err);
-    }
+    const btn = alarm.querySelector('#pgai-pw-pdf') as HTMLButtonElement;
+    btn.textContent = '⏳ Building…';
+    downloadPdfViaBackground(pwAlarmUi);
+    setTimeout(() => { btn.textContent = '📄 Save PDF report'; }, 2200);
   });
   alarm.querySelector('#pgai-pw-details')!.addEventListener('click', () => {
     if (pwAlarmUi) showAnalysisUI(pwAlarmUi);
