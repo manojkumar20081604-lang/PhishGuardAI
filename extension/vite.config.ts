@@ -55,7 +55,10 @@ function emitManifest(browser: 'chrome' | 'firefox'): Plugin {
         };
         manifest.browser_specific_settings = {
           gecko: {
-            id: 'phishguard@example.com', // TODO: real ID before AMO submission
+            // Globally-unique UUID (AMO rejected phishguard@example.com as
+            // already registered). NEVER change this after first publication,
+            // or Firefox treats updates as a different add-on.
+            id: '{5ECEB6B6-6AF9-47EB-BD6B-FE77E70C9B96}',
             // 140 = first version supporting data_collection_permissions;
             // also matches current Firefox ESR baseline (nothing pre-140 is used)
             strict_min_version: '140.0',
