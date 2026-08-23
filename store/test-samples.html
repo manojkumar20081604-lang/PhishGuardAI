@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhishGuard AI — Test Samples</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 30px auto; padding: 0 16px; background:#f8fafc; color:#1e293b; }
+  h1 { font-size: 22px; } p { color:#64748b; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:16px; margin-bottom:18px; }
+  .card h2 { font-size:15px; margin:0 0 10px; }
+  textarea { width:100%; box-sizing:border-box; height:110px; font-family:monospace; font-size:12px;
+             border:1px solid #cbd5e1; border-radius:6px; padding:8px; }
+  button { margin-top:8px; padding:8px 18px; border:none; border-radius:6px; cursor:pointer;
+           background:#4c51bf; color:#fff; font-weight:600; font-size:13px; }
+  button:hover { background:#3730a3; }
+  .ok { color:#059669; font-size:13px; margin-left:10px; display:none; }
+</style>
+</head>
+<body>
+<h1>🛡️ PhishGuard AI — Test Messages</h1>
+<p>Click <b>Copy</b>, then paste into PhishGuard's Message Scan tab (Ctrl+V).</p>
+
+<div class="card">
+  <h2>1 · OTP / bank block scam (SMS)</h2>
+  <textarea id="t1">Dear Customer, Your account will be BLOCKED today. Unusual login detected. Verify your identity immediately: http://sbi-secure-verify.xyz/login OTP: 482913 Do not share this code with anyone. - SBI Security Team</textarea><br>
+  <button onclick="cp('t1',this)">Copy</button><span class="ok" id="ok-t1">✓ Copied!</span>
+</div>
+
+<div class="card">
+  <h2>2 · Prize / lottery scam (SMS)</h2>
+  <textarea id="t2">CONGRATULATIONS! Your mobile number won $500,000 in the UK National Lottery Draw. Send your name, address &amp; bank details to claim: http://lotto-claim-now.click/claim within 24 hours or prize expires!</textarea><br>
+  <button onclick="cp('t2',this)">Copy</button><span class="ok" id="ok-t2">✓ Copied!</span>
+</div>
+
+<div class="card">
+  <h2>3 · Delivery fee scam (SMS)</h2>
+  <textarea id="t3">IndiaPost: Your parcel is on hold due to unpaid delivery fee of Rs.4.99. Pay now to reschedule: https://indiapost-redelivery.top/pay Last reminder before return to sender.</textarea><br>
+  <button onclick="cp('t3',this)">Copy</button><span class="ok" id="ok-t3">✓ Copied!</span>
+</div>
+
+<div class="card">
+  <h2>4 · Phishing EMAIL (multi-line)</h2>
+  <textarea id="t4">From: security-alert@paypal-support.xyz
+Subject: Action Required: Unusual Activity Detected
+
+Dear Valued Customer,
+
+We detected unusual sign-in activity on your account. Your access has been limited for your protection.
+
+To restore full access, confirm your identity within 12 hours:
+https://paypal-resolve-issue.info/verify?id=XJ291
+
+Failure to verify will result in permanent account closure.
+
+Sincerely,
+PayPal Security Team</textarea><br>
+  <button onclick="cp('t4',this)">Copy</button><span class="ok" id="ok-t4">✓ Copied!</span>
+</div>
+
+<script>
+function cp(id, btn) {
+  const ta = document.getElementById(id);
+  ta.focus();
+  ta.select();
+  let done = false;
+  try { done = document.execCommand('copy'); } catch (e) { done = false; }
+  if (!done && navigator.clipboard) {
+    navigator.clipboard.writeText(ta.value).then(show);
+    return;
+  }
+  function show() {
+    const ok = document.getElementById('ok-' + id);
+    ok.style.display = 'inline';
+    btn.textContent = '✓ Copied';
+    setTimeout(() => { ok.style.display = 'none'; btn.textContent = 'Copy'; }, 2000);
+  }
+  if (done) show();
+}
+</script>
+</body>
+</html>
