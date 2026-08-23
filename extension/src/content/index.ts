@@ -4,6 +4,29 @@
  * All risk analysis comes from the Flask backend via the background service worker.
  */
 
+import { downloadScanReport, type ScanResultForReport } from '../utils/reportPdf';
+
+// ============================================================================
+// PDF REPORT (password-alarm / warning surfaces)
+// ============================================================================
+
+/** Adapt the injected-UI verdict shape into the report generator's input. */
+function uiToScanResult(ui: any): ScanResultForReport {
+  return {
+    session_id: `cs-${Date.now().toString(36)}`,
+    url: window.location.href,
+    prediction: String(ui.finalPrediction ?? 'safe').toLowerCase(),
+    confidence: Number(ui.finalConfidence ?? 0) / 100,
+    risk_score: Number(ui.finalRiskScore ?? 0),
+    risk_level: String(ui.finalThreatLevel ?? '').toUpperCase(),
+    reasons: Array.isArray(ui.explanation?.riskIndicators) ? ui.explanation.riskIndicators : [],
+    summary: typeof ui.explanation?.summary === 'string' ? ui.explanation.summary : '',
+    security_tips: Array.isArray(ui.explanation?.recommendations) ? ui.explanation.recommendations : [],
+    recommendation: '',
+    analyzed_at: ui.analyzedAt || new Date().toISOString(),
+  };
+}
+
 // ============================================================================
 // BACKEND ANALYSIS BRIDGE
 // ============================================================================
@@ -1015,11 +1038,23 @@ function showPasswordAlarm(input: HTMLInputElement): void {
     </div>
     <div class="pgai-pw-actions">
       <button class="pgai-pw-btn" id="pgai-pw-details">View details</button>
+      <button class="pgai-pw-btn" id="pgai-pw-pdf">📄 Save PDF report</button>
       <button class="pgai-pw-btn" id="pgai-pw-dismiss">Dismiss</button>
     </div>
   `;
 
   alarm.querySelector('#pgai-pw-dismiss')!.addEventListener('click', dismissPasswordAlarm);
+  alarm.querySelector('#pgai-pw-pdf')!.addEventListener('click', () => {
+    if (!pwAlarmUi) return;
+    try {
+      downloadScanReport(uiToScanResult(pwAlarmUi));
+      const btn = alarm.querySelector('#pgai-pw-pdf') as HTMLButtonElement;
+      btn.textContent = '✓ Report saved';
+      setTimeout(() => { btn.textContent = '📄 Save PDF report'; }, 2200);
+    } catch (err) {
+      console.error('[PhishGuard] PDF report failed:', err);
+    }
+  });
   alarm.querySelector('#pgai-pw-details')!.addEventListener('click', () => {
     if (pwAlarmUi) showAnalysisUI(pwAlarmUi);
   });

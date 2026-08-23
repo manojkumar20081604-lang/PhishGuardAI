@@ -11,6 +11,9 @@
 
 import type { ScanResult } from '../services/baseApi';
 
+/** Convenience alias for consumers outside popup (e.g. the content script). */
+export type ScanResultForReport = ScanResult;
+
 // ============================================================================
 // PUBLIC API
 // ============================================================================
