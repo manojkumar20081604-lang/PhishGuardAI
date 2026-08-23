@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-# PhishGuard AI - competition demo server.
-# Serves the simulated phishing login page from your own laptop so the
-# live demo never depends on venue internet or a real malicious site.
+# PhishGuard AI - competition demo server. ONE COMMAND setup.
 #
-#   sudo ./serve.sh         -> clean URL on port 80 (recommended, needs sudo)
-#   ./serve.sh 8020         -> fallback without sudo (port shows in URL)
+#   ./serve.sh              -> does EVERYTHING (auto-sudo, hosts entry, port 80)
+#   ./serve.sh 8020         -> no-sudo fallback dev mode (port shows in URL)
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -12,27 +10,28 @@ FANCY_HOST="secure-login.paypal-verify-alert.top"
 URL_PATH="/signin"
 PORT="${1:-80}"
 
-if [ "$PORT" = "80" ] && [ "$(id -u)" != "0" ]; then
-  echo ""
-  echo "  ⚠️  Port 80 (the invisible, normal-looking port) needs root."
-  echo ""
-  echo "     Run:   sudo ./serve.sh"
-  echo "     ...or use a dev port:  ./serve.sh 8020"
-  exit 1
+# ---- Fallback dev mode (no root needed) -------------------------------------
+if [ "$PORT" != "80" ]; then
+  HOSTPART="localhost"; PORT_SUFFIX=":$PORT"
+else
+  # ---- Single-step mode: auto-elevate once, then never ask again ------------
+  if [ "$(id -u)" != "0" ]; then
+    echo "  🔑 One-time admin rights needed (hosts entry + port 80)..."
+    exec sudo -E bash "$0" "$@"
+  fi
+
+  # Ensure the realistic hostname resolves to this laptop (idempotent)
+  if ! grep -qF "$FANCY_HOST" /etc/hosts; then
+    echo "127.0.0.1 $FANCY_HOST" >> /etc/hosts
+    echo "  ✅ Added $FANCY_HOST -> this laptop (/etc/hosts)"
+  fi
+  HOSTPART="$FANCY_HOST"; PORT_SUFFIX=""
 fi
 
 check() {
   curl -s -o /dev/null "http://localhost:$PORT$URL_PATH" 2>/dev/null
 }
 
-# Fancy hostname works only after the /etc/hosts entry exists:
-#   echo '127.0.0.1 secure-login.paypal-verify-alert.top' | sudo tee -a /etc/hosts
-if getent hosts "$FANCY_HOST" >/dev/null 2>&1; then
-  HOSTPART="$FANCY_HOST"
-else
-  HOSTPART="localhost"
-fi
-[ "$PORT" = "80" ] && PORT_SUFFIX="" || PORT_SUFFIX=":$PORT"
 PUBLIC_URL="http://$HOSTPART$PORT_SUFFIX$URL_PATH"
 
 if check; then
@@ -40,18 +39,13 @@ if check; then
   echo "  ✅ Demo server is ALREADY running - nothing to start."
   echo ""
   echo "     Open:  $PUBLIC_URL"
-  getent hosts "$FANCY_HOST" >/dev/null 2>&1 || {
-    echo ""
-    echo "  💡 Optional (hides 'localhost' on stage): run ONCE,"
-    echo "       echo '127.0.0.1 $FANCY_HOST' | sudo tee -a /etc/hosts"
-  }
   echo ""
-  echo "  (Restart fresh:  fuser -k $PORT/tcp && sudo ./serve.sh)"
+  echo "  (Restart fresh:  fuser -k $PORT/tcp && ./serve.sh)"
   exit 0
 fi
 
 echo ""
-echo "  PhishGuard demo server -> http://localhost:$PORT"
+echo "  PhishGuard demo server ready."
 echo ""
 echo "  Open this URL in the browser:"
 echo "    $PUBLIC_URL"
