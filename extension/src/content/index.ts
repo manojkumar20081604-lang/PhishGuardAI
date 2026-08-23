@@ -349,12 +349,17 @@ function showAnalysisUI(result: any): void {
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(0, 0, 0, 0.7);
-        z-index: 2147483646;
+        z-index: 2147483647;
         display: flex;
         align-items: center;
         justify-content: center;
         animation: phishguard-fade-in 0.2s ease;
       }
+      /* While the analysis modal is open, keep warning surfaces out of the way */
+      body.pgai-modal-open #pgai-suspicious-chip,
+      body.pgai-modal-open #pgai-pw-alarm,
+      body.pgai-modal-open #phishguard-float-btn,
+      body.pgai-modal-open .phishguard-badge { visibility: hidden !important; }
       @keyframes phishguard-fade-in { from { opacity: 0; } to { opacity: 1; } }
       #phishguard-modal {
         background: #1e293b;
@@ -542,11 +547,18 @@ function showAnalysisUI(result: any): void {
   `;
   
   document.body.appendChild(modal);
-  
+  document.body.classList.add('pgai-modal-open');
+
+  const closeAnalysisModal = () => {
+    modal.remove();
+    document.body.classList.remove('pgai-modal-open');
+    document.removeEventListener('keydown', handleEsc);
+  };
+
   // Event listeners
-  modal.querySelector('#phishguard-close-modal')!.addEventListener('click', () => modal.remove());
+  modal.querySelector('#phishguard-close-modal')!.addEventListener('click', closeAnalysisModal);
   modal.querySelector('#phishguard-modal-overlay')!.addEventListener('click', (e) => {
-    if (e.target === modal.querySelector('#phishguard-modal-overlay')) modal.remove();
+    if (e.target === modal.querySelector('#phishguard-modal-overlay')) closeAnalysisModal();
   });
   modal.querySelector('#phishguard-report')!.addEventListener('click', () => {
     // Send feedback to background
@@ -555,14 +567,13 @@ function showAnalysisUI(result: any): void {
       data: { url: window.location.href, prediction: result.finalPrediction, correct: false }
     });
     alert('Thank you for reporting! This helps improve PhishGuard AI.');
-    modal.remove();
+    closeAnalysisModal();
   });
   
   // Close on Escape
   const handleEsc = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
-      modal.remove();
-      document.removeEventListener('keydown', handleEsc);
+      closeAnalysisModal();
     }
   };
   document.addEventListener('keydown', handleEsc);
