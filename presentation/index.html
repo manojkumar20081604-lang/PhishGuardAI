@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhishGuard AI — Presentation</title>
+<style>
+  :root{
+    --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+    --blue:#2d9cdb; --deep:#003087; --purple:#667eea; --violet:#764ba2;
+    --green:#38a169; --amber:#dd6b20; --red:#e53e3e; --bg:#f8fafc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden}
+
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6vh 7vw}
+  .slide.active{display:flex}
+  .slide h1{font-size:5vw;color:var(--deep);margin-bottom:1.5vh;line-height:1.15}
+  .slide h2{font-size:3.4vw;color:var(--deep);margin-bottom:3.5vh;line-height:1.2}
+  .slide p,.slide li{font-size:1.6vw;line-height:1.55;color:#334155}
+  .tagline{font-size:2vw;color:var(--muted);margin-top:1vh}
+  .kicker{font-size:1.25vw;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);margin-bottom:2vh}
+
+  ul.clean{list-style:none;text-align:left;max-width:80%}
+  ul.clean li{padding:.85vh 0;padding-left:2.4vw;position:relative;font-size:1.55vw}
+  ul.clean li::before{content:'▸';position:absolute;left:.4vw;color:var(--blue);font-weight:700}
+
+  table{border-collapse:collapse;margin:0 auto;width:92%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+  th,td{padding:1.4vh 1.1vw;font-size:1.35vw;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--deep);color:#fff;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  td.v-green{color:var(--green);font-weight:700}
+  td.v-amber{color:var(--amber);font-weight:700}
+  td.v-red{color:var(--red);font-weight:700}
+
+  .cards{display:flex;gap:1.4vw;justify-content:center;flex-wrap:wrap;width:100%}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:2.2vh 1.5vw;width:30%;min-width:210px;box-shadow:0 3px 12px rgba(0,0,0,.06);text-align:left}
+  .card h3{font-size:1.4vw;margin-bottom:.7vh;color:var(--deep)}
+  .card p{font-size:1.12vw;color:var(--muted);line-height:1.45}
+
+  .metric{display:inline-block;background:#fff;border:2px solid var(--purple);color:var(--violet);border-radius:16px;padding:2.4vh 2.4vw;margin:.8vh 1vw;font-size:1.2vw}
+  .metric b{display:block;font-size:3.2vw;line-height:1.15;color:var(--violet)}
+  .badge{display:inline-block;background:#fffbeb;border:2px solid #f59e0b;color:#92400e;border-radius:999px;padding:1.2vh 2vw;font-size:1.35vw;font-weight:700;margin-top:3vh}
+
+  .logo-mark{width:8vw;margin-bottom:2.5vh}
+  .corner{position:fixed;top:2vh;left:2vw;display:flex;align-items:center;gap:.6vw;z-index:50;opacity:.9}
+  .corner img{width:2.2vw}
+  .corner span{font-weight:700;font-size:1vw;color:var(--deep)}
+
+  #bar{position:fixed;top:0;left:0;height:.6vh;background:linear-gradient(90deg,var(--purple),var(--violet));z-index:60;transition:width .25s}
+  #count{position:fixed;bottom:2.2vh;right:2.2vw;font-size:1vw;color:var(--muted);z-index:50}
+  .hint{position:fixed;bottom:2.2vh;left:2vw;font-size:.95vw;color:var(--muted);z-index:50;opacity:.75}
+  .navbtns{position:fixed;bottom:1.6vh;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:.5vw}
+  .navbtns button{border:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.9vh 1.4vw;font-size:1.05vw;cursor:pointer;color:var(--ink)}
+  .navbtns button:hover{background:#eef2ff}
+
+  .demo-divider{background:linear-gradient(135deg,var(--purple),var(--violet));width:100%}
+  .demo-divider h1,.demo-divider p{color:#fff}
+  .demo-divider .kicker{color:#c7d2fe}
+  .demo-divider .big{font-size:2.2vw;margin-top:2vh;line-height:1.7}
+
+  .mono{font-family:Consolas,Menlo,monospace;background:#0f172a;color:#fbbf24;border-radius:10px;padding:.6vh 1.2vw;font-size:1.3vw;display:inline-block}
+  .fakechar{color:var(--red);text-decoration:underline wavy var(--red) 2px}
+  .realchar{color:var(--green)}
+  .duo{display:flex;gap:2vw;justify-content:center;width:100%;margin-top:1vh}
+  .duo .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:2.4vh 1.8vw;width:38%;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+  .duo .box h3{font-size:1.5vw;margin-bottom:1.4vh}
+  .duo .bad{border-top:6px solid var(--red)}
+  .duo .good{border-top:6px solid var(--green)}
+
+  @media print{
+    body{overflow:visible;background:#fff}
+    #bar,#count,.hint,.navbtns,.corner{display:none}
+    .slide{display:flex !important;position:relative;page-break-after:always;height:100vh}
+  }
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+<div class="corner"><img src="data:image/png;base64,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" alt=""><span>PhishGuard AI</span></div>
+<div id="count"></div>
+<div class="hint">← → arrow keys · F11 fullscreen</div>
+<div class="navbtns">
+  <button onclick="go(-1)">◀ Back</button>
+  <button onclick="go(1)">Next ▶</button>
+</div>
+
+
+<!-- 1 · TITLE -->
+<section class="slide">
+  <img class="logo-mark" src="data:image/png;base64,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" alt="PhishGuard logo" id="logo2">
+  <h1>PhishGuard AI</h1>
+  <p class="tagline">Offline AI phishing detection — inside your browser.</p>
+  <p style="margin-top:5vh;color:var(--muted);font-size:1.3vw">Inter-College Project Competition · August 2026</p>
+</section>
+
+<!-- 2 · PROBLEM -->
+<section class="slide">
+  <div class="kicker">The Problem</div>
+  <h2>Every 11 seconds, someone falls for a phishing attack</h2>
+  <ul class="clean">
+    <li><b>3.4 billion</b> phishing emails are sent every single day</li>
+    <li>Scams now arrive by <b>link, SMS, email and QR code</b> — not just one channel</li>
+    <li>Fake pages are pixel-perfect — humans <b>cannot</b> tell them apart anymore</li>
+    <li>Students and families lose savings to fake bank &amp; UPI pages every day</li>
+  </ul>
+</section>
+
+<!-- 3 · WHY TOOLS FAIL -->
+<section class="slide">
+  <div class="kicker">Gap Analysis</div>
+  <h2>Why today's protection fails you</h2>
+  <div class="duo">
+    <div class="box bad">
+      <h3>☁️ Cloud filters</h3>
+      <p style="font-size:1.25vw;line-height:1.6;text-align:left">
+        • Every link you touch is sent to a corporation's server<br>
+        • Useless without internet<br>
+        • You pay for safety with your privacy
+      </p>
+    </div>
+    <div class="box bad">
+      <h3>📋 Blacklists &amp; antivirus</h3>
+      <p style="font-size:1.25vw;line-height:1.6;text-align:left">
+        • Only catch sites reported <b>yesterday</b><br>
+        • New phishing kits appear faster than reports<br>
+        • Zero protection against look-alike domains
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · SOLUTION -->
+<section class="slide">
+  <div class="kicker">Our Solution</div>
+  <h1 style="font-size:3.8vw;max-width:85%">We put the AI <span style="color:var(--purple)">inside</span> the browser.</h1>
+  <p style="margin-top:4vh;font-size:2vw;color:#334155">Every link judged on your own machine.<br>Instantly · Privately · Even offline.</p>
+</section>
+
+<!-- 5 · ARCHITECTURE -->
+<section class="slide" style="padding:4vh 4vw">
+  <div class="kicker">Architecture</div>
+  <h2 style="margin-bottom:1vh">Local-first, by design</h2>
+  <div style="width:92%;height:74vh;display:flex;justify-content:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="960" height="540" fill="#f8fafc"/>
+  <text x="480" y="46" text-anchor="middle" font-size="26" font-weight="700" fill="#1e293b">PhishGuard AI — Local-First Architecture</text>
+  <text x="480" y="72" text-anchor="middle" font-size="13" fill="#64748b">The AI brain lives INSIDE the browser. Zero data leaves the device.</text>
+
+  <!-- Browser box -->
+  <rect x="60" y="100" width="840" height="330" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="84" y="130" font-size="15" font-weight="700" fill="#334155">Browser Extension (Manifest V3)</text>
+
+  <!-- Entry points -->
+  <g font-size="13" fill="#334155" text-anchor="middle">
+    <rect x="90" y="150" width="150" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="165" y="173" font-weight="600">Popup</text>
+    <text x="165" y="192" font-size="11" fill="#64748b">URL + Message scan</text>
+
+    <rect x="90" y="222" width="150" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="165" y="245" font-weight="600">Auto-Protect</text>
+    <text x="165" y="264" font-size="11" fill="#64748b">banners on visit</text>
+
+    <rect x="90" y="294" width="150" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+    <text x="165" y="317" font-weight="600">Right-click / Hotkey</text>
+    <text x="165" y="336" font-size="11" fill="#64748b">scan without visiting</text>
+  </g>
+
+  <!-- Pipeline -->
+  <g font-size="12" text-anchor="middle">
+    <line x1="240" y1="247" x2="290" y2="247" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="292" y="222" width="140" height="50" rx="8" fill="#f0fdf4" stroke="#22c55e"/>
+    <text x="362" y="243" font-weight="600" fill="#14532d">Trust Lists</text>
+    <text x="362" y="260" font-size="10.5" fill="#4ade80">🤍 allow · 🖤 block</text>
+
+    <line x1="432" y1="247" x2="482" y2="247" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="484" y="222" width="120" height="50" rx="8" fill="#fefce8" stroke="#eab308"/>
+    <text x="544" y="243" font-weight="600" fill="#713f12">Cache</text>
+    <text x="544" y="260" font-size="10.5" fill="#a16207">IndexedDB</text>
+
+    <line x1="604" y1="247" x2="654" y2="247" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="656" y="160" width="216" height="220" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="764" y="186" font-size="14" font-weight="700" fill="#581c87">LOCAL AI ENGINE</text>
+    <text x="764" y="212" font-size="12" fill="#6b21a8">url-model-v3.onnx</text>
+    <text x="764" y="228" font-size="10.5" fill="#9333ea">(GradientBoosting, bundled)</text>
+    <g font-size="11.5" fill="#6b21a8">
+      <text x="764" y="254">• 10-feature URL extraction</text>
+      <text x="764" y="272">• Homoglyph/punycode guard</text>
+      <text x="764" y="290">• Risk fusion + XAI reasons</text>
+      <text x="764" y="308">• Email/SMS text rules</text>
+      <text x="764" y="326">• Brand-safety gate (58 domains)</text>
+      <text x="764" y="352" font-weight="700" fill="#14532d">⚡ ~milliseconds · works offline</text>
+    </g>
+  </g>
+
+  <!-- Verdicts -->
+  <g font-size="12" text-anchor="middle">
+    <line x1="764" y1="380" x2="764" y2="404" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="544" y="406" width="110" height="34" rx="17" fill="#f0fdf4" stroke="#22c55e"/>
+    <text x="599" y="427" fill="#166534" font-weight="700">SAFE 🟢</text>
+    <rect x="668" y="406" width="110" height="34" rx="17" fill="#fffbeb" stroke="#f59e0b"/>
+    <text x="723" y="427" fill="#92400e" font-weight="700">SUSPICIOUS 🟡</text>
+    <rect x="792" y="406" width="110" height="34" rx="17" fill="#fef2f2" stroke="#ef4444"/>
+    <text x="847" y="427" fill="#991b1b" font-weight="700">PHISHING 🔴</text>
+  </g>
+
+  <!-- Optional backend -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="292" y="300" width="140" height="50" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="5 4"/>
+    <text x="362" y="321" fill="#475569">Flask enrichment</text>
+    <text x="362" y="338" font-size="10.5" fill="#94a3b8">OPTIONAL · off by default</text>
+    <line x1="362" y1="298" x2="362" y2="274" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>
+</div>
+</section>
+
+<!-- 6 · AI INTERNALS -->
+<section class="slide">
+  <div class="kicker">Under the Hood</div>
+  <h2>A real model — trained, exported, embedded</h2>
+  <ul class="clean" style="max-width:88%">
+    <li>Trained on <b>OpenPhish</b> (live phishing feed) + <b>Majestic Million</b> (legit sites)</li>
+    <li><b>10 URL features</b>: length, HTTPS, IP-in-URL, entropy, dash count…</li>
+    <li>GradientBoosting classifier → exported to <b>ONNX</b>, runs in milliseconds via WebAssembly</li>
+    <li>Fusion engine blends ML verdict + heuristics + brand reputation into one score</li>
+  </ul>
+</section>
+
+<!-- 7 · FEATURES -->
+<section class="slide">
+  <div class="kicker">Feature Tour</div>
+  <h2>Six shields, one extension</h2>
+  <div class="cards">
+    <div class="card"><h3>🔗 URL Scanner</h3><p>Popup verdict — Safe / Suspicious / Phishing — with risk score and plain-language reasons.</p></div>
+    <div class="card"><h3>✉️📱 Message Scanner</h3><p>Paste any email or SMS. Catches OTP scams, urgency bait, prize fraud.</p></div>
+    <div class="card"><h3>🛡️ Auto-Protect</h3><p>Red banner on flagged pages before you type a single character.</p></div>
+    <div class="card"><h3>🖱️ Right-Click Scan</h3><p>Check any link safely — without ever visiting it.</p></div>
+    <div class="card"><h3>🤍🖤 Trust Lists</h3><p>Your own always-safe and always-blocked domains.</p></div>
+    <div class="card"><h3>📊 Stats Dashboard</h3><p>Scans per day, threat breakdown, weekly block count.</p></div>
+  </div>
+</section>
+
+<!-- 8 · SECURITY DEPTH -->
+<section class="slide">
+  <div class="kicker">Security Depth</div>
+  <h2>Catching what humans can't see</h2>
+  <div class="duo">
+    <div class="box bad">
+      <h3>The fake Apple site</h3>
+      <p class="mono" style="font-size:1.5vw">www.<span class="fakechar">аррӏе</span>.com</p>
+      <p style="font-size:1.15vw;margin-top:1.4vh;text-align:left">Looks identical to apple.com — but these letters are <b>Cyrillic characters</b>. Our homoglyph detector folds them back to ASCII and catches the clone instantly.</p>
+    </div>
+    <div class="box good">
+      <h3>The real one</h3>
+      <p class="mono" style="font-size:1.5vw">www.<span class="realchar">apple</span>.com</p>
+      <p style="font-size:1.15vw;margin-top:1.4vh;text-align:left">Genuine internationalized domains are never flagged — false-positive safety is built into the detector's rules.</p>
+    </div>
+  </div>
+  <p style="margin-top:3vh;font-size:1.35vw;color:var(--muted)">Same engine decodes punycode (<span class="mono" style="font-size:1vw">xn--80ak6aa92e</span>) and flags invisible characters in URLs.</p>
+</section>
+
+<!-- 9 · LIVE DEMO DIVIDER -->
+<section class="slide demo-divider">
+  <div class="kicker">Enough slides</div>
+  <h1>LIVE DEMO</h1>
+  <p class="big">▶ One-click scripted attack sequence<br>🎭 Fake login page hosted on this very laptop<br>✉️ Scam SMS caught offline</p>
+</section>
+
+<!-- 10 · REAL RESULTS -->
+<section class="slide">
+  <div class="kicker">Proven on Real Scams</div>
+  <h2 style="margin-bottom:2vh">Tested results from our own lab session</h2>
+  <table>
+    <tr><th>Attack tested (real samples)</th><th>PhishGuard verdict</th></tr>
+    <tr><td>Live credential-harvesting kit on free hosting</td><td class="v-red">🔴 Caught — flagged before visiting</td></tr>
+    <tr><td>Fake Apple domain (Cyrillic punycode)</td><td class="v-amber">🟡 Flagged + names the trick used</td></tr>
+    <tr><td>"Microsoft support" tech-scam SMS</td><td class="v-red">🔴 PHISHING 100/100 — 9 risk factors</td></tr>
+    <tr><td>Crypto giveaway scam SMS</td><td class="v-amber">🟡 6 risk factors detected</td></tr>
+    <tr><td>amazon.in with long tracking params</td><td class="v-green">🟢 SAFE — no false alarm</td></tr>
+    <tr><td>Genuine chatgpt.com deep link</td><td class="v-green">🟢 SAFE — no false alarm</td></tr>
+  </table>
+</section>
+
+<!-- 11 · ENGINEERING QUALITY -->
+<section class="slide">
+  <div class="kicker">Engineering Quality</div>
+  <h2>Built like a product, not a project</h2>
+  <div>
+    <span class="metric"><b>85%</b>Precision</span>
+    <span class="metric"><b>92%</b>Recall</span>
+    <span class="metric"><b>88.5%</b>F1 score</span>
+  </div>
+  <div style="margin-top:3vh">
+    <span class="metric"><b>39/39</b>automated tests</span>
+    <span class="metric"><b>2</b>browsers supported</span>
+  </div>
+  <div class="badge">🚀 Submitted to Mozilla Add-ons — under official security review</div>
+</section>
+
+<!-- 12 · ROADMAP -->
+<section class="slide">
+  <div class="kicker">Roadmap</div>
+  <h2>Where PhishGuard goes next</h2>
+  <ul class="clean">
+    <li><b>v3.3 — Android:</b> full mobile UI beyond the popup</li>
+    <li><b>Vision:</b> screenshot pHash matching — detect cloned logos even on fresh domains</li>
+    <li><b>Collective Immune System:</b> anonymous page-DNA sharing between users</li>
+    <li><b>Honeypots:</b> deception traps that feed new scam patterns to retraining</li>
+  </ul>
+</section>
+
+<!-- 13/14 · THANK YOU -->
+<section class="slide">
+  <img class="logo-mark" src="data:image/png;base64,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" alt="" id="logo3">
+  <h1>Thank you</h1>
+  <p class="tagline">Search "PhishGuard AI" on Mozilla Add-ons — review in progress</p>
+  <p style="margin-top:4vh;font-size:1.6vw;color:var(--purple);font-weight:600">Questions?</p>
+</section>
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  // reuse title logo data URI for closing slide
+  const l2=document.getElementById('logo2');
+  ['logo3'].forEach(id=>{const el=document.getElementById(id); if(el&&l2) el.src=l2.src;});
+  function render(){
+    slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+    document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('count').textContent=(i+1)+' / '+slides.length;
+  }
+  window.go=function(d){ i=Math.min(slides.length-1,Math.max(0,i+d)); render(); };
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(1);}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(-1);}
+    if(e.key==='Home'){i=0;render();}
+    if(e.key==='End'){i=slides.length-1;render();}
+  });
+  document.addEventListener('click',e=>{ if(!e.target.closest('button,a,object')) go(1); });
+  render();
+})();
+</script>
+</body>
+</html>
