@@ -37,4 +37,17 @@ describe('real phishing still flags', () => {
     const result = await analyzeURL('http://013224.icefactory.cl/');
     expect(result.prediction).not.toBe('safe');
   }, 60_000);
+
+  it('does NOT inherit platform reputation for free-hosting subdomains', () => {
+    // v3.2.1 fix: netlify.app / vercel.app removed from the brand list -
+    // their subdomains are user-controlled and a major phishing-abuse vector.
+    expect(isKnownGoodDomain('http://gilded-baklava-b9e48a.netlify.app/')).toBe(false);
+    expect(isKnownGoodDomain('https://login-verify-secure.vercel.app/account')).toBe(false);
+  });
+
+  it('flags the golden-vector netlify phishing page through the full pipeline', async () => {
+    const result = await analyzeURL('http://gilded-baklava-b9e48a.netlify.app/');
+    expect(result.prediction).not.toBe('safe');
+    expect(result.reasons.length).toBeGreaterThan(0);
+  }, 60_000);
 });

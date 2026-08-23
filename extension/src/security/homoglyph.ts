@@ -33,11 +33,17 @@ const CONFUSABLES: Record<string, string> = {
   // Cyrillic
   'а': 'a', 'е': 'e', 'о': 'o', 'р': 'p', 'с': 'c', 'х': 'x', 'у': 'y',
   'і': 'i', 'ѕ': 's', 'ј': 'j', 'ә': 'a', 'ғ': 'r', 'қ': 'k', 'ң': 'n',
+  // Cyrillic round 2 - covers the аррӏе/apple-class kits
+  'ӏ': 'l', 'в': 'b', 'к': 'k', 'м': 'm', 'н': 'h', 'т': 't',
+  'ԁ': 'd', 'һ': 'h', 'ѡ': 'w', 'ѣ': 'a',
   // Greek
   'α': 'a', 'β': 'b', 'ε': 'e', 'ο': 'o', 'ρ': 'p', 'τ': 't',
   'υ': 'u', 'ν': 'v', 'ι': 'i', 'κ': 'k', 'χ': 'x',
+  'ϳ': 'j', 'ϲ': 'c', 'λ': 'l', 'η': 'n', 'μ': 'm',
   // Armenian (common in homograph kits)
   'հ': 'h', 'օ': 'o', 'ց': 'g', 'ո': 'n', 'ւ': 'u',
+  // Latin extensions
+  'ı': 'i', 'ſ': 's',
 };
 
 /** Characters that should never appear in a real hostname. */

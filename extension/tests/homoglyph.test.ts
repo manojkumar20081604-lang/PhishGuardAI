@@ -29,6 +29,15 @@ describe('homoglyph inspection', () => {
     expect(report.reasons.join(' ')).toMatch(/mixes Latin with Cyrillic|imitates/i);
   });
 
+  it('flags FULL-punycode brand clones (wildfire case: xn--80ak6aa92e)', () => {
+    // Regression: the entire label is punycode, so there is no mixed-script
+    // signal - only confusable folding + exact brand match can catch this.
+    const report = inspectHomoglyph('http://www.xn--80ak6aa92e.com/');
+    expect(report.brandImitation).toBe('apple.com');
+    expect(report.escalate).toBe(true);
+    expect(report.reasons.join(' ')).toMatch(/imitates/i);
+  });
+
   it('flags invisible characters as a hard signal', () => {
     const report = inspectHomoglyph('https://pay\u200Bpal.com');
     expect(report.escalate).toBe(true);
