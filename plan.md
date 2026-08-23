@@ -15,8 +15,25 @@
 > Post-mortems locked into tests: golden-vector parity · brand-safety probe gate.
 > Remaining (user actions only): host privacy policy · capture screenshots · submit to stores.
 >
-> SESSION RESUME POINT (updated Aug 23 2026):
-> - ✅ v3.2 FEATURE PACK COMPLETE & VERIFIED (npm run verify green end-to-end):
+> SESSION RESUME POINT (updated Aug 23 2026 · evening):
+> - 🚀 AMO SUBMITTED: v3.2.1 Awaiting Review (gecko id {5ECEB6B6-6AF9-47EB-BD6B-FE77E70C9B96};
+>   source pkg verified reproducible; privacy policy live via GitHub Pages /docs)
+> - ✅ v3.2.1 hardening complete (user-tested in Chrome AND Firefox):
+>   brand-gate free-host FP fix · cache fidelity + MODEL_VERSION invalidation ·
+>   homoglyph palochka + full-punycode clone detection · PDF reasons/version ·
+>   content script kept import-free (Firefox SyntaxError) - PDF via background
+>   data-url handler 'buildReportPdf' · dismissals per-pageview only ·
+>   auto-protect retries while engine warms · modal layers above warnings
+> - ✅ STAGE UI v2: big suspicious card w/ score chip + reasons tags, bold
+>   password alarm (danger pulse), phishing banner headline style
+> - ✅ COMPETITION KIT READY (inter-college, Aug 28):
+>   popup ▶ Run Demo (4 acts) · demo/serve.sh ONE command -> clean URL
+>   http://secure-login.paypal-verify-alert.top/signin (auto-sudo+hosts) ·
+>   presentation/index.html 13-slide deck · COMPETITION.md runbook + Q&A ·
+>   tests/demo.test.ts guards all scenarios · 39/39 green both builds
+> - NEXT ACTIONS: rehearse ×3 + backup recording (user) · check AMO email daily ·
+>   CWS submission when $5 available · screenshots for AMO listing (optional) ·
+>   retrain model ~Nov via refresh-model.sh
 >   - Homoglyph/punycode detector wired into analyzeLocally (escalation + reasons)
 >     + no-control-regex lint fix; homoglyph.test.ts green
 >   - Alt+Shift+S / Cmd+Shift+S shortcut: manifest commands key survives both builds,
