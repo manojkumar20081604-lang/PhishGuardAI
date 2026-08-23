@@ -747,6 +747,7 @@ function isDismissedThisVisit(): boolean {
 /** Silent on-load protection sweep. Trust/cache/engine handled by background. */
 async function runAutoProtect(attempt: number = 1): Promise<void> {
   const settings = await getProtectSettings();
+  console.log('[PhishGuard][debug] auto-protect run', { attempt, level: settings.autoProtectLevel, href: location.href });
 
   // Legacy floating shield behavior preserved independently of protect level
   chrome.storage.local.get('phishguard_settings', (result) => {
@@ -762,7 +763,9 @@ async function runAutoProtect(attempt: number = 1): Promise<void> {
   const MAX_ATTEMPTS = 4;
   try {
     const raw = await requestBackendAnalysis(window.location.href);
-    applyAutoProtectVerdict(mapScanResult(raw), settings);
+    const mapped = mapScanResult(raw);
+    console.log('[PhishGuard][debug] analysis result', { prediction: mapped.finalPrediction, score: mapped.finalRiskScore });
+    applyAutoProtectVerdict(mapped, settings);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     // Orphaned content script (extension reloaded but this tab wasn't refreshed)
@@ -873,6 +876,7 @@ function showSuspiciousChip(ui: ReturnType<typeof mapScanResult>): void {
   if (document.getElementById('pgai-suspicious-chip')) return;
 
   const reasons = ((ui.explanation.riskIndicators ?? []) as string[]).slice(0, 2);
+  console.log('[PhishGuard][debug] rendering suspicious card', { reasons, bodyClassOpen: document.body.classList.contains('pgai-modal-open') });
   const chip = document.createElement('div');
   chip.id = 'pgai-suspicious-chip';
   chip.innerHTML = `
