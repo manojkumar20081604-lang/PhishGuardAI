@@ -3,6 +3,8 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import path from 'path';
 import { existsSync, rmSync, readFileSync, writeFileSync } from 'fs';
 
+const __dirname = import.meta.dirname;
+
 /**
  * ORT's bundler emits a default-fallback copy of the wasm binary next to the
  * chunk. The engine ALWAYS sets env.wasm.wasmPaths -> vendor/ort/ before
