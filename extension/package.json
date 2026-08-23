@@ -1,6 +1,6 @@
 {
   "name": "phishguard-extension",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "PhishGuard AI - Browser Extension for Phishing Detection",
   "type": "module",
   "scripts": {

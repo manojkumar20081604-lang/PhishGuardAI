@@ -3,6 +3,33 @@
 All notable changes to PhishGuard AI are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning is [SemVer](https://semver.org/).
 
+## [3.2.1] — 2026-08-23
+
+### Fixed
+- **Free-hosting reputation bug**: `netlify.app` / `vercel.app` removed from the
+  known-brand list — their subdomains are user-controlled and a major phishing
+  abuse vector. Real-world catch: golden-vector phish on netlify.app was scored
+  SAFE (2/100) by the brand gate.
+- **Cache fidelity**: scan cache now persists reasons, security tips, confidence,
+  risk level and recommendation; PDF reports no longer show empty sections.
+- **Stale verdicts**: cache entries carry the model version — anything analyzed
+  by an older model auto-invalidates and re-analyzes (fixes pre-retrain
+  false positives resurfacing from IndexedDB).
+- **Homoglyph table**: added Cyrillic palochka (U+04CF) + 13 more confusables;
+  full-punycode brand clones (`www.xn--80ak6aa92e.com` → аррӏе.com) now detected.
+- **Brand coverage**: real country-TLD variants added (amazon.in/.co.uk/.de/.ca/.ae,
+  google.co.in/.co.uk/.de) plus popular Indian services; explainer copy no longer
+  says "Found 0 indicators. Do not enter credentials".
+- **PDF report**: version string now read live from the manifest.
+
+### Added
+- **Demo mode** in the popup: one-click scripted attack sequence (safe baseline →
+  homoglyph clone → hosted phishing kit → OTP SMS) rendered through the real
+  pipeline with progress dots; built for presentations.
+- Competition demo kit: self-hosted credential-harvesting simulation page
+  (`demo/serve.sh`) for offline stage demos; 8 new regression tests guarding
+  every demo scenario (39 total).
+
 ## [3.2.0] — 2026-08-23
 
 ### Added
