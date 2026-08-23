@@ -11,8 +11,13 @@
  * domain reputation, which this list encodes for the sites people
  * actually use. Look-alikes (`chatgpt-secure.xyz`) do NOT match.
  *
- * Trade-off: phishing hosted ON these exact domains (open redirects)
- * will not be flagged locally - acceptable, documented trade-off.
+ * Trade-off: open redirects ON these exact domains will not be flagged
+ * locally - acceptable, documented trade-off.
+ *
+ * NOTE (v3.2.1): free-hosting platforms (netlify.app, vercel.app) were
+ * REMOVED from this list. Their subdomains are user-controlled content and
+ * a top phishing-abuse vector - `scam-page.netlify.app` must never inherit
+ * Netlify's reputation.
  */
 
 export const KNOWN_GOOD_DOMAINS: readonly string[] = [
@@ -21,12 +26,17 @@ export const KNOWN_GOOD_DOMAINS: readonly string[] = [
   // AI services
   'chatgpt.com', 'openai.com', 'claude.ai', 'anthropic.com',
   'gemini.google.com', 'perplexity.ai', 'huggingface.co',
-  // Dev platforms
+  // Dev platforms (first-party domains only - NOT user-content hosting)
   'github.com', 'gitlab.com', 'stackoverflow.com', 'npmjs.com',
-  'vercel.app', 'netlify.app', 'codepen.io',
+  'codepen.io',
   // Commerce / cloud
   'amazon.com', 'aws.amazon.com', 'azure.microsoft.com', 'microsoft.com',
   'live.com', 'office.com', 'microsoftonline.com', 'apple.com', 'icloud.com',
+  // Real country-TLD variants of major brands (verified registrations only -
+  // never assume <brand>.<any-tld> is safe, scammers buy look-alike TLDs)
+  'amazon.in', 'amazon.co.uk', 'amazon.de', 'amazon.ca', 'amazon.ae',
+  'google.co.in', 'google.co.uk', 'google.de',
+  'flipkart.com', 'myntra.com', 'zomato.com', 'swiggy.com',
   // Social / content
   'facebook.com', 'instagram.com', 'whatsapp.com', 'x.com', 'twitter.com',
   'reddit.com', 'linkedin.com', 'tiktok.com', 'pinterest.com',

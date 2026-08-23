@@ -67,6 +67,13 @@ export async function set(url: string, result: Partial<ScanCache> & { url?: stri
     prediction: result.prediction ?? 'safe',
     summary: result.summary,
     timestamp: Date.now(),
+    model_version: result.model_version,
+    confidence: result.confidence,
+    risk_level: result.risk_level,
+    reasons: result.reasons,
+    security_tips: result.security_tips,
+    recommendation: result.recommendation,
+    risk_breakdown: result.risk_breakdown,
   };
 
   return new Promise((resolve, reject) => {

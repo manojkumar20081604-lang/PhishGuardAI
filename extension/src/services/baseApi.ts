@@ -57,6 +57,14 @@ export type ScanCacheEntry = {
   prediction: 'safe' | 'suspicious' | 'phishing' | string;
   summary?: string;
   timestamp: number;
+  /** Entries written by a different model version are treated as stale. */
+  model_version?: string;
+  confidence?: number;
+  risk_level?: string;
+  reasons?: string[];
+  security_tips?: string[];
+  recommendation?: string;
+  risk_breakdown?: Record<string, number>;
 };
 
 export interface AnalysisResult {

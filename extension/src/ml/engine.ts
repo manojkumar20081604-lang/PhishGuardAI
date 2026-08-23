@@ -39,6 +39,8 @@ interface SessionHandle {
 
 const THRESHOLDS = { phishing: 0.65, suspicious: 0.35 };
 const MODEL_FILE = 'models/url-model-v3.onnx';
+/** Bump when MODEL_FILE changes - stale cache entries are auto-invalidated. */
+export const MODEL_VERSION = 'v3';
 
 let sessionPromise: Promise<SessionHandle> | null = null;
 let modelBaseOverride: string | null = null;

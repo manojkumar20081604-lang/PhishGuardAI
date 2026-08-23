@@ -8,7 +8,7 @@
  * fully functional offline.
  */
 
-import { predictUrl } from '../ml/engine';
+import { predictUrl, MODEL_VERSION } from '../ml/engine';
 import { explainUrl } from '../ml/explainer';
 import { calculateRiskScore } from '../ml/riskEngine';
 import { extractUrlFeatures } from '../ml/features';
@@ -91,11 +91,14 @@ export async function analyzeURL(url: string): Promise<ScanResult & { isCached?:
     }
   }
 
-  // 2. Cache hit -> instant answer
+  // 2. Cache hit -> instant answer (entries from older models are stale)
   const cached = await getCachedScan(url);
-  if (cached) {
+  if (cached && cached.model_version === MODEL_VERSION) {
     console.log('[Background] Cached result');
     return cacheToScanResult(cached);
+  }
+  if (cached) {
+    console.log('[Background] Cache entry from older model, re-analyzing');
   }
 
   // 3. Local ONNX engine (fully offline)
@@ -174,10 +177,14 @@ function cacheToScanResult(cached: ScanCache): ScanResult & { isCached?: boolean
     session_id: cached.session_id,
     url: cached.url,
     prediction: cached.prediction,
-    confidence: cached.risk_score / 100,
+    confidence: cached.confidence ?? cached.risk_score / 100,
     risk_score: cached.risk_score,
-    risk_level: String(cached.prediction),
+    risk_level: cached.risk_level ?? String(cached.prediction).toUpperCase(),
+    risk_breakdown: cached.risk_breakdown,
+    reasons: cached.reasons ?? [],
     summary: cached.summary,
+    security_tips: cached.security_tips ?? [],
+    recommendation: cached.recommendation,
     analyzed_at: new Date(cached.timestamp).toISOString(),
     isCached: true,
   };
@@ -236,6 +243,13 @@ async function cacheResult(url: string, result: ScanResult): Promise<void> {
       risk_score: result.risk_score,
       prediction: result.prediction,
       summary: typeof result.summary === 'string' ? result.summary : undefined,
+      model_version: MODEL_VERSION,
+      confidence: result.confidence,
+      risk_level: result.risk_level,
+      reasons: result.reasons,
+      security_tips: result.security_tips,
+      recommendation: result.recommendation,
+      risk_breakdown: result.risk_breakdown,
     });
     console.log('[Background] Result cached:', url);
   } catch (error) {
