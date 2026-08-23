@@ -745,7 +745,7 @@ function isDismissedThisVisit(): boolean {
 }
 
 /** Silent on-load protection sweep. Trust/cache/engine handled by background. */
-async function runAutoProtect(): Promise<void> {
+async function runAutoProtect(attempt: number = 1): Promise<void> {
   const settings = await getProtectSettings();
 
   // Legacy floating shield behavior preserved independently of protect level
@@ -759,11 +759,24 @@ async function runAutoProtect(): Promise<void> {
   if (settings.autoProtectLevel === 'off') return;
   if (!/^https?:/i.test(window.location.href)) return;
 
+  const MAX_ATTEMPTS = 4;
   try {
     const raw = await requestBackendAnalysis(window.location.href);
     applyAutoProtectVerdict(mapScanResult(raw), settings);
-  } catch {
-    // Analysis unavailable (engine loading/offline edge): stay silent, never break pages
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    // Orphaned content script (extension reloaded but this tab wasn't refreshed)
+    if (/context invalidated|reloaded/i.test(msg)) {
+      console.warn('[PhishGuard] Extension was reloaded - refresh this page to restore protection.');
+      return;
+    }
+    // Engine still warming up (first inference after reload): retry with backoff
+    if (attempt < MAX_ATTEMPTS) {
+      console.log(`[PhishGuard] Engine warming up - retry ${attempt}/${MAX_ATTEMPTS - 1}...`);
+      setTimeout(() => void runAutoProtect(attempt + 1), 1200 * attempt);
+      return;
+    }
+    console.warn('[PhishGuard] Auto-protect unavailable after retries:', msg);
   }
 }
 
