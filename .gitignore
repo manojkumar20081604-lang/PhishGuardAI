@@ -53,6 +53,9 @@ models/*.h5
 *.sqlite
 phishguard.db
 
+# Large training datasets — re-download via backend/tools/fetch_dataset.py
+backend/data/raw/majestic_million.csv
+
 # Not for deployment
 not_for_deploy/
 static/assets/background-music.mp3
