@@ -360,9 +360,10 @@ function updateButtonState(btn: HTMLElement, threatLevel: string): void {
 
 // Show analysis results in a modal
 function showAnalysisUI(result: any): void {
-  // Remove existing modal
+  // Remove existing modal (and any stale open-state from a previous pass)
   const existing = document.getElementById('phishguard-modal');
   if (existing) existing.remove();
+  document.body.classList.remove('pgai-modal-open');
   
   const modal = document.createElement('div');
   modal.id = 'phishguard-modal';
@@ -731,18 +732,16 @@ async function getProtectSettings(): Promise<ProtectSettings> {
   }
 }
 
+// In-memory dismissal: lasts only for the current page view. A refresh or
+// new visit always re-arms protection (critical for repeatable demos).
+const dismissedUrls = new Set<string>();
+
 function markDismissedThisVisit(): void {
-  try {
-    sessionStorage.setItem(`pgai-dismissed:${window.location.href}`, '1');
-  } catch { /* storage may be unavailable */ }
+  dismissedUrls.add(window.location.href);
 }
 
 function isDismissedThisVisit(): boolean {
-  try {
-    return sessionStorage.getItem(`pgai-dismissed:${window.location.href}`) === '1';
-  } catch {
-    return false;
-  }
+  return dismissedUrls.has(window.location.href);
 }
 
 /** Silent on-load protection sweep. Trust/cache/engine handled by background. */
@@ -950,18 +949,14 @@ function onPasswordFocus(event: FocusEvent): void {
   showPasswordAlarm(el as HTMLInputElement);
 }
 
+let pwDismissed = false;
+
 function isPwDismissed(): boolean {
-  try {
-    return sessionStorage.getItem('pgai-pw-dismissed') === '1';
-  } catch {
-    return false;
-  }
+  return pwDismissed;
 }
 
 function dismissPasswordAlarm(): void {
-  try {
-    sessionStorage.setItem('pgai-pw-dismissed', '1');
-  } catch { /* storage may be unavailable */ }
+  pwDismissed = true;
   document.getElementById('pgai-pw-alarm')?.remove();
   pwAlarmInput = null;
 }
