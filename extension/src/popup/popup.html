@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard AI - URL Scanner</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Scan Button (Default View) -->
+    <div id="scan-view" class="risk-header">
+      <h1 style="font-size: 28px; margin-bottom: 16px;">PhishGuard AI</h1>
+
+      <!-- Scan mode tabs (Phase H) -->
+      <div class="scan-tabs" role="tablist">
+        <button id="tab-url" class="scan-tab active" role="tab">🔗 URL Scan</button>
+        <button id="tab-message" class="scan-tab" role="tab">✉️ Message Scan</button>
+      </div>
+      <button id="open-tab-btn" class="open-tab-link" title="Opens the scanner in a browser tab - it stays open while you copy text">
+        ↗ Open in a full tab (stays open while you copy & paste)
+      </button>
+
+      <p id="url-mode-hint" class="mode-hint">
+        Enter a URL to scan for phishing risk using our AI-powered analysis engine.
+      </p>
+
+      <div id="url-scan-controls" style="margin-top: 20px; width: 100%;">
+        <input
+          type="text"
+          id="url-input"
+          class="url-input"
+          placeholder="Enter URL (e.g., https://example.com)"
+          autocomplete="off"
+        >
+        <button id="scan-btn" class="btn btn-primary full-width">Scan URL</button>
+      </div>
+
+      <div id="message-scan-controls" class="hidden" style="margin-top: 12px; width: 100%;">
+        <textarea
+          id="msg-input"
+          class="msg-input"
+          rows="12"
+          placeholder="Paste the suspicious email or SMS text here… (no size limit)"
+        ></textarea>
+        <div id="msg-type-hint" class="type-hint">Detected: SMS/text</div>
+        <button id="msg-scan-btn" class="btn btn-primary full-width">Analyze Message</button>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading-container" class="risk-header hidden">
+      <h1>Loading PhishGuard AI...</h1>
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Error State (hidden by default) -->
+    <div id="error-container" class="risk-header hidden">
+      <h1>Error</h1>
+      <p id="error-message" style="text-align: center; padding: 20px;"></p>
+      <button id="retry-btn" class="btn btn-primary">Retry</button>
+    </div>
+
+    <!-- Result State (hidden by default) -->
+    <div id="result-container" class="risk-header hidden">
+      
+      <!-- Risk Header -->
+      <h1 class="risk-header">Scan Result</h1>
+
+      <!-- URL Section -->
+      <div class="url-section">
+        <h3>Analyzed URL:</h3>
+        <p id="result-url"></p>
+      </div>
+
+      <!-- Risk Score Badge -->
+      <div class="risk-badge">
+        <span class="score-value" id="risk-score"></span>
+        <span class="score-label">Risk Score</span>
+      </div>
+
+      <!-- Risk Level Badge -->
+      <div id="risk-level-container" class="risk-level safe">
+        <span class="level-icon safe"></span>
+        <span id="risk-level-text">Safe</span>
+      </div>
+
+      <!-- Explanation Section (hidden by default) -->
+      <div id="explanation-section" class="explanation-section hidden">
+        <h3>Risk Factors:</h3>
+        <p id="risk-explanation"></p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="rescan-btn" class="btn btn-primary">Rescan</button>
+        <button id="details-btn" class="btn btn-secondary">Details</button>
+        <button id="report-btn" class="btn btn-secondary">PDF Report</button>
+        <button id="history-btn" class="btn btn-secondary">History</button>
+      </div>
+    </div>
+
+    <!-- History Section (hidden by default) -->
+    <div id="history-container" class="risk-header hidden">
+      
+      <!-- Risk Header -->
+      <h1 class="risk-header">Scan History</h1>
+
+      <!-- Clear History Button -->
+      <button id="clear-history-btn" class="btn btn-secondary">Clear All</button>
+
+      <!-- Scan History List -->
+      <ul id="scan-history-list" class="scan-history"></ul>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="back-to-scan-btn" class="btn btn-primary">Back to Scan</button>
+        <button id="close-history-btn" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+
+    <!-- Detail Modal (hidden by default) -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Details</h2>
+          <button id="modal-close-btn" class="btn btn-secondary modal-close">×</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Weekly stats strip (Phase G) -->
+  <footer id="stats-strip" class="stats-strip hidden" title="Threats flagged in the last 7 days">
+    🛡️ <span id="stats-threats-week">0</span> threats flagged this week
+    · <span id="stats-scans-total">0</span> scans total
+  </footer>
+
+  <!-- Popup Controller -->
+  <script type="module" src="./popup.ts"></script>
+</body>
+</html>

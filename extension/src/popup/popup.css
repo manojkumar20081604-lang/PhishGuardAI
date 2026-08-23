@@ -1,0 +1,893 @@
+/**
+ * PhishGuard AI - Popup Styles (CSS)
+ * 
+ * Complete styling for the popup interface including:
+ * - Base styles and layout
+ * - Risk header with score display
+ * - URL input form
+ * - Action buttons (scan, rescan, history, details)
+ * - Loading and error states
+ * - Result container with risk indicators
+ * - History view
+ * - Modal overlay for detailed results
+ */
+
+/* ============================================================================
+   BASE STYLES & LAYOUT
+   ============================================================================ */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-tertiary: #eef1f6;
+  
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --text-muted: #a0aec0;
+  
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  --safe-color: #38b2ac;
+  --suspicious-color: #f6ad55;
+  --phishing-color: #e53e3e;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Base page: every view lives here, so put font/colors on body -
+   #scan-view-only styling left result/history/error unstyled. */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+#scan-view {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  background-color: var(--bg-primary);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+#scan-view .container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================================================================
+   RISK HEADER (Score Display)
+   ============================================================================ */
+
+#risk-header {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.risk-score-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.score-value {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Risk level colors */
+.score-value.safe, .level-icon.safe { color: var(--safe-color); }
+.score-value.suspicious, .level-icon.suspicious { color: var(--suspicious-color); }
+.score-value.phishing, .level-icon.phishing { color: var(--phishing-color); }
+
+.level-icon {
+  font-size: 32px;
+}
+
+.risk-level-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+/* ============================================================================
+   URL INPUT FORM
+   ============================================================================ */
+
+#url-input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+#url-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--bg-primary);
+}
+
+#url-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* ============================================================================
+   ACTION BUTTONS (Scan, Rescan, History, Details)
+   ============================================================================ */
+
+#scan-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#scan-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+#scan-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#scan-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Rescan button */
+#rescan-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--safe-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#rescan-btn:hover {
+  background-color: #319795;
+  transform: translateY(-1px);
+}
+
+/* History button */
+#history-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#history-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* Details button */
+#details-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#details-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* ============================================================================
+   LOADING STATE
+   ============================================================================ */
+
+#loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--bg-tertiary);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ============================================================================
+   ERROR STATE
+   ============================================================================ */
+
+#error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+#error-message {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+#retry-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background-color: var(--safe-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#retry-btn:hover {
+  background-color: #319795;
+  transform: translateY(-1px);
+}
+
+/* ============================================================================
+   RESULT CONTAINER (Main Results)
+   ============================================================================ */
+
+#result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-url {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Risk level badge */
+.risk-level-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+}
+
+.risk-level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.risk-level.safe { background-color: rgba(56, 178, 172, 0.15); color: var(--safe-color); }
+.risk-level.suspicious { background-color: rgba(246, 173, 85, 0.15); color: var(--suspicious-color); }
+.risk-level.phishing { background-color: rgba(229, 62, 62, 0.15); color: var(--phishing-color); }
+
+/* ============================================================================
+   EXPLANATION SECTION (Risk Factors)
+   ============================================================================ */
+
+#explanation-section {
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+}
+
+.explanation-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   BUTTONS (General)
+   ============================================================================ */
+
+.hidden {
+  display: none !important;
+}
+
+/* ============================================================================
+   HISTORY VIEW
+   ============================================================================ */
+
+#history-container {
+  padding: 8px;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.history-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.history-url {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.history-time {
+  flex-shrink: 0;
+  margin-left: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+/* ============================================================================
+   MODAL OVERLAY & CONTENT
+   ============================================================================ */
+
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#modal-overlay.hidden {
+  display: none !important;
+}
+
+.modal-container {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 420px;
+  width: 90%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Modal sections */
+.modal-section {
+  margin-bottom: 24px;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section h3 {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.modal-section p, .modal-section div {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Modal risk display */
+.modal-risk-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+}
+
+/* Modal features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.feature-item {
+  padding: 8px 10px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-sm);
+  font-size: 12px;
+}
+
+.feature-name {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.feature-value {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Feature suspicious indicator */
+.feature-suspicious {
+  background-color: rgba(246, 173, 85, 0.15) !important;
+}
+
+/* Modal timestamp */
+.modal-timestamp {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Modal close button */
+#modal-close-btn {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+
+#modal-close-btn:hover {
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  #scan-view {
+    padding: 16px;
+  }
+  
+  .score-value {
+    font-size: 36px;
+  }
+  
+  .level-icon {
+    font-size: 24px;
+  }
+}
+
+
+/* ============================================================================
+   Stats strip (Phase G) - LIGHT theme
+   ============================================================================ */
+
+.stats-strip {
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.stats-strip #stats-threats-week {
+  font-weight: 700;
+  color: #b45309;
+}
+
+
+/* ============================================================================
+   Message scan tabs (Phase H) - LIGHT theme (was white-on-dark, invisible
+   on the white popup background)
+   ============================================================================ */
+
+.scan-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.scan-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+.scan-tab:hover { background: rgba(0, 0, 0, 0.05); }
+
+.scan-tab.active {
+  background: #4c51bf;
+  color: #fff;
+  border-color: #4c51bf;
+}
+
+.open-tab-link {
+  display: block;
+  margin: -6px auto 10px auto;
+  background: none;
+  border: none;
+  color: #4c51bf;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.open-tab-link:hover { color: #3730a3; }
+
+/* Full-tab mode: popup.html opened via ?asPage=1 */
+body.as-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+}
+
+body.as-page .container {
+  max-width: 680px;
+  margin: 24px auto;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 28px;
+}
+
+.mode-hint {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 12px;
+}
+
+.msg-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 220px;
+  max-height: 320px;
+  resize: vertical;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background: #fff;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.msg-input::placeholder { color: var(--text-muted); }
+.msg-input:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102,126,234,.2); }
+
+.type-hint {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* ============================================================================
+   Result view pieces that had NO matching CSS before
+   ============================================================================ */
+
+#result-container,
+#history-container,
+#error-container,
+#loading-container {
+  color: var(--text-primary);
+}
+
+.url-section h3,
+.explanation-section h3 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.url-section p {
+  margin: 0;
+  font-size: 13px;
+  word-break: break-all;
+  background-color: var(--bg-secondary);
+  padding: 10px;
+  border-radius: var(--border-radius-sm);
+}
+
+.risk-badge {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+.score-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.explanation-section {
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+}
+
+.explanation-section p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons .btn {
+  flex: 1;
+  width: auto;
+  padding: 12px 8px;
+  font-size: 13px;
+}
+
+.btn {
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background-color .2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--bg-tertiary);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* History list */
+.scan-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.scan-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+
+.scan-item:hover { transform: translateX(4px); box-shadow: var(--shadow-sm); }
+
+.scan-url {
+  flex: 1;
+  font-size: 13px;
+  word-break: break-all;
+  color: var(--text-primary);
+}
+
+.scan-score {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.scan-score.safe { color: var(--safe-color); }
+.scan-score.warning { color: var(--suspicious-color); }
+.scan-score.danger { color: var(--phishing-color); }
+
+.empty-state {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding: 20px 0;
+}
+
+/* Details modal */
+.modal-content {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 380px;
+  width: 92%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.details-table td {
+  padding: 6px 4px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+  word-break: break-word;
+}
+
+.details-table td:first-child { white-space: nowrap; padding-right: 12px; }
+
+#modal-body h3 {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 16px 0 6px 0;
+}
+
+#modal-body ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
