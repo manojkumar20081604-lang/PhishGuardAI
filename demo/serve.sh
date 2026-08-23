@@ -3,39 +3,50 @@
 # Serves the simulated phishing login page from your own laptop so the
 # live demo never depends on venue internet or a real malicious site.
 #
-#   ./serve.sh          -> port 8020
-#   ./serve.sh 9000     -> custom port
+#   sudo ./serve.sh         -> clean URL on port 80 (recommended, needs sudo)
+#   ./serve.sh 8020         -> fallback without sudo (port shows in URL)
 set -euo pipefail
 cd "$(dirname "$0")"
-PORT="${1:-8020}"
-URL_PATH="/paypal.com-account-security-verify-login-alert/index.html"
+
 FANCY_HOST="secure-login.paypal-verify-alert.top"
+URL_PATH="/signin"
+PORT="${1:-80}"
+
+if [ "$PORT" = "80" ] && [ "$(id -u)" != "0" ]; then
+  echo ""
+  echo "  ⚠️  Port 80 (the invisible, normal-looking port) needs root."
+  echo ""
+  echo "     Run:   sudo ./serve.sh"
+  echo "     ...or use a dev port:  ./serve.sh 8020"
+  exit 1
+fi
 
 check() {
   curl -s -o /dev/null "http://localhost:$PORT$URL_PATH" 2>/dev/null
 }
 
-# Fancy hostname works only after the /etc/hosts entry exists (see below)
+# Fancy hostname works only after the /etc/hosts entry exists:
+#   echo '127.0.0.1 secure-login.paypal-verify-alert.top' | sudo tee -a /etc/hosts
 if getent hosts "$FANCY_HOST" >/dev/null 2>&1; then
-  PUBLIC_URL="http://$FANCY_HOST:$PORT$URL_PATH"
+  HOSTPART="$FANCY_HOST"
 else
-  PUBLIC_URL="http://localhost:$PORT$URL_PATH"
+  HOSTPART="localhost"
 fi
+[ "$PORT" = "80" ] && PORT_SUFFIX="" || PORT_SUFFIX=":$PORT"
+PUBLIC_URL="http://$HOSTPART$PORT_SUFFIX$URL_PATH"
 
 if check; then
   echo ""
   echo "  ✅ Demo server is ALREADY running - nothing to start."
   echo ""
   echo "     Open:  $PUBLIC_URL"
-  if ! getent hosts "$FANCY_HOST" >/dev/null 2>&1; then
+  getent hosts "$FANCY_HOST" >/dev/null 2>&1 || {
     echo ""
     echo "  💡 Optional (hides 'localhost' on stage): run ONCE,"
-    echo "     then restart this script:"
     echo "       echo '127.0.0.1 $FANCY_HOST' | sudo tee -a /etc/hosts"
-  fi
+  }
   echo ""
-  echo "  (To restart fresh: kill the old one with"
-  echo "   fuser -k $PORT/tcp   then run ./serve.sh again)"
+  echo "  (Restart fresh:  fuser -k $PORT/tcp && sudo ./serve.sh)"
   exit 0
 fi
 
@@ -44,14 +55,8 @@ echo "  PhishGuard demo server -> http://localhost:$PORT"
 echo ""
 echo "  Open this URL in the browser:"
 echo "    $PUBLIC_URL"
-if ! getent hosts "$FANCY_HOST" >/dev/null 2>&1; then
-  echo ""
-  echo "  💡 Optional (hides 'localhost' on stage): run ONCE,"
-  echo "     then restart this script:"
-  echo "       echo '127.0.0.1 $FANCY_HOST' | sudo tee -a /etc/hosts"
-fi
 echo ""
-echo "  Expected: red auto-protect banner + password-field alarm + red badge."
+echo "  Expected: warning banner + password-field alarm + badge."
 echo "  Press Ctrl+C to stop."
 echo ""
 

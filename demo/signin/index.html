@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PayPal - Security Verification Required</title>
+<style>
+  /* Credential-harvesting kit look - pure CSS, zero external assets so it
+     works on an air-gapped competition laptop. Educational simulation ONLY. */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
+  body { background:#f5f7fa; }
+  .topbar { background:#003087; color:#fff; padding:14px 8%; display:flex; align-items:center; justify-content:space-between; }
+  .logo { font-size:26px; font-weight:700; font-style:italic; }
+  .logo span { color:#009cde; }
+  .container { max-width:420px; margin:48px auto; }
+  .alert { background:#fff7e6; border:1px solid #f5c33b; border-radius:8px; padding:16px 18px; margin-bottom:20px; }
+  .alert h2 { color:#8a6100; font-size:15px; margin-bottom:6px; }
+  .alert p { color:#6b5900; font-size:13px; line-height:1.45; }
+  .card { background:#fff; border:1px solid #e1e5eb; border-radius:10px; padding:28px; box-shadow:0 4px 16px rgba(0,0,0,.08); }
+  .card h1 { font-size:19px; color:#2c2e2f; margin-bottom:18px; }
+  label { display:block; font-size:12px; font-weight:600; color:#555; margin:12px 0 5px; }
+  input { width:100%; padding:11px 12px; border:1px solid #c4cbd4; border-radius:6px; font-size:14px; }
+  input:focus { outline:2px solid #0070ba; }
+  .btn { width:100%; margin-top:22px; background:#0070ba; color:#fff; border:none; border-radius:24px; padding:12px; font-size:15px; font-weight:700; cursor:pointer; }
+  .btn:hover { background:#005ea6; }
+  .help { text-align:center; margin-top:14px; font-size:12px; }
+  .help a { color:#0070ba; }
+  .footnote { max-width:420px; margin:26px auto; text-align:center; font-size:11px; color:#9aa4b2; line-height:1.5; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">Pay<span>Pal</span></div>
+    <div style="font-size:13px;">Secure&nbsp;|&nbsp;Verified</div>
+  </div>
+
+  <div class="container">
+    <div class="alert">
+      <h2>&#9888; Unusual sign-in activity detected</h2>
+      <p>Your account access has been limited for your protection.
+         Confirm your identity within 24 hours to restore full access.</p>
+    </div>
+
+    <div class="card">
+      <h1>Log in to your account</h1>
+      <form onsubmit="return false;">
+        <label for="em">Email or mobile number</label>
+        <input id="em" type="text" autocomplete="off">
+        <label for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="off">
+        <button class="btn" type="submit">Log In</button>
+      </form>
+      <div class="help"><a href="#">Forgot password?</a> &middot; <a href="#">Sign up</a></div>
+    </div>
+
+    <p class="footnote">
+      EDUCATIONAL SIMULATION &mdash; this page is a safe replica served locally for
+      demonstrating phishing detection. No data is sent anywhere; nothing you type
+      leaves this laptop.
+    </p>
+  </div>
+</body>
+</html>
