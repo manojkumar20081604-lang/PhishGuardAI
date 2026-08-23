@@ -61,3 +61,7 @@ not_for_deploy/
 static/assets/background-music.mp3
 models/*.pkl
 node_modules
+
+# Personal competition materials (kept local only)
+/presentation/
+/demo/
